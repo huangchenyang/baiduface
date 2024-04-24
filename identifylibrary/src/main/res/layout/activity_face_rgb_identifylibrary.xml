@@ -7,11 +7,33 @@
     android:layout_height="match_parent"
     tools:context=".activity.FaceRGBPersonActivity">
 
-
     <com.example.datalibrary.gl.view.GlMantleSurfacView
         android:id="@+id/camera_textureview"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/face_detect_rl"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/testimony_titleRl"-->
+<!--        >-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/face_detect_tv"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center"-->
+<!--            android:text="人脸识别区"-->
+<!--            android:textColor="#ffffff"-->
+<!--            android:textStyle="bold" />-->
+
+<!--        <com.example.datalibrary.gl.view.GlMantleSurfacView-->
+<!--            android:id="@+id/camera_textureview"-->
+<!--            android:layout_width="640dp"-->
+<!--            android:layout_height="480dp"-->
+<!--            android:layout_centerInParent="true" />-->
+<!--    </RelativeLayout>-->
 
     <View
         android:id="@+id/mongolia_view"
@@ -22,7 +44,6 @@
     <include
         android:id="@+id/testimony_titleRl"
         layout="@layout/layout_title_testimony" />
-
 
     <include layout="@layout/item_save_camera"
         android:layout_above="@+id/test_rgb_rl"
@@ -80,155 +101,182 @@
 
     <RelativeLayout
         android:id="@+id/person_buttomLl_All"
-        android:layout_width="150dp"
+        android:layout_width="120dp"
         android:layout_height="match_parent"
-        android:layout_alignParentRight="true"
         android:layout_below="@+id/testimony_titleRl"
-        >
+        android:layout_alignParentRight="true"
+        android:background="#4169E1">
+
+        <TextView
+            android:id="@+id/persion_detect_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="人证核验信息区"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/persion_detect_tv"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
+            android:background="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
 
-        <LinearLayout
-            android:id="@+id/tty"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/imageView"
-            android:layout_marginTop="10dp"
-            >
-            <TextView
-                android:id="@+id/textSerial"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="串口：" />
+        <!--        <LinearLayout-->
+        <!--            android:id="@+id/tty"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/imageView"-->
+        <!--            android:layout_marginTop="10dp"-->
+        <!--            >-->
+        <!--            <TextView-->
+        <!--                android:id="@+id/textSerial"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="串口：" />-->
 
-            <EditText
-                android:id="@+id/editSerial"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="/dev/ttyS8" />
+        <!--            <EditText-->
+        <!--                android:id="@+id/editSerial"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:ems="10"-->
+        <!--                android:inputType="textPersonName"-->
+        <!--                android:text="/dev/ttyS8" />-->
 
-        </LinearLayout>
+        <!--        </LinearLayout>-->
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tty"
-            android:id="@+id/readCardLL"
-           >
-            <Button
-                android:id="@+id/btnStart"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                android:text="开始读卡"
-                android:onClick="onBnStart" />
+        <!--        <LinearLayout-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/tty"-->
+        <!--            android:id="@+id/readCardLL"-->
+        <!--           >-->
+        <!--            <Button-->
+        <!--                android:id="@+id/btnStart"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginTop="10dp"-->
+        <!--                android:layout_weight="1"-->
+        <!--                android:text="开始读卡"-->
+        <!--                android:onClick="onBnStart" />-->
 
-            <Button
-                android:id="@+id/btnStop"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                android:text="停止读卡"
-                android:onClick="onBnStop" />
+        <!--            <Button-->
+        <!--                android:id="@+id/btnStop"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginTop="10dp"-->
+        <!--                android:layout_weight="1"-->
+        <!--                android:text="停止读卡"-->
+        <!--                android:onClick="onBnStop" />-->
 
 
-        </LinearLayout>
+        <!--        </LinearLayout>-->
         <TextView
             android:id="@+id/textResult"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/readCardLL"
+            android:layout_below="@+id/imageView"
             android:layout_marginTop="10dp"
-            android:text="TextView" />
+            android:textColor="#ffffff"
+            android:textSize="8dp" />
         <!--        预览模式-->
-<!--        <include layout="@layout/layout_testimony_preview_mode" />-->
+        <!--        <include layout="@layout/layout_testimony_preview_mode" />-->
         <!--        开发模式-->
-<!--        <include layout="@layout/layout_testimony_development_model" />-->
+        <!--        <include layout="@layout/layout_testimony_development_model" />-->
     </RelativeLayout>
+
 
     <RelativeLayout
         android:id="@+id/fingerprintRl"
-        android:layout_width="150dp"
+        android:layout_width="80dp"
         android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
         android:layout_below="@+id/testimony_titleRl"
-        >
+        android:layout_alignParentLeft="true"
+        android:background="#4169E1">
 
         <TextView
-            android:id="@+id/txtResult"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:text="111"
-            android:textSize="20sp" />
-       <LinearLayout
-           android:id="@+id/fpBtTl"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_below="@+id/txtResult">
-           <Button
-               android:id="@+id/startFpBt"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:onClick="onBnFpStart"
-               android:text="Start"
-               android:textAllCaps="false" />
-
-
-           <Button
-               android:id="@+id/stopFpBt"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:onClick="onBnFpStop"
-               android:text="Stop"
-               android:textAllCaps="false" />
-
-       </LinearLayout>
-
-        <EditText
-            android:id="@+id/editFeatureFileName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:layout_below="@+id/fpBtTl"
-            android:text="/sdcard/fp.dat" />
+            android:gravity="center"
+            android:text="指纹识别区"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btnImport"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onBnFpImport"
-            android:text="Import"
-            android:layout_below="@+id/editFeatureFileName"
-            android:textAllCaps="false" />
+        <!--        <TextView-->
+        <!--            android:id="@+id/txtResult"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="80dp"-->
+        <!--            android:text="111"-->
+        <!--            android:textSize="20sp" />-->
+
+        <!--        <LinearLayout-->
+        <!--            android:id="@+id/fpBtTl"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/txtResult">-->
+
+        <!--            <Button-->
+        <!--                android:id="@+id/startFpBt"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:onClick="onBnFpStart"-->
+        <!--                android:text="Start"-->
+        <!--                android:textAllCaps="false" />-->
+
+
+        <!--            <Button-->
+        <!--                android:id="@+id/stopFpBt"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:onClick="onBnFpStop"-->
+        <!--                android:text="Stop"-->
+        <!--                android:textAllCaps="false" />-->
+
+        <!--        </LinearLayout>-->
+
+        <!--        <EditText-->
+        <!--            android:id="@+id/editFeatureFileName"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/fpBtTl"-->
+        <!--            android:ems="10"-->
+        <!--            android:inputType="textPersonName"-->
+        <!--            android:text="/sdcard/fp.dat" />-->
+
+        <!--        <Button-->
+        <!--            android:id="@+id/btnImport"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/editFeatureFileName"-->
+        <!--            android:onClick="onBnFpImport"-->
+        <!--            android:text="Import"-->
+        <!--            android:textAllCaps="false" />-->
 
         <ImageView
             android:id="@+id/imageFP"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/btnImport"/>
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerInParent="true"
+            android:background="@color/white" />
 
     </RelativeLayout>
 
-    <TextView
-        android:id="@+id/person_baiduTv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="15dp"
-        android:text="@string/home_baidu"
-        android:textColor="#808080"
-        android:textSize="12sp" />
+
+<!--    <TextView-->
+<!--        android:id="@+id/person_baiduTv"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginBottom="15dp"-->
+<!--        android:text="@string/home_baidu"-->
+<!--        android:textColor="#808080"-->
+<!--        android:textSize="12sp" />-->
 </RelativeLayout>

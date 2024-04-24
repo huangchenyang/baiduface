@@ -13,6 +13,7 @@ import com.baidu.idl.face.main.finance.utils.FinanceConfigUtils;
 import com.baidu.idl.facesdkdemo.R;
 import com.baidu.idl.main.facesdk.attendancelibrary.utils.AttendanceConfigUtils;
 import com.baidu.idl.main.facesdk.gazelibrary.utils.GazeConfigUtils;
+import com.baidu.idl.main.facesdk.identifylibrary.activity.FaceRGBPersonActivity;
 import com.baidu.idl.main.facesdk.identifylibrary.utils.IdentifyConfigUtils;
 import com.baidu.idl.main.facesdk.paymentlibrary.utils.PaymentConfigUtils;
 import com.baidu.idl.main.facesdk.registerlibrary.user.utils.RegisterConfigUtils;
@@ -90,7 +91,7 @@ public class StartActivity extends BaseActivity {
                         /**
                          *要执行的操作
                          */
-                        startActivity(new Intent(mContext, HomeActivity.class));
+                        startActivity(new Intent(mContext, FaceRGBPersonActivity.class));
                         finish();
                     }
                 };

@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="40dp"
+    android:layout_height="20dp"
     android:alpha="0.9"
-    android:background="#121212">
+    android:background="@android:color/transparent">
 
     <ImageView
         android:id="@+id/btn_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="5dp"
         android:layout_centerVertical="true"
         android:padding="5dp"
-        android:src="@mipmap/ic_return"
-        android:text="返回"
-        android:textColor="#ffffff" />
+        android:src="@drawable/my_return"
+        android:visibility="gone" />
 
 
     <ImageView
@@ -26,16 +25,18 @@
         android:layout_alignRight="@id/preview_text"
         android:layout_marginTop="-12dp"
         android:src="@mipmap/ic_highlight" />
+
     <TextView
         android:id="@+id/preview_text"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
+        android:layout_centerVertical="true"
         android:layout_marginStart="50dp"
         android:layout_toEndOf="@+id/btn_back"
-        android:layout_centerVertical="true"
         android:text="预览模式"
         android:textColor="#d3d3d3"
-        android:textSize="@dimen/title_font" />
+        android:textSize="@dimen/title_font"
+        android:visibility="gone" />
 
 
 
@@ -58,17 +59,17 @@
         android:text="开发模式"
         android:layout_centerVertical="true"
         android:textColor="#999999"
-        android:textSize="@dimen/title_font" />
+        android:textSize="@dimen/title_font"
+        android:visibility="gone" />
 
     <ImageView
         android:id="@+id/btn_setting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="28dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="5dp"
         android:layout_centerVertical="true"
         android:padding="5dp"
-        android:src="@mipmap/ic_setting" />
+        android:src="@drawable/my_setting" />
 
 </RelativeLayout>

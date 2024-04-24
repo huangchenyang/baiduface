@@ -20,7 +20,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="56dp">
+                android:layout_height="20dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -30,7 +30,7 @@
                     <ImageView
                         android:id="@+id/gate_settting_back"
                         android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_height="20dp"
                         android:layout_marginLeft="30dp"
                         android:scaleType="centerInside"
                         android:src="@mipmap/ic_return"></ImageView>
@@ -38,20 +38,19 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="20dp"
                     android:gravity="center"
                     android:text="设置"
-                    android:textColor="@color/white"
-                    android:textSize="25sp"></TextView>
+                    android:textColor="@color/white"></TextView>
             </RelativeLayout>
         </LinearLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.3dp"
-            android:background="#333333"></View>
+<!--        <View-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0.3dp"-->
+<!--            android:background="#333333"></View>-->
 
-        <View style="@style/configViewtyle"></View>
+<!--        <View style="@style/configViewtyle"></View>-->
 
 
         <LinearLayout
@@ -60,12 +59,62 @@
             android:gravity="center_horizontal"
             android:orientation="vertical"
             android:paddingLeft="30dp"
-            android:paddingRight="30dp">
+            android:paddingRight="20dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="认证核验方式"
+                        android:textColor="#ffffff"
+                        />
+                    <RadioGroup
+                        android:id="@+id/radio_group"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/card_bt"
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:text="仅身份证"
+                            android:textColor="#ffffff"
+                            android:buttonTint="@color/white"/>
+
+                        <RadioButton
+                            android:id="@+id/card_face_bt"
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:text="身份证+人脸"
+                            android:textColor="#ffffff"
+                            android:buttonTint="@color/white"/>
+
+                        <RadioButton
+                            android:id="@+id/car_fp_bt"
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:text="身份证+指纹"
+                            android:textColor="#ffffff"
+                            android:buttonTint="@color/white"/>
+                        <RadioButton
+                            android:id="@+id/car_face_fp_bt"
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:text="身份证+人脸+指纹"
+                            android:textColor="#ffffff"
+                            android:buttonTint="@color/white"/>
+                    </RadioGroup>
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -82,11 +131,12 @@
                         <LinearLayout
                             android:id="@+id/gate_face_detection"
                             android:layout_width="match_parent"
-                            android:layout_height="60dp">
+                            android:layout_height="20dp">
 
                             <TextView
                                 style="@style/configTextStyle"
-                                android:text="@string/gate_face_detection"></TextView>
+                                android:text="@string/gate_face_detection">
+                            </TextView>
 
                             <LinearLayout style="@style/configInnerImageLayout">
 
@@ -102,11 +152,13 @@
                         <LinearLayout
                             android:id="@+id/gate_config_qualtify"
                             android:layout_width="match_parent"
-                            android:layout_height="60dp">
+                            android:layout_height="20dp">
 
                             <TextView
                                 style="@style/configTextStyle"
-                                android:text="@string/gate_quality_inspection"></TextView>
+                                android:text="@string/gate_quality_inspection">
+
+                            </TextView>
 
                             <LinearLayout style="@style/configInnerImageLayout">
 
@@ -128,7 +180,7 @@
                         <LinearLayout
                             android:id="@+id/gate_huoti_detection"
                             android:layout_width="match_parent"
-                            android:layout_height="60dp">
+                            android:layout_height="20dp">
 
                             <TextView
                                 style="@style/configTextStyle"
@@ -160,7 +212,7 @@
                             <LinearLayout
                                 android:id="@+id/gate_face_recognition"
                                 android:layout_width="match_parent"
-                                android:layout_height="60dp">
+                                android:layout_height="20dp">
 
                                 <TextView
                                     style="@style/configTextStyle"
@@ -187,7 +239,7 @@
                     <LinearLayout
                         android:id="@+id/gate_picture_optimization"
                         android:layout_width="match_parent"
-                        android:layout_height="60dp"
+                        android:layout_height="20dp"
                         android:background="@drawable/sr_liner_rectangle">
 
                         <TextView
@@ -208,7 +260,7 @@
                     <LinearLayout
                         android:id="@+id/gate_lens_settings"
                         android:layout_width="match_parent"
-                        android:layout_height="60dp"
+                        android:layout_height="20dp"
                         android:background="@drawable/sr_liner_rectangle">
 
                         <TextView
@@ -235,7 +287,7 @@
                     <LinearLayout
                         android:id="@+id/gate_log_settings"
                         android:layout_width="match_parent"
-                        android:layout_height="60dp">
+                        android:layout_height="20dp">
 
                         <TextView
                             style="@style/configTextStyle"
@@ -264,7 +316,7 @@
                         <LinearLayout
                             android:id="@+id/configVersionMessage"
                             android:layout_width="match_parent"
-                            android:layout_height="60dp">
+                            android:layout_height="20dp">
 
                             <TextView
                                 style="@style/configTextStyle"

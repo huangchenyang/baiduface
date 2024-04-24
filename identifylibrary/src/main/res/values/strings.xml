@@ -173,6 +173,7 @@
     <string name="technical_support">技术支持:</string>
     <string name="activation_help_url">http://ticket.bce.baidu.com</string>
     <string name="filter_vcode">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <string name="verify_type">认证核验方式</string>
     <string name="gate_face_detection">人脸检测</string>
     <string name="gate_quality_inspection">质量检测</string>
     <string name="gate_huoti_detection">活体检测</string>

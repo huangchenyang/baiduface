@@ -4,7 +4,9 @@ import android.Manifest;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -19,8 +21,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.MediaStore;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -148,13 +155,14 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
     //身份证读卡器
     private CheckBox checkRepeat = null;
     private ImageView imageView = null;
+    private ImageView imageViewFp = null;
 //    private TextView textSuccessCount = null;
 //    private TextView textFailCount = null;
     private TextView textTimeCost = null;
     private TextView textResult = null;
     private TextView textMaxTimeCost = null;
     private CheckBox checkReadFp = null;
-    private EditText editSerial = null;
+//    private EditText editSerial = null;
     private boolean bRepeatMode = false;
     private boolean bReadFp = false;
 
@@ -173,7 +181,7 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
     private static final int ZKTECO_VID =   0x1b55;
     private final int REQUEST_PERMISSION_CODE = 9;
     private ZKUSBManager zkusbManager = null;
-    private TextView textView = null;
+//    private TextView textView = null;
     private ImageView fpImageView = null;
     private EditText editText = null;
     private FingerprintSensor fingerprintSensor = new FingerprintSensor();
@@ -185,10 +193,26 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
     private byte[]  idTemplate1 = null;
     private byte[]  idTemplate2 = null;
 
+    //验证方式
+    public static int CARD = 0;
+    public static int CARD_FACE = 1;
+    public static int CARD_FP = 2;
+    public static int CARD_FACE_FP = 3;
+    public  static  int verifyType = CARD_FACE;
+    private float fp_score;
+    private boolean isFpConfirm = false;
+    private boolean isVerifyFp = false;
+    private boolean isVerifyFace = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = this;
+        Intent intent=new Intent("com.hyzn.sdk.switchNavBar");
+        intent.putExtra("value", 0);
+        intent.setPackage("com.android.settings");
+        sendBroadcast(intent);
+
         initListener();
         setContentView(R.layout.activity_face_rgb_identifylibrary);
         FaceSDKManager.getInstance().emptyFrame();
@@ -197,6 +221,12 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
         checkStoragePermission();
         zkusbManager = new ZKUSBManager(this.getApplicationContext(), zkusbManagerListener);
         zkusbManager.registerUSBPermissionReceiver();
+
+        //启动指纹识别
+        onBnFpStart();
+
+        //启动人脸识别
+        onBnStart();
     }
 
     private void initFaceConfig(int height , int width){
@@ -325,15 +355,18 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
         CameraPreviewManager.getInstance().startPreview(/*mContext, */glSurfaceView,
                 SingleBaseConfig.getBaseConfig().getRgbVideoDirection() , RGB_WIDTH, RGB_HEIGHT);
 
+        Log.d(TAG,"RGB_WIDTH:"+RGB_WIDTH);
+        Log.d(TAG,"RGB_HEIGHT:"+RGB_HEIGHT);
+
         //身份证读取卡器
         imageView = (ImageView)findViewById(R.id.imageView);
         textResult = (TextView)findViewById(R.id.textResult);
-        editSerial = (EditText)findViewById(R.id.editSerial);
+//        editSerial = (EditText)findViewById(R.id.editSerial);
 
         //指纹
-        textView = (TextView)findViewById(R.id.txtResult);
-        imageView = (ImageView)findViewById(R.id.imageFP);
-        editText = (EditText)findViewById(R.id.editFeatureFileName);
+//        textView = (TextView)findViewById(R.id.txtResult);
+        imageViewFp = (ImageView)findViewById(R.id.imageFP);
+//        editText = (EditText)findViewById(R.id.editFeatureFileName);
     }
 
     @Override
@@ -360,7 +393,7 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
             }
             // 跳转设置页面
             startActivity(new Intent(mContext, IdentifySettingActivity.class));
-            finish();
+//            finish();
             // 上传图片
         } else if (id == R.id.testimony_addIv) {
             Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
@@ -560,6 +593,9 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
 
     // 预览模式
     private void checkCloseDebugResult(final LivenessModel model) {
+        if(verifyType!=CARD_FACE && verifyType!=CARD_FACE_FP){
+            return;
+        }
         // 当未检测到人脸UI显示
         runOnUiThread(new Runnable() {
             @Override
@@ -590,9 +626,8 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-//                            Log.d(TAG,"model != null");
+                            Log.d(TAG,"model != null");
                             score = model.getScore();
-
                             if (isDevelopment == false) {
 //                                Log.d(TAG,"isDevelopment == false");
                                 layoutCompareStatus.setVisibility(View.GONE);
@@ -608,18 +643,26 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
 //                                        Log.d(TAG,"mLiveType == 0");
                                         if (score > SingleBaseConfig.getBaseConfig().getIdThreshold()) {
                                             Log.d(TAG,"人证核验通过");
-                                            testimonyTipsFailTv.setText("人证核验通过");
+                                            String result="";
+                                            isVerifyFace = true;
+                                            if(verifyType==CARD_FACE_FP){
+                                                if(!isVerifyFp){
+                                                    result = "人脸核验通过\n 请进行指纹识别";
+                                                }else{
+                                                    result = "人脸核验通过\n 全部验证通过";
+                                                }
+                                            }
+                                            testimonyTipsFailTv.setText(result);
                                             testimonyTipsFailTv.setTextColor(
                                                     Color.parseColor("#FF00BAF2"));
                                             testimonyTipsPleaseFailTv.setText("识别成功");
                                             testimonyTipsFailIv.setImageResource(R.mipmap.tips_success);
                                         } else {
-//                                            Log.d(TAG,"人证核验未通过");
-                                            testimonyTipsFailTv.setText("人证核验未通过");
-                                            testimonyTipsFailTv.setTextColor(
-                                                    Color.parseColor("#FFFEC133"));
-                                            testimonyTipsPleaseFailTv.setText("请上传正面人脸照片");
-                                            testimonyTipsFailIv.setImageResource(R.mipmap.tips_fail);
+                                              testimonyTipsFailTv.setText("人证核验未通过");
+                                              testimonyTipsFailTv.setTextColor(
+                                                        Color.parseColor("#FFFEC133"));
+                                              testimonyTipsPleaseFailTv.setText("请上传正面人脸照片");
+                                              testimonyTipsFailIv.setImageResource(R.mipmap.tips_fail);
                                         }
                                     } else {
 //                                        Log.d(TAG,"mLiveType != 0");
@@ -637,14 +680,23 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                                             if (score > SingleBaseConfig.getBaseConfig()
                                                     .getIdThreshold()) {
                                                 Log.d(TAG,"人证核验通过");
-                                                testimonyTipsFailTv.setText("人证核验通过");
+                                                String result="";
+                                                isVerifyFace = true;
+                                                if(verifyType==CARD_FACE_FP){
+                                                    if(!isVerifyFp){
+                                                        result = "人脸核验通过\n 请进行指纹识别";
+                                                    }else{
+                                                        result = "人脸核验通过\n 全部验证通过";
+                                                    }
+                                                }
+                                                testimonyTipsFailTv.setText(result);
                                                 testimonyTipsFailTv.setTextColor(
                                                         Color.parseColor("#FF00BAF2"));
                                                 testimonyTipsPleaseFailTv.setText("识别成功");
                                                 testimonyTipsFailIv.setImageResource(
                                                         R.mipmap.tips_success);
                                             } else {
-//                                                Log.d(TAG,"人证核验未通过");
+//                                              Log.d(TAG,"人证核验未通过");
                                                 testimonyTipsFailTv.setText("人证核验未通过");
                                                 testimonyTipsFailTv.setTextColor(
                                                         Color.parseColor("#FFFEC133"));
@@ -820,11 +872,14 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
         CameraPreviewManager.getInstance().stopPreview();
         closeDevice();
 
-        if (bFpStarted)
-        {
-            closeFpDevice();
-        }
+//        if (bFpStarted)
+//        {
+//            closeFpDevice();
+//        }
+//        zkusbManager.unRegisterUSBPermissionReceiver();
+        onBnFpStop();
         zkusbManager.unRegisterUSBPermissionReceiver();
+        onBnStop();
     }
 
     private boolean isPause = false;
@@ -898,8 +953,19 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
     private void setResult(String strText)
     {
         final String flStrText = strText;
+//        Log.d(TAG,flStrText);
         runOnUiThread(new Runnable() {
             public void run() {
+//                String[] split = flStrText.split("！");
+//                if(split.length>2){
+//                    Log.d(TAG,"length="+split.length);
+//                    String[] split1 = split[1].split("，");
+//                    String persionStr = "";
+//                    for(String str:split1){
+//                        persionStr = persionStr+str+"\n";
+//                    }
+//                    textResult.setText(persionStr);
+//                }
                 textResult.setText(flStrText);
             }
         });
@@ -981,6 +1047,11 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                                 final String addr = idCardInfo.getAddress();
                                 final String passNo = idCardInfo.getPassNum();
                                 final int visaTimes = idCardInfo.getVisaTimes();
+                                byte[] fpdata = idCardInfo.getFpdata();
+                                int fplength = idCardInfo.getFplength();
+//                                Log.d(TAG,"fplength:"+fplength);
+                                fpImportByCard(fpdata);
+
                                 Bitmap bmpPhoto = null;
                                 if (idCardInfo.getPhotolength() > 0) {
                                     byte[] buf = new byte[WLTService.imgLength];
@@ -997,28 +1068,27 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                                         String result = "";
                                         if (final_cardType == IDCardType.TYPE_CARD_SFZ)
                                         {
-                                            result += "读取居民身份证成功！";
-                                            result += "姓名：" + name;
-                                            result += ",性别：" + sex;
-                                            result += ",民族：" + nation;
-                                            result += ",出生日期：" + born;
-                                            result += ",地址：" + addr;
-                                            result += ",身份号码：" + licid;
-                                            result += "，签发机关：" + depart;
-                                            result += "，有效期：" + expireDate;
+                                            result += "姓名:" + name+"\n";
+                                            result += "性别:" + sex+"\n";
+                                            result += "民族:" + nation+"\n";
+                                            result += "出生日期:" + born+"\n";
+                                            result += "地址:" + addr+"\n";
+                                            result += "身份号码:" + licid+"\n";
+                                            result += "签发机关:" + depart+"\n";
+                                            result += "有效期:" + expireDate;
                                             setResult(result);
                                         }
                                         else
                                         {
-                                            result += "读取港澳台居住证成功！";
-                                            result += "姓名：" + name;
-                                            result += ",性别：" + sex;
-                                            result += ",出生日期：" + born;
-                                            result += ",身份号码：" + licid;
-                                            result += "，签发机关：" + depart;
-                                            result += "，有效期：" + expireDate;
-                                            result += "，签发次数：" + visaTimes;
-                                            result += "，通行证号码：" + passNo;
+//                                            result += "读取港澳台居住证成功！";
+                                            result += "姓名:" + name+"\n";
+                                            result += "性别:" + sex+"\n";
+                                            result += "出生日期:" + born+"\n";
+                                            result += "身份号码:" + licid+"\n";
+                                            result += "签发机关:" + depart+"\n";
+                                            result += "有效期:" + expireDate+"\n";
+                                            result += "签发次数:" + visaTimes+"\n";
+                                            result += "通行证号码:" + passNo;
                                             setResult(result);
                                         }
                                     }
@@ -1037,6 +1107,10 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                                 final String relatecode = idprpCardInfo.getRelateCode();
                                 final String oldLicId = idprpCardInfo.getOldId();
                                 final int    visaTimes = idprpCardInfo.getVisaTimes();
+                                byte[] fpdata = idprpCardInfo.getFpdata();
+                                int fplength = idprpCardInfo.getFplength();
+//                                Log.d(TAG,"fplength:"+fplength);
+                                fpImportByCard(fpdata);
 
                                 Bitmap bmpPhoto = null;
                                 if (idprpCardInfo.getPhotolength() > 0) {
@@ -1053,31 +1127,31 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                                         String result = "";
                                         if (final_cardType == IDCardType.TYPE_CARD_PRP)
                                         {
-                                            result += "读取外国人永久居留身份证(2017)成功！";
-                                            result += "中文姓名：" + cnName;
-                                            result += "英文姓名：" + enName;
-                                            result += ",性别：" + sex;
-                                            result += ",国家：" + country;
-                                            result += ",出生日期：" + born;
-                                            result += ",身份号码：" + licid;
-                                            result += "，有效期：" + expireDate;
+//                                            result += "读取外国人永久居留身份证(2017)成功！";
+                                            result += "中文姓名:" + cnName+"\n";
+                                            result += "英文姓名:" + enName+"\n";
+                                            result += "性别:" + sex+"\n";
+                                            result += "国家:" + country+"\n";
+                                            result += "出生日期:" + born+"\n";
+                                            result += "身份号码:" + licid+"\n";
+                                            result += "有效期:" + expireDate;
                                             setResult(result);
                                         }
                                         else
                                         {
-                                            result += "读取外国人永久居留身份证(2023)成功！";
-                                            result += "中文姓名：" + cnName;
-                                            result += "英文姓名：" + enName;
-                                            result += ",性别：" + sex;
-                                            result += ",国家：" + country;
-                                            result +=",出生日期：" + born;
-                                            result += ",身份号码：" + licid;
-                                            result += "，有效期：" + expireDate;
-                                            result += "，换证次数：" + visaTimes;
+//                                            result += "读取外国人永久居留身份证(2023)成功！";
+                                            result += "中文姓名:" + cnName+"\n";
+                                            result += "英文姓名:" + enName+"\n";
+                                            result += "性别:" + sex+"\n";
+                                            result += "国家:" + country+"\n";
+                                            result +="出生日期:" + born+"\n";
+                                            result += "身份号码:" + licid+"\n";
+                                            result += "有效期:" + expireDate+"\n";
+                                            result += "换证次数:" + visaTimes;
                                             if (!relatecode.isEmpty())
                                             {
-                                                result += "，既往身份号码关联项：" + relatecode;
-                                                result += "，既往身份号码：" + oldLicId;
+                                                result += "既往身份号码关联项:" + relatecode+"\n";
+                                                result += "既往身份号码:" + oldLicId+"\n";
                                             }
                                             setResult(result);
                                         }
@@ -1102,7 +1176,7 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
     }
 
 
-    public void onBnStart(View view) {
+    public void onBnStart() {
         bRepeatMode = false;
         bReadFp = false;
         readFailTimes = 0;
@@ -1111,7 +1185,8 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
         timeCostCurrent = 0;
         maxTimeCost = 0;
 
-        String strSerialName = editSerial.getText().toString();
+//        String strSerialName = editSerial.getText().toString();
+        String strSerialName  = "/dev/ttyS8";
         if (null == strSerialName || strSerialName.isEmpty())
         {
             setResult("请输入串口路径！");
@@ -1155,7 +1230,7 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
         }
     }
 
-    public void onBnStop(View view) {
+    public void onBnStop() {
         closeDevice();
         setResult("设备断开连接");
     }
@@ -1228,12 +1303,13 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
             final Bitmap bitmap = ToolUtils.renderCroppedGreyScaleBitmap(fpImage, fingerprintSensor.getImageWidth(), fingerprintSensor.getImageHeight());
             runOnUiThread(new Runnable() {
                 public void run() {
-                    imageView.setImageBitmap(bitmap);
+                    imageViewFp.setImageBitmap(bitmap);
                 }
             });
             byte imageQuality = fingerprintSensor.getImageQuality(fpImage);
             String strText;
             strText = "image quality:" + imageQuality;
+//            Log.d(TAG,strText);
             if (imageQuality < 45 || null == idTemplate1)
             {
                 setFpResult(strText);
@@ -1263,15 +1339,46 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                 }
             }
              */
-
-            float score = fingerprintSensor.imageMatch(fpImage, idTemplate1);
-            if (score < 0.35 && null != idTemplate2)    //第一个比对失败比对第二个
+            fp_score = fingerprintSensor.imageMatch(fpImage, idTemplate1);
+            if (fp_score < 0.35 && null != idTemplate2)    //第一个比对失败比对第二个
             {
-                score = fingerprintSensor.imageMatch(fpImage, idTemplate2);
+                fp_score = fingerprintSensor.imageMatch(fpImage, idTemplate2);
             }
             strText += "\r\n";
-            strText += "Match result:" + score;
+            strText += "Match result:" + fp_score;
+            Log.d(TAG,strText);
             setFpResult(strText);
+
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    if(verifyType == CARD_FP || verifyType == CARD_FACE_FP){
+                        if(!isFpConfirm){
+                            isVerifyFp = true;
+                            isFpConfirm = true;
+                            if(fp_score > 35){
+                                String result="";
+                                if(verifyType==CARD_FACE_FP){
+                                    if(!isVerifyFace){
+                                        result = "指纹人证核验通过\n 请进行人脸识别";
+                                    }else{
+                                        result = "指纹人证核验通过\n 全部验证通过";
+                                    }
+                                }
+                                SpannableString redMessage = new SpannableString(result);
+                                redMessage.setSpan(new ForegroundColorSpan(Color.GREEN), 0, redMessage.length(), 0);
+                                showConfirmationDialog(redMessage);
+                            }else{
+                                SpannableString redMessage = new SpannableString("指纹人证核验不通过");
+                                redMessage.setSpan(new ForegroundColorSpan(Color.RED), 0, redMessage.length(), 0);
+                                showConfirmationDialog(redMessage);
+                            }
+                        }
+                    }
+                }
+            });
+
+
         }
 
         @Override
@@ -1283,6 +1390,28 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
             }
         }
     };
+
+    public void showConfirmationDialog(SpannableString result) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(result);
+        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                isFpConfirm = false;
+                dialog.dismiss();
+            }
+        });
+        AlertDialog dialog = builder.create();
+        Window window = dialog.getWindow();
+
+        // 设置窗口的LayoutParams
+        WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
+        layoutParams.copyFrom(dialog.getWindow().getAttributes());
+        layoutParams.width = 600; // 宽度自适应
+        layoutParams.height = 400; // 高度自适应
+        dialog.show();
+        window.setAttributes(layoutParams);
+    }
 
     private boolean enumSensor()
     {
@@ -1326,12 +1455,12 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
             fingerprintSensor.setDeviceListener(zknidfpSensorListener);
             fingerprintSensor.startCapture();
             bStarted = true;
-            textView.setText("connect success!");
+//            textView.setText("connect success!");
         }
         else
         {
             fingerprintSensor.resetEx(deviceIndex, getApplicationContext(), usb_vid, usb_pid);
-            textView.setText("connect failed!");
+//            textView.setText("connect failed!");
         }
     }
 
@@ -1345,46 +1474,42 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
         }
     }
 
-    public void onBnFpStart(View view) {
+    public void onBnFpStart() {
         if (bStarted)
         {
-            textView.setText("Device already connected!");
+//            textView.setText("Device already connected!");
+            Toast.makeText(this,"指纹设备连接成功",Toast.LENGTH_SHORT).show();
             return;
         }
         if (!enumSensor())
         {
-            textView.setText("Device not found!");
+            Toast.makeText(this,"指纹设备连接失败",Toast.LENGTH_SHORT).show();
+//            textView.setText("Device not found!");
             return;
         }
         tryGetUSBPermission();
     }
 
-    public void onBnFpStop(View view) {
+    public void onBnFpStop() {
         if (!bStarted)
         {
-            textView.setText("Device not connected!");
+//            textView.setText("Device not connected!");
             return;
         }
         closeFpDevice();
-        textView.setText("Device closed!");
+//        textView.setText("Device closed!");
     }
 
-    public void onBnFpImport(View view) {
+    public void fpImportByCard(byte[] tempData) {
         if (!bStarted)
         {
-            textView.setText("Device not connected!");
+//            textView.setText("Device not connected!");
             return;
         }
-        String strFileName = editText.getText().toString();
-        if (null == strFileName || strFileName.isEmpty())
-        {
-            textView.setText("Please input filepath!");
-            return;
-        }
-        byte[] tempData = readFile(strFileName);
         if (null == tempData || (tempData.length != 512 && tempData.length != 1024))
         {
-            textView.setText("invalid template data!");
+            Toast.makeText(this,"无效指纹数据",Toast.LENGTH_SHORT).show();
+//            textView.setText("invalid template data!");
             return;
         }
         idTemplate1 = new byte[512];
@@ -1395,7 +1520,36 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
             idTemplate2 = new byte[512];
             System.arraycopy(tempData, 512, idTemplate2, 0, 512);
         }
-        textView.setText("Import success!");
+//        textView.setText("Import success!");
+    }
+
+    public void fpImportByFile() {
+        if (!bStarted)
+        {
+//            textView.setText("Device not connected!");
+            return;
+        }
+        String strFileName = editText.getText().toString();
+        if (null == strFileName || strFileName.isEmpty())
+        {
+//            textView.setText("Please input filepath!");
+            return;
+        }
+        byte[] tempData = readFile(strFileName);
+        if (null == tempData || (tempData.length != 512 && tempData.length != 1024))
+        {
+//            textView.setText("invalid template data!");
+            return;
+        }
+        idTemplate1 = new byte[512];
+        idTemplate2 = null;
+        System.arraycopy(tempData, 0, idTemplate1, 0, 512);
+        if (tempData.length == 1024)
+        {
+            idTemplate2 = new byte[512];
+            System.arraycopy(tempData, 512, idTemplate2, 0, 512);
+        }
+//        textView.setText("Import success!");
     }
 
     public static byte[] readFile(final String filePath) {
@@ -1445,7 +1599,7 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                textView.setText(mStrText);
+//                textView.setText(mStrText);
             }
         });
     }

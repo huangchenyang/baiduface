@@ -83,7 +83,8 @@
 
 
     <style name="configTextStyle">
-        <item name="android:textSize">20sp</item>
+<!--        <item name="android:textSize">10sp</item>-->
+        <item name="android:textSize">8dp</item>
         <item name="android:layout_marginLeft">18dp</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>

@@ -1,11 +1,19 @@
 package com.baidu.idl.main.facesdk.identifylibrary.setting;
 
+import static com.baidu.idl.main.facesdk.identifylibrary.activity.FaceRGBPersonActivity.CARD;
+import static com.baidu.idl.main.facesdk.identifylibrary.activity.FaceRGBPersonActivity.CARD_FACE;
+import static com.baidu.idl.main.facesdk.identifylibrary.activity.FaceRGBPersonActivity.CARD_FACE_FP;
+import static com.baidu.idl.main.facesdk.identifylibrary.activity.FaceRGBPersonActivity.CARD_FP;
+import static com.baidu.idl.main.facesdk.identifylibrary.activity.FaceRGBPersonActivity.verifyType;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import com.baidu.idl.main.facesdk.FaceAuth;
 import com.baidu.idl.main.facesdk.identifylibrary.R;
@@ -85,6 +93,35 @@ public class IdentifySettingActivity extends BaseActivity implements View.OnClic
         tvSettingLiviness = findViewById(R.id.tvSettingLiviness);
 
         tvSettingEffectiveDate = findViewById(R.id.tvSettingEffectiveDate);
+
+        RadioGroup radioGroup = findViewById(R.id.radio_group);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                // 通过checkedId获取选中的RadioButton
+                RadioButton radioButton = findViewById(checkedId);
+                // 根据选中的RadioButton执行相应的操作
+                if (checkedId == R.id.card_bt) {
+                    verifyType = CARD;
+                } else if (checkedId == R.id.card_face_bt) {
+                    verifyType = CARD_FACE;
+                } else if (checkedId == R.id.car_fp_bt) {
+                    verifyType = CARD_FP;
+                } else if (checkedId == R.id.car_face_fp_bt) {
+                    verifyType = CARD_FACE_FP;
+                }
+            }
+        });
+        if(verifyType==CARD){
+            radioGroup.check(R.id.card_bt);
+        }else if(verifyType==CARD_FACE){
+            radioGroup.check(R.id.card_face_bt);
+        }else if(verifyType==CARD_FP){
+            radioGroup.check(R.id.car_fp_bt);
+        }else if(verifyType==CARD_FACE_FP){
+            radioGroup.check(R.id.car_face_fp_bt);
+        }
+
     }
 
     @Override
