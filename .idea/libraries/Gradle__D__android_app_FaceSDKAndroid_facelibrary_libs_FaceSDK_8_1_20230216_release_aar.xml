@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: D./android_app/FaceSDKAndroid/facelibrary/libs/FaceSDK_8.1_20230216-release.aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/299432b9037a0b567164ec7a2adb0c78/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/299432b9037a0b567164ec7a2adb0c78/jars/libs/bd_unifylicense.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/299432b9037a0b567164ec7a2adb0c78/jars/libs/liantian.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/299432b9037a0b567164ec7a2adb0c78/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/299432b9037a0b567164ec7a2adb0c78/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

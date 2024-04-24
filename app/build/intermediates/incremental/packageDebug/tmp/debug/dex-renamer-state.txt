@@ -1,0 +1,7 @@
+#Sun Apr 21 20:48:02 CST 2024
+base.1=D\:\\android_app\\FaceSDKAndroid\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
+path.1=classes.dex
+base.0=D\:\\android_app\\FaceSDKAndroid\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+renamed.1=classes2.dex
+renamed.0=classes.dex
+path.0=classes.dex

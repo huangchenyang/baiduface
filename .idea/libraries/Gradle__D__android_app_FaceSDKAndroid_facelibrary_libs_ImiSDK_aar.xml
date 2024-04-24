@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: D./android_app/FaceSDKAndroid/facelibrary/libs/ImiSDK.aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ebb5a6592018eaa4e7d37600e16bbb12/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ebb5a6592018eaa4e7d37600e16bbb12/jars/libs/ImiSDK.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ebb5a6592018eaa4e7d37600e16bbb12/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ebb5a6592018eaa4e7d37600e16bbb12/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

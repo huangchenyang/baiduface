@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: D./android_app/FaceSDKAndroid/app/libs/SocketClient.jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/SocketClient.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

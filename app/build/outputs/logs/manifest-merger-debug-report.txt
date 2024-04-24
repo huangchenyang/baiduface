@@ -1,0 +1,914 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:2:1-113:12
+INJECTED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:2:1-113:12
+INJECTED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:2:1-113:12
+INJECTED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:2:1-113:12
+MERGED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-50:12
+MERGED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-56:12
+MERGED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-49:12
+MERGED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-55:12
+MERGED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-49:12
+MERGED from [:financelibrary] D:\android_app\FaceSDKAndroid\financelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-24:12
+MERGED from [:gatelibrary] D:\android_app\FaceSDKAndroid\gatelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-29:12
+MERGED from [:paymentlibrary] D:\android_app\FaceSDKAndroid\paymentlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-28:12
+MERGED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-33:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\05bba893dfdbf41e31e4c8cdaecfe53d\AndroidManifest.xml:2:1-11:12
+MERGED from [:face-sdk-library] D:\android_app\FaceSDKAndroid\face-sdk-library\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:settinglibrary] D:\android_app\FaceSDKAndroid\settinglibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-31:12
+MERGED from [:datalibrary] D:\android_app\FaceSDKAndroid\datalibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.0.2] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\7da3d3c61c70eda38e1e944db1670276\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\0dfa4f1422c6b3ad1f551915fe221f0e\AndroidManifest.xml:17:1-22:12
+MERGED from [me.jessyan:autosize:0.9.5] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\d78a0fe77eb275fd953d507a0cf0bb71\AndroidManifest.xml:2:1-19:12
+MERGED from [:facelibrary] D:\android_app\FaceSDKAndroid\facelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-17:12
+MERGED from [orbbec_module-debug.aar] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\8713ef2535f0c0d022f6cbf9450c3db1\AndroidManifest.xml:2:1-11:12
+MERGED from [ImiSDK.aar] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\ebb5a6592018eaa4e7d37600e16bbb12\AndroidManifest.xml:2:1-11:12
+MERGED from [deptrumSDK.aar] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\4497e1714dd4538cfb86cc6c08e4ce90\AndroidManifest.xml:2:1-11:12
+MERGED from [opencv.aar] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\9518b1b1acf9717c22507ba861dbc81e\AndroidManifest.xml:2:1-11:12
+MERGED from [FaceSDK_8.1_20230216-release.aar] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\299432b9037a0b567164ec7a2adb0c78\AndroidManifest.xml:2:1-17:12
+MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\2007680d5af06316a3623d134b587775\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\8967fb5193a55da8ebbd969ee8ddc9e4\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\a2fa0403121ba19ca885436109419ec1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\d3866bdea5bfedf109dd6ac6068f1f6c\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\32cabc64f85e876e9e7c0077d3de4784\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\369ffd8223032b128c2e147ab25163b1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\1084042e4032ce83e9cfa5ca21d35372\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\b4d31adbc517c247924b9092f6a84568\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\6c9077c3d47f126d75f7420590149e05\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\b52057694f62225029e2fc4b8751f7f6\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\874e2cc5a824e024d4b2d2837d79d391\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\f21bd02c27fb1cd298ebe41b7265a0ca\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\1ef9342d26e9a3ad964e846b2adfb3ab\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.0.1] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\80383c7a55a4597859fac763695d51bc\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\f22123771458d87c088cb78b463f214c\AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\fef9298135bb14ed253730259694d270\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\489ad466e9fb444add0cec15413b125f\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\b8ee793fa6f461c170c55c1393f20fdd\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\5f88f4538b21da3682e3f94025641361\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\97bec2d5908de2c09449aba752f7f73c\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\77070e969bf654fac5cf8bfd37b35074\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\8f11a0fa325b9cf4d0663deec8aa134b\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\c72f91a48d2bdce1e3699190ea7e92af\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\eb206480780724a68143fe73b1c19b5c\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\4f7f6fe8dfbaca11eadd641a384d39d7\AndroidManifest.xml:17:1-22:12
+INJECTED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:2:1-113:12
+INJECTED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:2:1-113:12
+INJECTED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:2:1-113:12
+	package
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:4:5-40
+		INJECTED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml
+		INJECTED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:2:1-113:12
+		INJECTED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:2:1-113:12
+		INJECTED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.CAMERA
+ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:6:5-65
+MERGED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-65
+MERGED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-65
+MERGED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-65
+MERGED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-65
+MERGED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-65
+MERGED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-65
+MERGED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-65
+MERGED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-65
+MERGED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-65
+MERGED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-65
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:6:22-62
+uses-permission#android.permission.INTERNET
+ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:7:5-67
+MERGED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-67
+MERGED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-67
+MERGED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-67
+MERGED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-67
+MERGED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-67
+MERGED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-67
+MERGED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-67
+MERGED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-67
+MERGED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-67
+MERGED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-67
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:7:22-64
+uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:8:5-10:47
+MERGED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:5-16:47
+MERGED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:5-16:47
+MERGED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:5-16:47
+MERGED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:5-16:47
+MERGED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:5-16:47
+MERGED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:5-16:47
+MERGED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:5-16:47
+MERGED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:5-16:47
+MERGED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:5-16:47
+MERGED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:5-16:47
+MERGED from [:financelibrary] D:\android_app\FaceSDKAndroid\financelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-84
+MERGED from [:financelibrary] D:\android_app\FaceSDKAndroid\financelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-84
+MERGED from [:gatelibrary] D:\android_app\FaceSDKAndroid\gatelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:5-84
+MERGED from [:gatelibrary] D:\android_app\FaceSDKAndroid\gatelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:5-84
+MERGED from [:paymentlibrary] D:\android_app\FaceSDKAndroid\paymentlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-84
+MERGED from [:paymentlibrary] D:\android_app\FaceSDKAndroid\paymentlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-84
+MERGED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:5-84
+MERGED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:5-84
+MERGED from [:settinglibrary] D:\android_app\FaceSDKAndroid\settinglibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:5-84
+MERGED from [:settinglibrary] D:\android_app\FaceSDKAndroid\settinglibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:5-84
+	tools:ignore
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:10:9-44
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:9:9-68
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:11:5-81
+MERGED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:5-81
+MERGED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:5-81
+MERGED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:5-81
+MERGED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:5-81
+MERGED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:5-81
+MERGED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:5-81
+MERGED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:5-81
+MERGED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:5-81
+MERGED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:5-81
+MERGED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:5-81
+MERGED from [:financelibrary] D:\android_app\FaceSDKAndroid\financelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-81
+MERGED from [:financelibrary] D:\android_app\FaceSDKAndroid\financelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-81
+MERGED from [:gatelibrary] D:\android_app\FaceSDKAndroid\gatelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-81
+MERGED from [:gatelibrary] D:\android_app\FaceSDKAndroid\gatelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-81
+MERGED from [:paymentlibrary] D:\android_app\FaceSDKAndroid\paymentlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-81
+MERGED from [:paymentlibrary] D:\android_app\FaceSDKAndroid\paymentlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-81
+MERGED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-81
+MERGED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-81
+MERGED from [:settinglibrary] D:\android_app\FaceSDKAndroid\settinglibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-81
+MERGED from [:settinglibrary] D:\android_app\FaceSDKAndroid\settinglibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-81
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:11:22-78
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:12:5-79
+MERGED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:5-79
+MERGED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:5-79
+MERGED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:5-79
+MERGED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:5-79
+MERGED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:5-79
+MERGED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:5-79
+MERGED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:5-79
+MERGED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:5-79
+MERGED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:5-79
+MERGED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:5-79
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:12:22-76
+uses-permission#android.hardware.camera.autofocus
+ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:13:5-73
+MERGED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:5-73
+MERGED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:5-73
+MERGED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:5-73
+MERGED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:5-73
+MERGED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:5-73
+MERGED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:5-73
+MERGED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:5-73
+MERGED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:5-73
+MERGED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:5-73
+MERGED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:5-73
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:13:22-70
+uses-permission#android.permission.WRITE_SETTINGS
+ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:14:5-16:47
+MERGED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:5-22:47
+MERGED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:5-22:47
+MERGED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:5-22:47
+MERGED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:5-22:47
+MERGED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:5-22:47
+MERGED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:5-22:47
+MERGED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:5-22:47
+MERGED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:5-22:47
+MERGED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:5-22:47
+MERGED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:5-22:47
+	tools:ignore
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:16:9-44
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:15:9-57
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:18:5-80
+MERGED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:5-80
+MERGED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:5-80
+MERGED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:5-80
+MERGED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:5-80
+MERGED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:5-80
+MERGED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:5-80
+MERGED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:5-80
+MERGED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:5-80
+MERGED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:5-80
+MERGED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:5-80
+MERGED from [:financelibrary] D:\android_app\FaceSDKAndroid\financelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-80
+MERGED from [:financelibrary] D:\android_app\FaceSDKAndroid\financelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-80
+MERGED from [:gatelibrary] D:\android_app\FaceSDKAndroid\gatelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:5-80
+MERGED from [:gatelibrary] D:\android_app\FaceSDKAndroid\gatelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:5-80
+MERGED from [:paymentlibrary] D:\android_app\FaceSDKAndroid\paymentlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:16:5-80
+MERGED from [:paymentlibrary] D:\android_app\FaceSDKAndroid\paymentlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:16:5-80
+MERGED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:16:5-80
+MERGED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:16:5-80
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:18:22-77
+uses-permission#android.permission.GET_TASKS
+ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:19:5-68
+MERGED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:5-68
+MERGED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:5-68
+MERGED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:5-68
+MERGED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:5-68
+MERGED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:5-68
+MERGED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:5-68
+MERGED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:5-68
+MERGED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:5-68
+MERGED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:5-68
+MERGED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:5-68
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:19:22-65
+uses-permission#android.permission.VIBRATE
+ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:20:5-66
+MERGED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:26:5-66
+MERGED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:26:5-66
+MERGED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:26:5-66
+MERGED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:26:5-66
+MERGED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:26:5-66
+MERGED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:26:5-66
+MERGED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:26:5-66
+MERGED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:26:5-66
+MERGED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:26:5-66
+MERGED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:26:5-66
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:20:22-63
+uses-feature#android.hardware.camera
+ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:22:5-60
+MERGED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:28:5-60
+MERGED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:28:5-60
+MERGED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:28:5-60
+MERGED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:28:5-60
+MERGED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:28:5-60
+MERGED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:28:5-60
+MERGED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:28:5-60
+MERGED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:28:5-60
+MERGED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:28:5-60
+MERGED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:28:5-60
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:22:19-57
+uses-feature#android.hardware.camera.autofocus
+ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:23:5-25:35
+MERGED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:29:5-31:35
+MERGED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:29:5-31:35
+MERGED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:29:5-31:35
+MERGED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:29:5-31:35
+MERGED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:29:5-31:35
+MERGED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:29:5-31:35
+MERGED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:29:5-31:35
+MERGED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:29:5-31:35
+MERGED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:29:5-31:35
+MERGED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:29:5-31:35
+	android:required
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:25:9-32
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:24:9-57
+uses-feature#android.hardware.camera.front
+ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:26:5-28:35
+MERGED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:32:5-34:35
+MERGED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:32:5-34:35
+MERGED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:32:5-34:35
+MERGED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:32:5-34:35
+MERGED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:32:5-34:35
+MERGED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:32:5-34:35
+MERGED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:32:5-34:35
+MERGED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:32:5-34:35
+MERGED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:32:5-34:35
+MERGED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:32:5-34:35
+	android:required
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:28:9-32
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:27:9-53
+uses-feature#android.hardware.camera.front.autofocus
+ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:29:5-31:35
+MERGED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:35:5-37:35
+MERGED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:35:5-37:35
+MERGED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:35:5-37:35
+MERGED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:35:5-37:35
+MERGED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:35:5-37:35
+MERGED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:35:5-37:35
+MERGED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:35:5-37:35
+MERGED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:35:5-37:35
+MERGED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:35:5-37:35
+MERGED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:35:5-37:35
+	android:required
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:31:9-32
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:30:9-63
+application
+ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:33:5-111:19
+MERGED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:39:5-48:19
+MERGED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:39:5-48:19
+MERGED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:39:5-54:19
+MERGED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:39:5-54:19
+MERGED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:39:5-47:19
+MERGED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:39:5-47:19
+MERGED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:39:5-53:19
+MERGED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:39:5-53:19
+MERGED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:39:5-47:19
+MERGED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:39:5-47:19
+MERGED from [:financelibrary] D:\android_app\FaceSDKAndroid\financelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:15:5-22:19
+MERGED from [:financelibrary] D:\android_app\FaceSDKAndroid\financelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:15:5-22:19
+MERGED from [:gatelibrary] D:\android_app\FaceSDKAndroid\gatelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:5-27:19
+MERGED from [:gatelibrary] D:\android_app\FaceSDKAndroid\gatelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:5-27:19
+MERGED from [:paymentlibrary] D:\android_app\FaceSDKAndroid\paymentlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:5-26:19
+MERGED from [:paymentlibrary] D:\android_app\FaceSDKAndroid\paymentlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:5-26:19
+MERGED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:5-31:19
+MERGED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:5-31:19
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\05bba893dfdbf41e31e4c8cdaecfe53d\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\05bba893dfdbf41e31e4c8cdaecfe53d\AndroidManifest.xml:9:5-20
+MERGED from [:settinglibrary] D:\android_app\FaceSDKAndroid\settinglibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:16:5-29:19
+MERGED from [:settinglibrary] D:\android_app\FaceSDKAndroid\settinglibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:16:5-29:19
+MERGED from [me.jessyan:autosize:0.9.5] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\d78a0fe77eb275fd953d507a0cf0bb71\AndroidManifest.xml:11:5-17:19
+MERGED from [me.jessyan:autosize:0.9.5] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\d78a0fe77eb275fd953d507a0cf0bb71\AndroidManifest.xml:11:5-17:19
+MERGED from [:facelibrary] D:\android_app\FaceSDKAndroid\facelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-15:19
+MERGED from [:facelibrary] D:\android_app\FaceSDKAndroid\facelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-15:19
+MERGED from [FaceSDK_8.1_20230216-release.aar] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\299432b9037a0b567164ec7a2adb0c78\AndroidManifest.xml:11:5-15:19
+MERGED from [FaceSDK_8.1_20230216-release.aar] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\299432b9037a0b567164ec7a2adb0c78\AndroidManifest.xml:11:5-15:19
+MERGED from [androidx.core:core:1.0.1] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\80383c7a55a4597859fac763695d51bc\AndroidManifest.xml:22:5-89
+MERGED from [androidx.core:core:1.0.1] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\80383c7a55a4597859fac763695d51bc\AndroidManifest.xml:22:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\f22123771458d87c088cb78b463f214c\AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\f22123771458d87c088cb78b463f214c\AndroidManifest.xml:22:5-23:19
+	android:requestLegacyExternalStorage
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:34:9-52
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.0.1] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\80383c7a55a4597859fac763695d51bc\AndroidManifest.xml:22:18-86
+	android:supportsRtl
+		ADDED from [:facelibrary] D:\android_app\FaceSDKAndroid\facelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:9-35
+	android:label
+		ADDED from [:facelibrary] D:\android_app\FaceSDKAndroid\facelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:9-41
+	tools:ignore
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:37:9-48
+	android:allowBackup
+		ADDED from [:facelibrary] D:\android_app\FaceSDKAndroid\facelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:9-36
+	android:largeHeap
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:36:9-33
+	android:icon
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:35:9-43
+meta-data#design_width_in_dp
+ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:39:9-41:35
+	android:value
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:41:13-32
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:40:13-46
+meta-data#design_height_in_dp
+ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:42:9-44:35
+	android:value
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:44:13-32
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:43:13-47
+activity#com.baidu.idl.face.main.activity.start.HomeActivity
+ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:46:9-88
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:46:19-85
+activity#com.baidu.idl.face.main.activity.start.ActivitionActivity
+ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:47:9-94
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:47:19-91
+activity#com.baidu.idl.face.main.activity.start.StartSettingActivity
+ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:48:9-96
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:48:19-93
+activity#com.baidu.idl.face.main.activity.start.StartActivity
+ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:49:9-58:20
+	android:launchMode
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:51:13-43
+	android:theme
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:52:13-49
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:50:13-80
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:53:13-57:29
+action#android.intent.action.MAIN
+ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:54:17-69
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:54:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:56:17-77
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:56:27-74
+activity#com.baidu.liantian.LiantianActivity
+ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:60:9-72:20
+	android:excludeFromRecents
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:62:13-46
+	android:launchMode
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:64:13-42
+	android:exported
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:63:13-36
+	android:theme
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:65:13-61
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:61:13-63
+intent-filter#action:name:com.baidu.action.Liantian.VIEW+category:name:android.intent.category.DEFAULT+category:name:com.baidu.category.liantian
+ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:66:13-71:29
+action#com.baidu.action.Liantian.VIEW
+ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:67:17-73
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:67:25-70
+category#com.baidu.category.liantian
+ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:69:17-72
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:69:27-69
+category#android.intent.category.DEFAULT
+ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:70:17-76
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml:70:27-73
+uses-sdk
+INJECTED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml
+INJECTED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml
+MERGED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-10:41
+MERGED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-10:41
+MERGED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-10:41
+MERGED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-10:41
+MERGED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-10:41
+MERGED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-10:41
+MERGED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-10:41
+MERGED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-10:41
+MERGED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-10:41
+MERGED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-10:41
+MERGED from [:financelibrary] D:\android_app\FaceSDKAndroid\financelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:financelibrary] D:\android_app\FaceSDKAndroid\financelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:gatelibrary] D:\android_app\FaceSDKAndroid\gatelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:gatelibrary] D:\android_app\FaceSDKAndroid\gatelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:paymentlibrary] D:\android_app\FaceSDKAndroid\paymentlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:paymentlibrary] D:\android_app\FaceSDKAndroid\paymentlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\05bba893dfdbf41e31e4c8cdaecfe53d\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\05bba893dfdbf41e31e4c8cdaecfe53d\AndroidManifest.xml:5:5-7:41
+MERGED from [:face-sdk-library] D:\android_app\FaceSDKAndroid\face-sdk-library\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:face-sdk-library] D:\android_app\FaceSDKAndroid\face-sdk-library\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:settinglibrary] D:\android_app\FaceSDKAndroid\settinglibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:settinglibrary] D:\android_app\FaceSDKAndroid\settinglibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:datalibrary] D:\android_app\FaceSDKAndroid\datalibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:datalibrary] D:\android_app\FaceSDKAndroid\datalibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.appcompat:appcompat:1.0.2] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\7da3d3c61c70eda38e1e944db1670276\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.2] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\7da3d3c61c70eda38e1e944db1670276\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\0dfa4f1422c6b3ad1f551915fe221f0e\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\0dfa4f1422c6b3ad1f551915fe221f0e\AndroidManifest.xml:20:5-44
+MERGED from [me.jessyan:autosize:0.9.5] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\d78a0fe77eb275fd953d507a0cf0bb71\AndroidManifest.xml:7:5-9:41
+MERGED from [me.jessyan:autosize:0.9.5] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\d78a0fe77eb275fd953d507a0cf0bb71\AndroidManifest.xml:7:5-9:41
+MERGED from [:facelibrary] D:\android_app\FaceSDKAndroid\facelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:facelibrary] D:\android_app\FaceSDKAndroid\facelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [orbbec_module-debug.aar] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\8713ef2535f0c0d022f6cbf9450c3db1\AndroidManifest.xml:7:5-9:41
+MERGED from [orbbec_module-debug.aar] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\8713ef2535f0c0d022f6cbf9450c3db1\AndroidManifest.xml:7:5-9:41
+MERGED from [ImiSDK.aar] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\ebb5a6592018eaa4e7d37600e16bbb12\AndroidManifest.xml:7:5-9:41
+MERGED from [ImiSDK.aar] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\ebb5a6592018eaa4e7d37600e16bbb12\AndroidManifest.xml:7:5-9:41
+MERGED from [deptrumSDK.aar] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\4497e1714dd4538cfb86cc6c08e4ce90\AndroidManifest.xml:7:5-9:41
+MERGED from [deptrumSDK.aar] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\4497e1714dd4538cfb86cc6c08e4ce90\AndroidManifest.xml:7:5-9:41
+MERGED from [opencv.aar] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\9518b1b1acf9717c22507ba861dbc81e\AndroidManifest.xml:7:5-9:41
+MERGED from [opencv.aar] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\9518b1b1acf9717c22507ba861dbc81e\AndroidManifest.xml:7:5-9:41
+MERGED from [FaceSDK_8.1_20230216-release.aar] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\299432b9037a0b567164ec7a2adb0c78\AndroidManifest.xml:7:5-9:41
+MERGED from [FaceSDK_8.1_20230216-release.aar] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\299432b9037a0b567164ec7a2adb0c78\AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\2007680d5af06316a3623d134b587775\AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\2007680d5af06316a3623d134b587775\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\8967fb5193a55da8ebbd969ee8ddc9e4\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\8967fb5193a55da8ebbd969ee8ddc9e4\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\a2fa0403121ba19ca885436109419ec1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\a2fa0403121ba19ca885436109419ec1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\d3866bdea5bfedf109dd6ac6068f1f6c\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\d3866bdea5bfedf109dd6ac6068f1f6c\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\32cabc64f85e876e9e7c0077d3de4784\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\32cabc64f85e876e9e7c0077d3de4784\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\369ffd8223032b128c2e147ab25163b1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\369ffd8223032b128c2e147ab25163b1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\1084042e4032ce83e9cfa5ca21d35372\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\1084042e4032ce83e9cfa5ca21d35372\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\b4d31adbc517c247924b9092f6a84568\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\b4d31adbc517c247924b9092f6a84568\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\6c9077c3d47f126d75f7420590149e05\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\6c9077c3d47f126d75f7420590149e05\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\b52057694f62225029e2fc4b8751f7f6\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\b52057694f62225029e2fc4b8751f7f6\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\874e2cc5a824e024d4b2d2837d79d391\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\874e2cc5a824e024d4b2d2837d79d391\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\f21bd02c27fb1cd298ebe41b7265a0ca\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\f21bd02c27fb1cd298ebe41b7265a0ca\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\1ef9342d26e9a3ad964e846b2adfb3ab\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\1ef9342d26e9a3ad964e846b2adfb3ab\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.1] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\80383c7a55a4597859fac763695d51bc\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.1] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\80383c7a55a4597859fac763695d51bc\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\f22123771458d87c088cb78b463f214c\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\f22123771458d87c088cb78b463f214c\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\fef9298135bb14ed253730259694d270\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\fef9298135bb14ed253730259694d270\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\489ad466e9fb444add0cec15413b125f\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\489ad466e9fb444add0cec15413b125f\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\b8ee793fa6f461c170c55c1393f20fdd\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\b8ee793fa6f461c170c55c1393f20fdd\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\5f88f4538b21da3682e3f94025641361\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\5f88f4538b21da3682e3f94025641361\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\97bec2d5908de2c09449aba752f7f73c\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\97bec2d5908de2c09449aba752f7f73c\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\77070e969bf654fac5cf8bfd37b35074\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\77070e969bf654fac5cf8bfd37b35074\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\8f11a0fa325b9cf4d0663deec8aa134b\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\8f11a0fa325b9cf4d0663deec8aa134b\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\c72f91a48d2bdce1e3699190ea7e92af\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\c72f91a48d2bdce1e3699190ea7e92af\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\eb206480780724a68143fe73b1c19b5c\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\eb206480780724a68143fe73b1c19b5c\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\4f7f6fe8dfbaca11eadd641a384d39d7\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\4f7f6fe8dfbaca11eadd641a384d39d7\AndroidManifest.xml:20:5-44
+INJECTED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml
+INJECTED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml
+		INJECTED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml
+		ADDED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml
+		INJECTED from D:\android_app\FaceSDKAndroid\app\src\main\AndroidManifest.xml
+activity#com.baidu.idl.main.facesdk.registerlibrary.user.activity.UserManagerActivity
+ADDED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:40:9-113
+	android:name
+		ADDED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:40:19-110
+activity#com.baidu.idl.main.facesdk.registerlibrary.user.activity.BatchImportActivity
+ADDED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:41:9-113
+	android:name
+		ADDED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:41:19-110
+activity#com.baidu.idl.main.facesdk.registerlibrary.user.register.FaceRegisterNewActivity
+ADDED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:42:9-117
+	android:name
+		ADDED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:42:19-114
+activity#com.baidu.idl.main.facesdk.registerlibrary.user.register.FaceRegisterNewNIRActivity
+ADDED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:43:9-120
+	android:name
+		ADDED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:43:19-117
+activity#com.baidu.idl.main.facesdk.registerlibrary.user.register.FaceRegisterNewDepthActivity
+ADDED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:44:9-122
+	android:name
+		ADDED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:44:19-119
+activity#com.baidu.idl.main.facesdk.registerlibrary.user.register.FaceRegisterLimActivity
+ADDED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:45:9-117
+	android:name
+		ADDED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:45:19-114
+activity#com.baidu.idl.main.facesdk.registerlibrary.user.register.FaceRegisterDeptrumActivity
+ADDED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:46:9-121
+	android:name
+		ADDED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:46:19-118
+activity#com.baidu.idl.main.facesdk.registerlibrary.user.register.FaceRegisterNewRgbNirDepthActivity
+ADDED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:47:9-128
+	android:name
+		ADDED from [:registerlibrary] D:\android_app\FaceSDKAndroid\registerlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:47:19-125
+activity#com.baidu.idl.main.facesdk.gazelibrary.gaze.FaceGazeActivity
+ADDED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:40:9-97
+	android:name
+		ADDED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:40:19-94
+activity#com.baidu.idl.main.facesdk.gazelibrary.setting.CameraDisplayAngleActivity
+ADDED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:41:9-110
+	android:name
+		ADDED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:41:19-107
+activity#com.baidu.idl.main.facesdk.gazelibrary.setting.GazeSettingActivity
+ADDED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:42:9-103
+	android:name
+		ADDED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:42:19-100
+activity#com.baidu.idl.main.facesdk.gazelibrary.setting.GazeConfigQualtifyActivity
+ADDED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:43:9-110
+	android:name
+		ADDED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:43:19-107
+activity#com.baidu.idl.main.facesdk.gazelibrary.setting.GazeLensSelectionActivity
+ADDED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:44:9-109
+	android:name
+		ADDED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:44:19-106
+activity#com.baidu.idl.main.facesdk.gazelibrary.setting.GazeFaceDetectActivity
+ADDED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:45:9-106
+	android:name
+		ADDED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:45:19-103
+activity#com.baidu.idl.main.facesdk.gazelibrary.setting.GazeLensSettingsActivity
+ADDED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:46:9-108
+	android:name
+		ADDED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:46:19-105
+activity#com.baidu.idl.main.facesdk.gazelibrary.setting.MinFaceActivity
+ADDED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:47:9-99
+	android:name
+		ADDED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:47:19-96
+activity#com.baidu.idl.main.facesdk.gazelibrary.setting.MirrorSettingActivity
+ADDED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:48:9-105
+	android:name
+		ADDED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:48:19-102
+activity#com.baidu.idl.main.facesdk.gazelibrary.setting.VersionMessageActivity
+ADDED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:49:9-106
+	android:name
+		ADDED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:49:19-103
+activity#com.baidu.idl.main.facesdk.gazelibrary.setting.FaceLivinessTypeActivity
+ADDED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:50:9-108
+	android:name
+		ADDED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:50:19-105
+activity#com.baidu.idl.main.facesdk.gazelibrary.setting.FaceDetectAngleActivity
+ADDED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:51:9-107
+	android:name
+		ADDED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:51:19-104
+activity#com.baidu.idl.main.facesdk.gazelibrary.setting.PictureOptimizationActivity
+ADDED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:52:9-111
+	android:name
+		ADDED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:52:19-108
+activity#com.baidu.idl.main.facesdk.gazelibrary.setting.LogSettingActivity
+ADDED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:53:9-102
+	android:name
+		ADDED from [:gazelibrary] D:\android_app\FaceSDKAndroid\gazelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:53:19-99
+activity#com.baidu.idl.main.facesdk.identifylibrary.activity.FaceRGBPersonActivity
+ADDED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:40:9-110
+	android:name
+		ADDED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:40:19-107
+activity#com.baidu.idl.main.facesdk.identifylibrary.activity.FaceIRTestimonyActivity
+ADDED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:41:9-112
+	android:name
+		ADDED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:41:19-109
+activity#com.baidu.idl.main.facesdk.identifylibrary.activity.FaceDepthTestimonyActivity
+ADDED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:42:9-115
+	android:name
+		ADDED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:42:19-112
+activity#com.baidu.idl.main.facesdk.identifylibrary.activity.FaceLimPersonActivity
+ADDED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:43:9-110
+	android:name
+		ADDED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:43:19-107
+activity#com.baidu.idl.main.facesdk.identifylibrary.activity.FaceRGBIRDepthTestimonyActivity
+ADDED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:44:9-120
+	android:name
+		ADDED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:44:19-117
+activity#com.baidu.idl.main.facesdk.identifylibrary.activity.FaceDeptrumPersonActivity
+ADDED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:45:9-114
+	android:name
+		ADDED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:45:19-111
+activity#com.baidu.idl.main.facesdk.identifylibrary.setting.IdentifySettingActivity
+ADDED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:46:9-111
+	android:name
+		ADDED from [:identifylibrary] D:\android_app\FaceSDKAndroid\identifylibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:46:19-108
+activity#com.baidu.idl.face.main.drivermonitor.activity.drivermonitor.DriverMonitorActivityDrivermonitor
+ADDED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:40:9-132
+	android:name
+		ADDED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:40:19-129
+activity#com.baidu.idl.face.main.drivermonitor.setting.CameraDisplayAngleActivity
+ADDED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:41:9-109
+	android:name
+		ADDED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:41:19-106
+activity#com.baidu.idl.face.main.drivermonitor.setting.DriverMonitorSettingActivity
+ADDED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:42:9-111
+	android:name
+		ADDED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:42:19-108
+activity#com.baidu.idl.face.main.drivermonitor.setting.FaceDetectAngleActivity
+ADDED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:43:9-106
+	android:name
+		ADDED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:43:19-103
+activity#com.baidu.idl.face.main.drivermonitor.setting.FaceLivinessTypeActivity
+ADDED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:44:9-107
+	android:name
+		ADDED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:44:19-104
+activity#com.baidu.idl.face.main.drivermonitor.setting.DriverMonitorConfigQualtifyActivity
+ADDED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:45:9-118
+	android:name
+		ADDED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:45:19-115
+activity#com.baidu.idl.face.main.drivermonitor.setting.DriverMonitorLensSelectionActivity
+ADDED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:46:9-117
+	android:name
+		ADDED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:46:19-114
+activity#com.baidu.idl.face.main.drivermonitor.setting.DriverMonitorLensSettingsActivity
+ADDED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:47:9-116
+	android:name
+		ADDED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:47:19-113
+activity#com.baidu.idl.face.main.drivermonitor.setting.DrivermonitorMinFaceActivity
+ADDED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:48:9-111
+	android:name
+		ADDED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:48:19-108
+activity#com.baidu.idl.face.main.drivermonitor.setting.MirrorSettingActivity
+ADDED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:49:9-104
+	android:name
+		ADDED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:49:19-101
+activity#com.baidu.idl.face.main.drivermonitor.setting.VersionMessageActivity
+ADDED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:50:9-105
+	android:name
+		ADDED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:50:19-102
+activity#com.baidu.idl.face.main.drivermonitor.setting.PictureOptimizationActivity
+ADDED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:51:9-110
+	android:name
+		ADDED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:51:19-107
+activity#com.baidu.idl.face.main.drivermonitor.setting.LogSettingActivity
+ADDED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:52:9-101
+	android:name
+		ADDED from [:drivermonitorlibrary] D:\android_app\FaceSDKAndroid\drivermonitorlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:52:19-98
+activity#com.baidu.idl.main.facesdk.attendancelibrary.attendance.FaceRGBAttendanceActivity
+ADDED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:40:9-118
+	android:name
+		ADDED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:40:19-115
+activity#com.baidu.idl.main.facesdk.attendancelibrary.attendance.FaceDepthAttendanceActivity
+ADDED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:41:9-120
+	android:name
+		ADDED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:41:19-117
+activity#com.baidu.idl.main.facesdk.attendancelibrary.attendance.FaceNIRAttendanceActivity
+ADDED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:42:9-118
+	android:name
+		ADDED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:42:19-115
+activity#com.baidu.idl.main.facesdk.attendancelibrary.attendance.FaceRGBNirDepthAttendanceActivity
+ADDED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:43:9-126
+	android:name
+		ADDED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:43:19-123
+activity#com.baidu.idl.main.facesdk.attendancelibrary.attendance.FaceLimAttendanceActivity
+ADDED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:44:9-118
+	android:name
+		ADDED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:44:19-115
+activity#com.baidu.idl.main.facesdk.attendancelibrary.attendance.FaceDeptrumAttendanceActivity
+ADDED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:45:9-122
+	android:name
+		ADDED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:45:19-119
+activity#com.baidu.idl.main.facesdk.attendancelibrary.setting.AttendanceSettingActivity
+ADDED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:46:9-115
+	android:name
+		ADDED from [:attendancelibrary] D:\android_app\FaceSDKAndroid\attendancelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:46:19-112
+activity#com.baidu.idl.face.main.finance.activity.finance.FaceRGBFinanceActivity
+ADDED from [:financelibrary] D:\android_app\FaceSDKAndroid\financelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:16:9-108
+	android:name
+		ADDED from [:financelibrary] D:\android_app\FaceSDKAndroid\financelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:16:19-105
+activity#com.baidu.idl.face.main.finance.activity.finance.FaceNIRFinanceActivity
+ADDED from [:financelibrary] D:\android_app\FaceSDKAndroid\financelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:9-108
+	android:name
+		ADDED from [:financelibrary] D:\android_app\FaceSDKAndroid\financelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:19-105
+activity#com.baidu.idl.face.main.finance.activity.finance.FaceDepthFinanceActivity
+ADDED from [:financelibrary] D:\android_app\FaceSDKAndroid\financelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:9-110
+	android:name
+		ADDED from [:financelibrary] D:\android_app\FaceSDKAndroid\financelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:19-107
+activity#com.baidu.idl.face.main.finance.activity.finance.FaceLimFinanceActivity
+ADDED from [:financelibrary] D:\android_app\FaceSDKAndroid\financelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:9-108
+	android:name
+		ADDED from [:financelibrary] D:\android_app\FaceSDKAndroid\financelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:19-105
+activity#com.baidu.idl.face.main.finance.activity.finance.FaceDeptrumFinanceActivity
+ADDED from [:financelibrary] D:\android_app\FaceSDKAndroid\financelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:9-112
+	android:name
+		ADDED from [:financelibrary] D:\android_app\FaceSDKAndroid\financelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:19-109
+activity#com.baidu.idl.face.main.finance.setting.FinanceSettingActivity
+ADDED from [:financelibrary] D:\android_app\FaceSDKAndroid\financelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:21:9-99
+	android:name
+		ADDED from [:financelibrary] D:\android_app\FaceSDKAndroid\financelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:21:19-96
+activity#com.baidu.idl.main.facesdk.activity.gate.FaceRgbNirDepthGataActivity
+ADDED from [:gatelibrary] D:\android_app\FaceSDKAndroid\gatelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:9-105
+	android:name
+		ADDED from [:gatelibrary] D:\android_app\FaceSDKAndroid\gatelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:19-102
+activity#com.baidu.idl.main.facesdk.setting.GateSettingActivity
+ADDED from [:gatelibrary] D:\android_app\FaceSDKAndroid\gatelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:21:9-91
+	android:name
+		ADDED from [:gatelibrary] D:\android_app\FaceSDKAndroid\gatelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:21:19-88
+activity#com.baidu.idl.main.facesdk.activity.gate.FaceRGBGateActivity
+ADDED from [:gatelibrary] D:\android_app\FaceSDKAndroid\gatelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:22:9-97
+	android:name
+		ADDED from [:gatelibrary] D:\android_app\FaceSDKAndroid\gatelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:22:19-94
+activity#com.baidu.idl.main.facesdk.activity.gate.FaceNIRGateActivriy
+ADDED from [:gatelibrary] D:\android_app\FaceSDKAndroid\gatelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:23:9-97
+	android:name
+		ADDED from [:gatelibrary] D:\android_app\FaceSDKAndroid\gatelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:23:19-94
+activity#com.baidu.idl.main.facesdk.activity.gate.FaceDepthGateActivity
+ADDED from [:gatelibrary] D:\android_app\FaceSDKAndroid\gatelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:9-99
+	android:name
+		ADDED from [:gatelibrary] D:\android_app\FaceSDKAndroid\gatelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:19-96
+activity#com.baidu.idl.main.facesdk.activity.gate.FaceLimActivity
+ADDED from [:gatelibrary] D:\android_app\FaceSDKAndroid\gatelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:9-93
+	android:name
+		ADDED from [:gatelibrary] D:\android_app\FaceSDKAndroid\gatelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:19-90
+activity#com.baidu.idl.main.facesdk.activity.gate.FaceDeptrumGateActivity
+ADDED from [:gatelibrary] D:\android_app\FaceSDKAndroid\gatelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:26:9-101
+	android:name
+		ADDED from [:gatelibrary] D:\android_app\FaceSDKAndroid\gatelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:26:19-98
+activity#com.baidu.idl.main.facesdk.paymentlibrary.activity.payment.FaceRgbNirDepthPaymentActivity
+ADDED from [:paymentlibrary] D:\android_app\FaceSDKAndroid\paymentlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:9-126
+	android:name
+		ADDED from [:paymentlibrary] D:\android_app\FaceSDKAndroid\paymentlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:19-123
+activity#com.baidu.idl.main.facesdk.paymentlibrary.activity.payment.FaceDepthPaymentActivity
+ADDED from [:paymentlibrary] D:\android_app\FaceSDKAndroid\paymentlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:9-120
+	android:name
+		ADDED from [:paymentlibrary] D:\android_app\FaceSDKAndroid\paymentlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:19-117
+activity#com.baidu.idl.main.facesdk.paymentlibrary.activity.payment.FaceNIRPaymentActivity
+ADDED from [:paymentlibrary] D:\android_app\FaceSDKAndroid\paymentlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:21:9-118
+	android:name
+		ADDED from [:paymentlibrary] D:\android_app\FaceSDKAndroid\paymentlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:21:19-115
+activity#com.baidu.idl.main.facesdk.paymentlibrary.activity.payment.FaceRGBPaymentActivity
+ADDED from [:paymentlibrary] D:\android_app\FaceSDKAndroid\paymentlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:22:9-118
+	android:name
+		ADDED from [:paymentlibrary] D:\android_app\FaceSDKAndroid\paymentlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:22:19-115
+activity#com.baidu.idl.main.facesdk.paymentlibrary.activity.payment.FaceLimPaymentActivity
+ADDED from [:paymentlibrary] D:\android_app\FaceSDKAndroid\paymentlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:23:9-118
+	android:name
+		ADDED from [:paymentlibrary] D:\android_app\FaceSDKAndroid\paymentlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:23:19-115
+activity#com.baidu.idl.main.facesdk.paymentlibrary.activity.payment.FaceDeptrumPaymentActivity
+ADDED from [:paymentlibrary] D:\android_app\FaceSDKAndroid\paymentlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:9-122
+	android:name
+		ADDED from [:paymentlibrary] D:\android_app\FaceSDKAndroid\paymentlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:19-119
+activity#com.baidu.idl.main.facesdk.paymentlibrary.setting.PaymentSettingActivity
+ADDED from [:paymentlibrary] D:\android_app\FaceSDKAndroid\paymentlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:9-109
+	android:name
+		ADDED from [:paymentlibrary] D:\android_app\FaceSDKAndroid\paymentlibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:19-106
+activity#com.baidu.idl.face.main.attribute.activity.attribute.FaceAttributeRgbActivity
+ADDED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:9-114
+	android:name
+		ADDED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:19-111
+activity#com.baidu.idl.face.main.attribute.setting.AttributeLensSettingActivity
+ADDED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:9-107
+	android:name
+		ADDED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:19-104
+activity#com.baidu.idl.face.main.attribute.setting.CameraDisplayAngleActivity
+ADDED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:21:9-105
+	android:name
+		ADDED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:21:19-102
+activity#com.baidu.idl.face.main.attribute.setting.AttrbuteConfigQualtifyActivity
+ADDED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:22:9-109
+	android:name
+		ADDED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:22:19-106
+activity#com.baidu.idl.face.main.attribute.setting.AttrbuteLensSelectionActivity
+ADDED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:23:9-108
+	android:name
+		ADDED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:23:19-105
+activity#com.baidu.idl.face.main.attribute.setting.AttrbuteLensSettingsActivity
+ADDED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:9-107
+	android:name
+		ADDED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:19-104
+activity#com.baidu.idl.face.main.attribute.setting.AttributeSettingActivity
+ADDED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:9-103
+	android:name
+		ADDED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:19-100
+activity#com.baidu.idl.face.main.attribute.setting.AttrbuteMinFaceActivity
+ADDED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:26:9-102
+	android:name
+		ADDED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:26:19-99
+activity#com.baidu.idl.face.main.attribute.setting.VersionMessageActivity
+ADDED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:27:9-101
+	android:name
+		ADDED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:27:19-98
+activity#com.baidu.idl.face.main.attribute.setting.FaceDetectAngleActivity
+ADDED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:28:9-102
+	android:name
+		ADDED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:28:19-99
+activity#com.baidu.idl.face.main.attribute.setting.PictureOptimizationActivity
+ADDED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:29:9-106
+	android:name
+		ADDED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:29:19-103
+activity#com.baidu.idl.face.main.attribute.setting.LogSettingActivity
+ADDED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:30:9-97
+	android:name
+		ADDED from [:attrbutelibrary] D:\android_app\FaceSDKAndroid\attrbutelibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:30:19-94
+activity#com.example.settinglibrary.GateFaceDetectActivity
+ADDED from [:settinglibrary] D:\android_app\FaceSDKAndroid\settinglibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:9-86
+	android:name
+		ADDED from [:settinglibrary] D:\android_app\FaceSDKAndroid\settinglibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:19-83
+activity#com.example.settinglibrary.VersionMessageActivity
+ADDED from [:settinglibrary] D:\android_app\FaceSDKAndroid\settinglibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:9-86
+	android:name
+		ADDED from [:settinglibrary] D:\android_app\FaceSDKAndroid\settinglibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:19-83
+activity#com.example.settinglibrary.CameraDisplayAngleActivity
+ADDED from [:settinglibrary] D:\android_app\FaceSDKAndroid\settinglibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:9-90
+	android:name
+		ADDED from [:settinglibrary] D:\android_app\FaceSDKAndroid\settinglibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:19-87
+activity#com.example.settinglibrary.FaceDetectAngleActivity
+ADDED from [:settinglibrary] D:\android_app\FaceSDKAndroid\settinglibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:9-87
+	android:name
+		ADDED from [:settinglibrary] D:\android_app\FaceSDKAndroid\settinglibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:19-84
+activity#com.example.settinglibrary.MirrorSettingActivity
+ADDED from [:settinglibrary] D:\android_app\FaceSDKAndroid\settinglibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:21:9-85
+	android:name
+		ADDED from [:settinglibrary] D:\android_app\FaceSDKAndroid\settinglibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:21:19-82
+activity#com.example.settinglibrary.FaceLivinessTypeActivity
+ADDED from [:settinglibrary] D:\android_app\FaceSDKAndroid\settinglibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:22:9-88
+	android:name
+		ADDED from [:settinglibrary] D:\android_app\FaceSDKAndroid\settinglibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:22:19-85
+activity#com.example.settinglibrary.GateConfigQualtifyActivity
+ADDED from [:settinglibrary] D:\android_app\FaceSDKAndroid\settinglibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:23:9-90
+	android:name
+		ADDED from [:settinglibrary] D:\android_app\FaceSDKAndroid\settinglibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:23:19-87
+activity#com.example.settinglibrary.GateMinFaceActivity
+ADDED from [:settinglibrary] D:\android_app\FaceSDKAndroid\settinglibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:9-83
+	android:name
+		ADDED from [:settinglibrary] D:\android_app\FaceSDKAndroid\settinglibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:19-80
+activity#com.example.settinglibrary.GateLensSettingsActivity
+ADDED from [:settinglibrary] D:\android_app\FaceSDKAndroid\settinglibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:9-88
+	android:name
+		ADDED from [:settinglibrary] D:\android_app\FaceSDKAndroid\settinglibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:19-85
+activity#com.example.settinglibrary.GateLensSelectionActivity
+ADDED from [:settinglibrary] D:\android_app\FaceSDKAndroid\settinglibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:26:9-89
+	android:name
+		ADDED from [:settinglibrary] D:\android_app\FaceSDKAndroid\settinglibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:26:19-86
+activity#com.example.settinglibrary.LogSettingActivity
+ADDED from [:settinglibrary] D:\android_app\FaceSDKAndroid\settinglibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:27:9-82
+	android:name
+		ADDED from [:settinglibrary] D:\android_app\FaceSDKAndroid\settinglibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:27:19-79
+activity#com.example.settinglibrary.PictureOptimizationActivity
+ADDED from [:settinglibrary] D:\android_app\FaceSDKAndroid\settinglibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:28:9-91
+	android:name
+		ADDED from [:settinglibrary] D:\android_app\FaceSDKAndroid\settinglibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:28:19-88
+provider#me.jessyan.autosize.InitProvider
+ADDED from [me.jessyan:autosize:0.9.5] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\d78a0fe77eb275fd953d507a0cf0bb71\AndroidManifest.xml:12:9-16:43
+	android:authorities
+		ADDED from [me.jessyan:autosize:0.9.5] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\d78a0fe77eb275fd953d507a0cf0bb71\AndroidManifest.xml:14:13-74
+	android:multiprocess
+		ADDED from [me.jessyan:autosize:0.9.5] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\d78a0fe77eb275fd953d507a0cf0bb71\AndroidManifest.xml:16:13-40
+	android:exported
+		ADDED from [me.jessyan:autosize:0.9.5] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\d78a0fe77eb275fd953d507a0cf0bb71\AndroidManifest.xml:15:13-37
+	android:name
+		ADDED from [me.jessyan:autosize:0.9.5] C:\Users\zmc\.gradle\caches\transforms-2\files-2.1\d78a0fe77eb275fd953d507a0cf0bb71\AndroidManifest.xml:13:13-60

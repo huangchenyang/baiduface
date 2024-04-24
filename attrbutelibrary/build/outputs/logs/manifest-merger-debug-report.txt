@@ -1,0 +1,99 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:2:1-28:12
+	package
+		ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:3:5-57
+		INJECTED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml
+		INJECTED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml
+		ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:2:1-28:12
+		INJECTED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml
+		ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:2:1-28:12
+		INJECTED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:6:5-80
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:6:22-78
+uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:8:5-83
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:8:22-81
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:10:5-80
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:10:22-77
+application
+ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:13:5-27:19
+activity#com.baidu.idl.face.main.attribute.activity.attribute.FaceAttributeRgbActivity
+ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:15:9-113
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:15:19-111
+activity#com.baidu.idl.face.main.attribute.setting.AttributeLensSettingActivity
+ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:16:9-106
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:16:19-104
+activity#com.baidu.idl.face.main.attribute.setting.CameraDisplayAngleActivity
+ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:17:9-104
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:17:19-102
+activity#com.baidu.idl.face.main.attribute.setting.AttrbuteConfigQualtifyActivity
+ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:18:9-108
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:18:19-106
+activity#com.baidu.idl.face.main.attribute.setting.AttrbuteLensSelectionActivity
+ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:19:9-107
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:19:19-105
+activity#com.baidu.idl.face.main.attribute.setting.AttrbuteLensSettingsActivity
+ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:20:9-106
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:20:19-104
+activity#com.baidu.idl.face.main.attribute.setting.AttributeSettingActivity
+ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:21:9-102
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:21:19-100
+activity#com.baidu.idl.face.main.attribute.setting.AttrbuteMinFaceActivity
+ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:22:9-101
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:22:19-99
+activity#com.baidu.idl.face.main.attribute.setting.VersionMessageActivity
+ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:23:9-100
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:23:19-98
+activity#com.baidu.idl.face.main.attribute.setting.FaceDetectAngleActivity
+ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:24:9-101
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:24:19-99
+activity#com.baidu.idl.face.main.attribute.setting.PictureOptimizationActivity
+ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:25:9-105
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:25:19-103
+activity#com.baidu.idl.face.main.attribute.setting.LogSettingActivity
+ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:26:9-96
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml:26:19-94
+uses-sdk
+INJECTED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml
+INJECTED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml
+INJECTED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml
+INJECTED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml
+		ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml
+		INJECTED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml
+		ADDED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml
+		INJECTED from D:\android_app\FaceSDKAndroid\attrbutelibrary\src\main\AndroidManifest.xml

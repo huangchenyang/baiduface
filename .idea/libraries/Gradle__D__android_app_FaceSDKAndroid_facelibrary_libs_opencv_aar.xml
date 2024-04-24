@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: D./android_app/FaceSDKAndroid/facelibrary/libs/opencv.aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9518b1b1acf9717c22507ba861dbc81e/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9518b1b1acf9717c22507ba861dbc81e/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9518b1b1acf9717c22507ba861dbc81e/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: D./android_app/FaceSDKAndroid/identifylibrary/libs/zkfpandroidcore.jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/identifylibrary/libs/zkfpandroidcore.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

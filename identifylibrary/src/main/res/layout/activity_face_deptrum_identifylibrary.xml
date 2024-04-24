@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/testimony_Rl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.FaceLimPersonActivity"
+    tools:ignore="MissingDefaultResource">
+
+    <com.example.datalibrary.deptrum.GLFrameSurface
+        android:id="@+id/gl_ir"
+        android:layout_width="83dp"
+        android:layout_height="110dp"
+        android:layout_above="@+id/person_buttomLl_All"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"
+        android:layout_gravity="center_vertical" />
+
+    <com.example.datalibrary.deptrum.GLFrameSurface
+        android:id="@+id/gl_depth"
+        android:layout_width="83dp"
+        android:layout_height="110dp"
+        android:layout_above="@+id/person_buttomLl_All"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="23dp"
+        android:visibility="invisible"
+        android:layout_marginBottom="5dp" />
+
+    <com.example.datalibrary.deptrum.GLFrameSurface
+        android:id="@+id/gl_rgb"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_gravity="center_vertical" />
+
+    <TextureView
+        android:id="@+id/draw_detect_face_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <View
+        android:id="@+id/mongolia_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!--    title-->
+    <include
+        android:id="@+id/testimony_titleRl"
+        layout="@layout/layout_title_testimony" />
+
+
+    <include layout="@layout/item_save_camera"
+        android:layout_above="@+id/show_rgb_nir_depth"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"/>
+
+    <!--送检图片-->
+    <LinearLayout
+        android:id="@+id/show_rgb_nir_depth"
+        android:layout_width="match_parent"
+        android:layout_height="106dp"
+        android:visibility="gone"
+        android:layout_above="@id/person_buttomLl_All"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!--送检图片-->
+
+
+            <ImageView
+                android:id="@+id/face_detect_image_view"
+                android:layout_width="110dp"
+                android:layout_height="83dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/gate_imageview_radius"
+                android:src="@mipmap/ic_image_video" />
+
+            <LinearLayout
+                android:id="@+id/rgb_surface_Ll"
+                android:layout_width="110dp"
+                android:layout_height="23dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/relativelayout_radius"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/detect_surface_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text=" RGB图片帧"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/is_check_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/start_15" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/nir_surface_Ll"
+                android:layout_width="110dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_height="23dp"
+                android:background="@drawable/relativelayout_radius"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/nir_surface_textTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" NIR图片帧"
+                    android:textColor="#FFFFFFFF"
+
+                    android:textSize="14sp"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/nir_is_check_image_Iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/start_15"
+                    android:visibility="visible" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/depth_surface_Ll"
+                android:layout_width="110dp"
+                android:layout_height="23dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/relativelayout_radius"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/depth_surface_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Depth图片帧"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="14sp"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/depth_is_check_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/start_15"
+                    android:visibility="visible" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!--        提示-->
+    <include
+        layout="@layout/layout_testimory_hint"/>
+
+    <RelativeLayout
+        android:id="@+id/person_buttomLl_All"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <!--        预览模式-->
+        <include layout="@layout/layout_testimony_preview_mode" />
+        <!--        开发模式-->
+        <include layout="@layout/layout_testimony_development_model" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/person_baiduTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:text="@string/home_baidu"
+        android:textColor="#808080"
+        android:textSize="12sp" />
+</RelativeLayout>

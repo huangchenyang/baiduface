@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/testimony_Rl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.FaceLimPersonActivity"
+    tools:ignore="MissingDefaultResource">
+
+
+    <com.example.datalibrary.lim.GLPanel
+        android:id="@+id/sv_depth_view"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:visibility="invisible"
+        android:layout_above="@+id/person_buttomLl_All"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true" />
+    <com.example.datalibrary.lim.GLPanel
+        android:id="@+id/sv_color_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <TextureView
+        android:id="@+id/draw_detect_face_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true" />
+
+
+    <View
+        android:id="@+id/mongolia_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!--    title-->
+    <include
+        android:id="@+id/testimony_titleRl"
+        layout="@layout/layout_title_testimony" />
+
+
+    <include layout="@layout/item_save_camera"
+        android:layout_above="@+id/test_rgb_rl"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"/>
+
+    <!--RGB 检测图片测试-->
+    <RelativeLayout
+        android:id="@+id/test_rgb_rl"
+        android:layout_width="110dp"
+        android:layout_height="82.7dp"
+        android:layout_above="@+id/person_buttomLl_All"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="5dp">
+
+        <ImageView
+            android:id="@+id/test_rgb_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gate_imageview_radius"
+            android:src="@mipmap/ic_image_video" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:layout_alignParentBottom="true"
+            android:background="#B3000000"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="23dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:gravity="center_vertical"
+                android:text="RGB图片帧"
+                android:textColor="#FFFFFFFF"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/person_kaifaIv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:layout_marginEnd="2dp"
+                android:src="@mipmap/ic_icon_develop_success"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!--        提示-->
+    <include layout="@layout/layout_testimory_hint" />
+
+    <RelativeLayout
+        android:id="@+id/person_buttomLl_All"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <!--        预览模式-->
+        <include layout="@layout/layout_testimony_preview_mode" />
+        <!--        开发模式-->
+        <include layout="@layout/layout_testimony_development_model" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/person_baiduTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:text="@string/home_baidu"
+        android:textColor="#808080"
+        android:textSize="12sp" />
+</RelativeLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FaceSDKAndroid.iml" filepath="$PROJECT_DIR$/.idea/modules/FaceSDKAndroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/FaceSDKAndroid.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/FaceSDKAndroid.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/FaceSDKAndroid.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/FaceSDKAndroid.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/FaceSDKAndroid.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/FaceSDKAndroid.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/FaceSDKAndroid.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/FaceSDKAndroid.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/attendancelibrary/FaceSDKAndroid.attendancelibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/attendancelibrary/FaceSDKAndroid.attendancelibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/attendancelibrary/FaceSDKAndroid.attendancelibrary.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/attendancelibrary/FaceSDKAndroid.attendancelibrary.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/attendancelibrary/FaceSDKAndroid.attendancelibrary.main.iml" filepath="$PROJECT_DIR$/.idea/modules/attendancelibrary/FaceSDKAndroid.attendancelibrary.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/attendancelibrary/FaceSDKAndroid.attendancelibrary.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/attendancelibrary/FaceSDKAndroid.attendancelibrary.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/attrbutelibrary/FaceSDKAndroid.attrbutelibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/attrbutelibrary/FaceSDKAndroid.attrbutelibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/attrbutelibrary/FaceSDKAndroid.attrbutelibrary.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/attrbutelibrary/FaceSDKAndroid.attrbutelibrary.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/attrbutelibrary/FaceSDKAndroid.attrbutelibrary.main.iml" filepath="$PROJECT_DIR$/.idea/modules/attrbutelibrary/FaceSDKAndroid.attrbutelibrary.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/attrbutelibrary/FaceSDKAndroid.attrbutelibrary.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/attrbutelibrary/FaceSDKAndroid.attrbutelibrary.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/datalibrary/FaceSDKAndroid.datalibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/datalibrary/FaceSDKAndroid.datalibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/datalibrary/FaceSDKAndroid.datalibrary.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/datalibrary/FaceSDKAndroid.datalibrary.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/datalibrary/FaceSDKAndroid.datalibrary.main.iml" filepath="$PROJECT_DIR$/.idea/modules/datalibrary/FaceSDKAndroid.datalibrary.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/datalibrary/FaceSDKAndroid.datalibrary.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/datalibrary/FaceSDKAndroid.datalibrary.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/drivermonitorlibrary/FaceSDKAndroid.drivermonitorlibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/drivermonitorlibrary/FaceSDKAndroid.drivermonitorlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/drivermonitorlibrary/FaceSDKAndroid.drivermonitorlibrary.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/drivermonitorlibrary/FaceSDKAndroid.drivermonitorlibrary.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/drivermonitorlibrary/FaceSDKAndroid.drivermonitorlibrary.main.iml" filepath="$PROJECT_DIR$/.idea/modules/drivermonitorlibrary/FaceSDKAndroid.drivermonitorlibrary.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/drivermonitorlibrary/FaceSDKAndroid.drivermonitorlibrary.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/drivermonitorlibrary/FaceSDKAndroid.drivermonitorlibrary.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/face-sdk-library/FaceSDKAndroid.face-sdk-library.iml" filepath="$PROJECT_DIR$/.idea/modules/face-sdk-library/FaceSDKAndroid.face-sdk-library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/face-sdk-library/FaceSDKAndroid.face-sdk-library.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/face-sdk-library/FaceSDKAndroid.face-sdk-library.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/face-sdk-library/FaceSDKAndroid.face-sdk-library.main.iml" filepath="$PROJECT_DIR$/.idea/modules/face-sdk-library/FaceSDKAndroid.face-sdk-library.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/face-sdk-library/FaceSDKAndroid.face-sdk-library.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/face-sdk-library/FaceSDKAndroid.face-sdk-library.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/facelibrary/FaceSDKAndroid.facelibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/facelibrary/FaceSDKAndroid.facelibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/facelibrary/FaceSDKAndroid.facelibrary.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/facelibrary/FaceSDKAndroid.facelibrary.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/facelibrary/FaceSDKAndroid.facelibrary.main.iml" filepath="$PROJECT_DIR$/.idea/modules/facelibrary/FaceSDKAndroid.facelibrary.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/facelibrary/FaceSDKAndroid.facelibrary.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/facelibrary/FaceSDKAndroid.facelibrary.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/financelibrary/FaceSDKAndroid.financelibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/financelibrary/FaceSDKAndroid.financelibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/financelibrary/FaceSDKAndroid.financelibrary.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/financelibrary/FaceSDKAndroid.financelibrary.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/financelibrary/FaceSDKAndroid.financelibrary.main.iml" filepath="$PROJECT_DIR$/.idea/modules/financelibrary/FaceSDKAndroid.financelibrary.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/financelibrary/FaceSDKAndroid.financelibrary.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/financelibrary/FaceSDKAndroid.financelibrary.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gatelibrary/FaceSDKAndroid.gatelibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/gatelibrary/FaceSDKAndroid.gatelibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gatelibrary/FaceSDKAndroid.gatelibrary.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/gatelibrary/FaceSDKAndroid.gatelibrary.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gatelibrary/FaceSDKAndroid.gatelibrary.main.iml" filepath="$PROJECT_DIR$/.idea/modules/gatelibrary/FaceSDKAndroid.gatelibrary.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gatelibrary/FaceSDKAndroid.gatelibrary.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/gatelibrary/FaceSDKAndroid.gatelibrary.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gazelibrary/FaceSDKAndroid.gazelibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/gazelibrary/FaceSDKAndroid.gazelibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gazelibrary/FaceSDKAndroid.gazelibrary.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/gazelibrary/FaceSDKAndroid.gazelibrary.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gazelibrary/FaceSDKAndroid.gazelibrary.main.iml" filepath="$PROJECT_DIR$/.idea/modules/gazelibrary/FaceSDKAndroid.gazelibrary.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gazelibrary/FaceSDKAndroid.gazelibrary.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/gazelibrary/FaceSDKAndroid.gazelibrary.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/identifylibrary/FaceSDKAndroid.identifylibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/identifylibrary/FaceSDKAndroid.identifylibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/identifylibrary/FaceSDKAndroid.identifylibrary.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/identifylibrary/FaceSDKAndroid.identifylibrary.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/identifylibrary/FaceSDKAndroid.identifylibrary.main.iml" filepath="$PROJECT_DIR$/.idea/modules/identifylibrary/FaceSDKAndroid.identifylibrary.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/identifylibrary/FaceSDKAndroid.identifylibrary.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/identifylibrary/FaceSDKAndroid.identifylibrary.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/paymentlibrary/FaceSDKAndroid.paymentlibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/paymentlibrary/FaceSDKAndroid.paymentlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/paymentlibrary/FaceSDKAndroid.paymentlibrary.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/paymentlibrary/FaceSDKAndroid.paymentlibrary.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/paymentlibrary/FaceSDKAndroid.paymentlibrary.main.iml" filepath="$PROJECT_DIR$/.idea/modules/paymentlibrary/FaceSDKAndroid.paymentlibrary.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/paymentlibrary/FaceSDKAndroid.paymentlibrary.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/paymentlibrary/FaceSDKAndroid.paymentlibrary.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/registerlibrary/FaceSDKAndroid.registerlibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/registerlibrary/FaceSDKAndroid.registerlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/registerlibrary/FaceSDKAndroid.registerlibrary.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/registerlibrary/FaceSDKAndroid.registerlibrary.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/registerlibrary/FaceSDKAndroid.registerlibrary.main.iml" filepath="$PROJECT_DIR$/.idea/modules/registerlibrary/FaceSDKAndroid.registerlibrary.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/registerlibrary/FaceSDKAndroid.registerlibrary.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/registerlibrary/FaceSDKAndroid.registerlibrary.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/settinglibrary/FaceSDKAndroid.settinglibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/settinglibrary/FaceSDKAndroid.settinglibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/settinglibrary/FaceSDKAndroid.settinglibrary.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/settinglibrary/FaceSDKAndroid.settinglibrary.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/settinglibrary/FaceSDKAndroid.settinglibrary.main.iml" filepath="$PROJECT_DIR$/.idea/modules/settinglibrary/FaceSDKAndroid.settinglibrary.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/settinglibrary/FaceSDKAndroid.settinglibrary.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/settinglibrary/FaceSDKAndroid.settinglibrary.unitTest.iml" />
+    </modules>
+  </component>
+</project>

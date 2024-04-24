@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr format="integer" name="animTime"/>
+    <attr format="boolean" name="antiAlias"/>
+    <attr format="color|reference" name="arcColor1"/>
+    <attr format="color|reference" name="arcColor2"/>
+    <attr format="color|reference" name="arcColor3"/>
+    <attr format="color|reference" name="arcColors"/>
+    <attr format="dimension" name="arcWidth"/>
+    <attr format="color|reference" name="bgArcColor"/>
+    <attr format="string|reference" name="hint"/>
+    <attr format="color|reference" name="hintColor"/>
+    <attr format="dimension" name="hintSize"/>
+    <attr format="float" name="maxValue"/>
+    <attr format="integer" name="precision"/>
+    <attr format="float" name="startAngle"/>
+    <attr format="float" name="sweepAngle"/>
+    <attr format="float" name="textOffsetPercentInRadius"/>
+    <attr format="string|reference" name="unit"/>
+    <attr format="color|reference" name="unitColor"/>
+    <attr format="dimension" name="unitSize"/>
+    <attr format="float" name="value"/>
+    <attr format="color|reference" name="valueColor"/>
+    <attr format="dimension" name="valueSize"/>
+    <color name="white">#FFFFFF</color>
+    <declare-styleable name="CircleImageView">
+        <attr format="dimension" name="border_width"/>
+        <attr format="color" name="border_color"/>
+    </declare-styleable>
+    <declare-styleable name="CircleProgressBar">
+        <attr name="antiAlias"/>
+        <attr name="startAngle"/>
+        <attr name="sweepAngle"/>
+        <attr name="animTime"/>
+        <attr name="maxValue"/>
+        <attr name="value"/>
+        <attr name="precision"/>
+        <attr name="valueSize"/>
+        <attr name="valueColor"/>
+        <attr name="textOffsetPercentInRadius"/>
+        <!-- 绘制内容相应的提示语 -->
+        <attr name="hint"/>
+        <attr name="hintSize"/>
+        <attr name="hintColor"/>
+        <!-- 绘制内容的单位 -->
+        <attr name="unit"/>
+        <attr name="unitSize"/>
+        <attr name="unitColor"/>
+        <!-- 圆弧宽度 -->
+        <attr name="arcWidth"/>
+        <attr name="arcColors"/>
+        <!-- 背景圆弧颜色 -->
+        <attr name="bgArcColor"/>
+        <!-- 背景圆弧宽度 -->
+        <attr format="dimension" name="bgArcWidth"/>
+    </declare-styleable>
+    <declare-styleable name="CircularProgressView">
+        <attr format="dimension" name="backWidth"/>    <!--背景圆环宽度-->
+        <attr format="dimension" name="progWidth"/>    <!--进度圆环宽度-->
+        <attr format="color" name="backColor"/>        <!--背景圆环颜色-->
+        <attr format="color" name="progColor"/>        <!--进度圆环颜色-->
+        <attr format="color" name="progStartColor"/>   <!--进度圆环开始颜色-->
+        <attr format="color" name="progFirstColor"/>   <!--进度圆环结束颜色-->
+        <attr format="integer" name="progress"/>       <!--圆环进度-->
+    </declare-styleable>
+    <declare-styleable name="DialProgress">
+        <attr name="antiAlias"/>
+        <attr name="startAngle"/>
+        <attr name="sweepAngle"/>
+        <attr name="animTime"/>
+        <attr name="maxValue"/>
+        <attr name="value"/>
+        <attr name="precision"/>
+        <attr name="valueSize"/>
+        <attr name="valueColor"/>
+        <attr name="textOffsetPercentInRadius"/>
+        <!-- 绘制内容的单位 -->
+        <attr name="unit"/>
+        <attr name="unitSize"/>
+        <attr name="unitColor"/>
+        <!-- 绘制内容相应的提示语 -->
+        <attr name="hint"/>
+        <attr name="hintSize"/>
+        <attr name="hintColor"/>
+        <!-- 圆弧的宽度 -->
+        <attr name="arcWidth"/>
+        <!-- 刻度的宽度 -->
+        <attr format="dimension|reference" name="dialWidth"/>
+        <!-- 刻度之间的间隔 -->
+        <attr format="integer" name="dialIntervalDegree"/>
+        <!-- 圆弧颜色， -->
+        <attr name="arcColors"/>
+        <!-- 背景圆弧线颜色 -->
+        <attr name="bgArcColor"/>
+        <!-- 刻度线颜色 -->
+        <attr format="color|reference" name="dialColor"/>
+    </declare-styleable>
+    <declare-styleable name="WaveProgress">
+        <!-- 是否开启抗锯齿 -->
+        <attr name="antiAlias"/>
+        <!-- 深色水波动画时间 -->
+        <attr format="integer" name="darkWaveAnimTime"/>
+        <!-- 浅色水波动画时间 -->
+        <attr format="integer" name="lightWaveAnimTime"/>
+        <!-- 最大值 -->
+        <attr name="maxValue"/>
+        <!-- 当前值 -->
+        <attr name="value"/>
+        <attr name="valueColor"/>
+        <attr name="valueSize"/>
+        <!-- 绘制内容相应的提示语 -->
+        <attr name="hint"/>
+        <attr name="hintSize"/>
+        <attr name="hintColor"/>
+        <!-- 圆环宽度 -->
+        <attr format="dimension" name="circleWidth"/>
+        <!-- 圆环颜色 -->
+        <attr format="color|reference" name="circleColor"/>
+        <!-- 背景圆环颜色 -->
+        <attr format="color|reference" name="bgCircleColor"/>
+        <!-- 锁定水波不随圆环进度改变，默认锁定在50%处 -->
+        <attr format="boolean" name="lockWave"/>
+        <!-- 水波数量 -->
+        <attr format="integer" name="waveNum"/>
+        <!-- 水波高度，峰值和谷值之和 -->
+        <attr format="dimension" name="waveHeight"/>
+        <!-- 深色水波颜色 -->
+        <attr format="color|reference" name="darkWaveColor"/>
+        <!-- 是否显示浅色水波 -->
+        <attr format="boolean" name="showLightWave"/>
+        <!-- 浅色水波颜色 -->
+        <attr format="color|reference" name="lightWaveColor"/>
+        <!-- 浅色水波的方向 -->
+        <attr format="enum" name="lightWaveDirect">
+            <enum name="L2R" value="0"/>
+            <enum name="R2L" value="1"/>
+        </attr>
+    </declare-styleable>
+</resources>

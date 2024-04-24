@@ -1,0 +1,79 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml:2:1-22:12
+	package
+		ADDED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml:3:5-56
+		INJECTED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml
+		INJECTED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml
+		ADDED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml:2:1-22:12
+		INJECTED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml
+		ADDED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml:2:1-22:12
+		INJECTED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml:5:5-81
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml:5:22-78
+uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+ADDED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml:7:5-84
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml:7:22-81
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml:10:5-80
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml:10:22-77
+application
+ADDED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml:12:5-20:19
+activity#com.baidu.idl.main.facesdk.paymentlibrary.activity.payment.FaceRgbNirDepthPaymentActivity
+ADDED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml:13:9-94
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml:13:19-82
+activity#com.baidu.idl.main.facesdk.paymentlibrary.activity.payment.FaceDepthPaymentActivity
+ADDED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml:14:9-88
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml:14:19-76
+activity#com.baidu.idl.main.facesdk.paymentlibrary.activity.payment.FaceNIRPaymentActivity
+ADDED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml:15:9-86
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml:15:19-74
+activity#com.baidu.idl.main.facesdk.paymentlibrary.activity.payment.FaceRGBPaymentActivity
+ADDED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml:16:9-86
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml:16:19-74
+activity#com.baidu.idl.main.facesdk.paymentlibrary.activity.payment.FaceLimPaymentActivity
+ADDED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml:17:9-86
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml:17:19-74
+activity#com.baidu.idl.main.facesdk.paymentlibrary.activity.payment.FaceDeptrumPaymentActivity
+ADDED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml:18:9-90
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml:18:19-78
+activity#com.baidu.idl.main.facesdk.paymentlibrary.setting.PaymentSettingActivity
+ADDED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml:19:9-77
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml:19:19-65
+uses-sdk
+INJECTED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml
+INJECTED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml
+INJECTED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml
+INJECTED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml
+		ADDED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml
+		INJECTED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml
+		ADDED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml
+		INJECTED from D:\android_app\FaceSDKAndroid\paymentlibrary\src\main\AndroidManifest.xml

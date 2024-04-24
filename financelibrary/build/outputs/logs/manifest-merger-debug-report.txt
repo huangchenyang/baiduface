@@ -1,0 +1,77 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml:2:1-19:12
+INJECTED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml:2:1-19:12
+INJECTED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml:2:1-19:12
+INJECTED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml:2:1-19:12
+INJECTED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml:2:1-19:12
+INJECTED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml:2:1-19:12
+INJECTED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml:2:1-19:12
+	package
+		ADDED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml:3:5-56
+		INJECTED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml
+		INJECTED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml
+		ADDED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml:2:1-19:12
+		INJECTED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml
+		ADDED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml:2:1-19:12
+		INJECTED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml:5:5-81
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml:5:22-78
+uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+ADDED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml:6:5-84
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml:6:22-81
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml:7:5-80
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml:7:22-77
+application
+ADDED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml:9:5-17:19
+	android:requestLegacyExternalStorage
+		ADDED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml:9:18-61
+activity#com.baidu.idl.face.main.finance.activity.finance.FaceRGBFinanceActivity
+ADDED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml:10:9-108
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml:10:19-105
+activity#com.baidu.idl.face.main.finance.activity.finance.FaceNIRFinanceActivity
+ADDED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml:11:9-108
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml:11:19-105
+activity#com.baidu.idl.face.main.finance.activity.finance.FaceDepthFinanceActivity
+ADDED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml:12:9-110
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml:12:19-107
+activity#com.baidu.idl.face.main.finance.activity.finance.FaceLimFinanceActivity
+ADDED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml:13:9-108
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml:13:19-105
+activity#com.baidu.idl.face.main.finance.activity.finance.FaceDeptrumFinanceActivity
+ADDED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml:14:9-112
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml:14:19-109
+activity#com.baidu.idl.face.main.finance.setting.FinanceSettingActivity
+ADDED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml:15:9-99
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml:15:19-96
+uses-sdk
+INJECTED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml
+INJECTED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml
+INJECTED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml
+INJECTED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml
+		ADDED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml
+		INJECTED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml
+		ADDED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml
+		INJECTED from D:\android_app\FaceSDKAndroid\financelibrary\src\main\AndroidManifest.xml

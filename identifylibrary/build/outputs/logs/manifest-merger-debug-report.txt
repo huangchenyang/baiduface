@@ -1,0 +1,135 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:2:1-43:12
+INJECTED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:2:1-43:12
+INJECTED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:2:1-43:12
+INJECTED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:2:1-43:12
+INJECTED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:2:1-43:12
+INJECTED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:2:1-43:12
+INJECTED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:2:1-43:12
+	package
+		ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:4:5-57
+		INJECTED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml
+		INJECTED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml
+		ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:2:1-43:12
+		INJECTED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml
+		ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:2:1-43:12
+		INJECTED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.CAMERA
+ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:6:5-65
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:6:22-62
+uses-permission#android.permission.INTERNET
+ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:7:5-67
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:7:22-64
+uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:8:5-10:47
+	tools:ignore
+		ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:10:9-44
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:9:9-68
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:11:5-81
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:11:22-78
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:12:5-79
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:12:22-76
+uses-permission#android.hardware.camera.autofocus
+ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:13:5-73
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:13:22-70
+uses-permission#android.permission.WRITE_SETTINGS
+ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:14:5-16:47
+	tools:ignore
+		ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:16:9-44
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:15:9-57
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:18:5-80
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:18:22-77
+uses-permission#android.permission.GET_TASKS
+ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:19:5-68
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:19:22-65
+uses-permission#android.permission.VIBRATE
+ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:20:5-66
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:20:22-63
+uses-feature#android.hardware.camera
+ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:22:5-60
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:22:19-57
+uses-feature#android.hardware.camera.autofocus
+ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:23:5-25:35
+	android:required
+		ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:25:9-32
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:24:9-57
+uses-feature#android.hardware.camera.front
+ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:26:5-28:35
+	android:required
+		ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:28:9-32
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:27:9-53
+uses-feature#android.hardware.camera.front.autofocus
+ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:29:5-31:35
+	android:required
+		ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:31:9-32
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:30:9-63
+application
+ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:33:5-41:19
+activity#com.baidu.idl.main.facesdk.identifylibrary.activity.FaceRGBPersonActivity
+ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:34:9-77
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:34:19-65
+activity#com.baidu.idl.main.facesdk.identifylibrary.activity.FaceIRTestimonyActivity
+ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:35:9-79
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:35:19-67
+activity#com.baidu.idl.main.facesdk.identifylibrary.activity.FaceDepthTestimonyActivity
+ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:36:9-82
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:36:19-70
+activity#com.baidu.idl.main.facesdk.identifylibrary.activity.FaceLimPersonActivity
+ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:37:9-77
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:37:19-65
+activity#com.baidu.idl.main.facesdk.identifylibrary.activity.FaceRGBIRDepthTestimonyActivity
+ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:38:9-87
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:38:19-75
+activity#com.baidu.idl.main.facesdk.identifylibrary.activity.FaceDeptrumPersonActivity
+ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:39:9-81
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:39:19-69
+activity#com.baidu.idl.main.facesdk.identifylibrary.setting.IdentifySettingActivity
+ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:40:9-78
+	android:name
+		ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml:40:19-66
+uses-sdk
+INJECTED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml
+INJECTED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml
+INJECTED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml
+INJECTED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml
+		ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml
+		INJECTED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml
+		ADDED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml
+		INJECTED from D:\android_app\FaceSDKAndroid\identifylibrary\src\main\AndroidManifest.xml

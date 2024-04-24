@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.baidu.idl.main.facesdk.gazelibrary"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="22"
+        android:targetSdkVersion="29" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.hardware.camera.autofocus" />
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <!-- <uses-permission android:name="android.permission.READ_PHONE_STATE" /> -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera.front.autofocus"
+        android:required="true" />
+
+    <application>
+        <activity android:name="com.baidu.idl.main.facesdk.gazelibrary.gaze.FaceGazeActivity" />
+        <activity android:name="com.baidu.idl.main.facesdk.gazelibrary.setting.CameraDisplayAngleActivity" />
+        <activity android:name="com.baidu.idl.main.facesdk.gazelibrary.setting.GazeSettingActivity" />
+        <activity android:name="com.baidu.idl.main.facesdk.gazelibrary.setting.GazeConfigQualtifyActivity" />
+        <activity android:name="com.baidu.idl.main.facesdk.gazelibrary.setting.GazeLensSelectionActivity" />
+        <activity android:name="com.baidu.idl.main.facesdk.gazelibrary.setting.GazeFaceDetectActivity" />
+        <activity android:name="com.baidu.idl.main.facesdk.gazelibrary.setting.GazeLensSettingsActivity" />
+        <activity android:name="com.baidu.idl.main.facesdk.gazelibrary.setting.MinFaceActivity" />
+        <activity android:name="com.baidu.idl.main.facesdk.gazelibrary.setting.MirrorSettingActivity" />
+        <activity android:name="com.baidu.idl.main.facesdk.gazelibrary.setting.VersionMessageActivity" />
+        <activity android:name="com.baidu.idl.main.facesdk.gazelibrary.setting.FaceLivinessTypeActivity" />
+        <activity android:name="com.baidu.idl.main.facesdk.gazelibrary.setting.FaceDetectAngleActivity" />
+        <activity android:name="com.baidu.idl.main.facesdk.gazelibrary.setting.PictureOptimizationActivity" />
+        <activity android:name="com.baidu.idl.main.facesdk.gazelibrary.setting.LogSettingActivity" />
+    </application>
+
+</manifest>

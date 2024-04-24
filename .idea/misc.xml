@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/android_app/FaceSDKAndroid/app/src/main/res/layout/activity_activition.xml" value="0.136" />
+        <entry key="..\:/android_app/FaceSDKAndroid/app/src/main/res/layout/activity_activition_title.xml" value="0.152" />
+        <entry key="..\:/android_app/FaceSDKAndroid/app/src/main/res/layout/activity_home.xml" value="0.264" />
+        <entry key="..\:/android_app/FaceSDKAndroid/app/src/main/res/layout/activity_start.xml" value="0.16" />
+        <entry key="..\:/android_app/FaceSDKAndroid/app/src/main/res/layout/batch_activation_layout.xml" value="0.264" />
+        <entry key="..\:/android_app/FaceSDKAndroid/app/src/main/res/layout/chip_activation_layout.xml" value="0.10104166666666667" />
+        <entry key="..\:/android_app/FaceSDKAndroid/app/src/main/res/layout/offline_activation_layout.xml" value="0.536" />
+        <entry key="..\:/android_app/FaceSDKAndroid/identifylibrary/src/main/res/layout/activity_face_depth_identifylibrary.xml" value="0.1" />
+        <entry key="..\:/android_app/FaceSDKAndroid/identifylibrary/src/main/res/layout/activity_face_deptrum_identifylibrary.xml" value="0.12" />
+        <entry key="..\:/android_app/FaceSDKAndroid/identifylibrary/src/main/res/layout/activity_face_ir_identifylibrary.xml" value="0.152" />
+        <entry key="..\:/android_app/FaceSDKAndroid/identifylibrary/src/main/res/layout/activity_face_rgb_identifylibrary.xml" value="0.264" />
+        <entry key="..\:/android_app/FaceSDKAndroid/identifylibrary/src/main/res/layout/activity_identify_setting.xml" value="0.152" />
+        <entry key="..\:/android_app/FaceSDKAndroid/identifylibrary/src/main/res/layout/layout_testimony_development_model.xml" value="0.10104166666666667" />
+        <entry key="..\:/android_app/FaceSDKAndroid/identifylibrary/src/main/res/layout/layout_testimony_fraction.xml" value="0.1" />
+        <entry key="..\:/android_app/FaceSDKAndroid/identifylibrary/src/main/res/layout/layout_testimony_preview_mode.xml" value="0.1" />
+        <entry key="..\:/android_app/FaceSDKAndroid/identifylibrary/src/main/res/layout/layout_testimory_hint.xml" value="0.11200000000000002" />
+        <entry key="..\:/android_app/FaceSDKAndroid/identifylibrary/src/main/res/layout/layout_title_testimony.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
