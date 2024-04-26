@@ -44,6 +44,7 @@ import com.baidu.idl.main.facesdk.identifylibrary.ZKUSBManager.ZKUSBManager;
 import com.baidu.idl.main.facesdk.identifylibrary.ZKUSBManager.ZKUSBManagerListener;
 import com.baidu.idl.main.facesdk.identifylibrary.model.SingleBaseConfig;
 import com.baidu.idl.main.facesdk.identifylibrary.setting.IdentifySettingActivity;
+import com.baidu.idl.main.facesdk.identifylibrary.utils.DBManager;
 import com.baidu.idl.main.facesdk.identifylibrary.utils.FaceUtils;
 import com.baidu.idl.main.facesdk.identifylibrary.utils.PermissionUtils;
 import com.baidu.idl.main.facesdk.model.BDFaceImageInstance;
@@ -85,6 +86,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
@@ -204,6 +206,10 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
     private boolean isVerifyFp = false;
     private boolean isVerifyFace = false;
 
+    //数据库
+    private DBManager dbManager;
+    private String tableName="my_table";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -227,6 +233,22 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
 
         //启动人脸识别
         onBnStart();
+
+        dbManager = new DBManager(this);
+//        dbManager.insertData(tableName,"ID","test1");
+        //删除原来的数据库
+//        dbManager.deleteTable(tableName);
+
+        // 插入数据
+//        dbManager.insertData(tableName,"name","test1");
+//        dbManager.insertData(tableName,"name","test2");
+//        dbManager.insertData(tableName,"name","test2");
+//
+//        // 获取所有数据
+//        List<String> dataList = dbManager.getAllData(tableName,"name");
+//        for(String str : dataList){
+//            Log.d(TAG,"sqlite data:"+str);
+//        }
     }
 
     private void initFaceConfig(int height , int width){
