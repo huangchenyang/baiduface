@@ -3,7 +3,7 @@ package com.baidu.idl.main.facesdk.identifylibrary.utils;
 public class DBPersion {
    public static String ID = "ID";
    public static String DeviceType = "设备型号";
-   public static String IDNum = "设备编号";
+   public static String DeviceId = "设备编号";
    public static String VerifyTime = "核验时间";
     public static String VerifyResult = "核验结果";
     public static String VerifyType = "核验类型";
@@ -32,7 +32,7 @@ public class DBPersion {
     public static String FaceYuZhi = "FACEYUZHI";
     public static String FingerYuZhi = "FINGERYUZHI";
     public static String Fingerfs = "FINGERFS";
-    public static String finger = "FINGER";
+    public static String Finger = "FINGER";
 
 
 }

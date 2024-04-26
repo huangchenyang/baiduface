@@ -25,6 +25,7 @@ import android.provider.MediaStore;
 import android.provider.Settings;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
+import android.util.Base64;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
@@ -47,7 +48,9 @@ import com.baidu.idl.main.facesdk.identifylibrary.ZKUSBManager.ZKUSBManagerListe
 import com.baidu.idl.main.facesdk.identifylibrary.model.SingleBaseConfig;
 import com.baidu.idl.main.facesdk.identifylibrary.setting.IdentifySettingActivity;
 import com.baidu.idl.main.facesdk.identifylibrary.utils.DBManager;
+import com.baidu.idl.main.facesdk.identifylibrary.utils.DBPersion;
 import com.baidu.idl.main.facesdk.identifylibrary.utils.FaceUtils;
+import com.baidu.idl.main.facesdk.identifylibrary.utils.HttpPostRequest;
 import com.baidu.idl.main.facesdk.identifylibrary.utils.PermissionUtils;
 import com.baidu.idl.main.facesdk.model.BDFaceImageInstance;
 import com.baidu.idl.main.facesdk.model.BDFaceSDKCommon;
@@ -80,6 +83,9 @@ import com.zkteco.android.biometric.module.idcard.exception.IDCardReaderExceptio
 import com.zkteco.android.biometric.module.idcard.meta.IDCardInfo;
 import com.zkteco.android.biometric.module.idcard.meta.IDPRPCardInfo;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
@@ -96,7 +102,7 @@ import java.util.Random;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
-public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickListener {
+public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickListener, HttpPostRequest.OnResponseListener{
     private String TAG = "hcy--FaceRGBPersonActivity";
     private Context mContext;
     private ImageView testimonyBackIv;
@@ -215,6 +221,10 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
     private DBManager dbManager;
     private String tableName="my_table";
     private String verifyLicid = "";
+
+    //服务器
+//    String apiUrl = "http://192.168.3.14:8080/apiv1/internal/wonte32/UploadRecord";
+    String apiUrl = "http://192.168.3.14:8080/apiv1/internal/wonte32";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -678,7 +688,7 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                                                     result = "人脸核验通过\n 请进行指纹识别";
                                                 }else{
                                                     result = "人脸核验通过\n 全部验证通过";
-                                                    updateDbOk();
+                                                    updateDbOk(score,SingleBaseConfig.getBaseConfig().getIdThreshold());
                                                 }
                                             }
                                             testimonyTipsFailTv.setText(result);
@@ -692,7 +702,7 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                                                         Color.parseColor("#FFFEC133"));
                                               testimonyTipsPleaseFailTv.setText("请上传正面人脸照片");
                                               testimonyTipsFailIv.setImageResource(R.mipmap.tips_fail);
-                                              updateDbFail();
+                                              updateDbFail(score,SingleBaseConfig.getBaseConfig().getIdThreshold());
                                         }
                                     } else {
 //                                        Log.d(TAG,"mLiveType != 0");
@@ -705,7 +715,7 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                                                     Color.parseColor("#FFFEC133"));
                                             testimonyTipsPleaseFailTv.setText("请上传正面人脸照片");
                                             testimonyTipsFailIv.setImageResource(R.mipmap.tips_fail);
-                                            updateDbFail();
+                                            updateDbFail(score,SingleBaseConfig.getBaseConfig().getIdThreshold());
                                         } else {
                                             Log.d(TAG,"rgbLivenessScore >= mRgbLiveScore");
                                             if (score > SingleBaseConfig.getBaseConfig()
@@ -718,7 +728,7 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                                                         result = "人脸核验通过\n 请进行指纹识别";
                                                     }else{
                                                         result = "人脸核验通过\n 全部验证通过";
-                                                        updateDbOk();
+                                                        updateDbOk(score,SingleBaseConfig.getBaseConfig().getIdThreshold());
                                                     }
                                                 }
                                                 testimonyTipsFailTv.setText(result);
@@ -735,7 +745,7 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                                                 testimonyTipsPleaseFailTv.setText("请上传正面人脸照片");
                                                 testimonyTipsFailIv.setImageResource(
                                                         R.mipmap.tips_fail);
-                                                updateDbFail();
+                                                updateDbFail(score,SingleBaseConfig.getBaseConfig().getIdThreshold());
                                             }
                                         }
                                     }
@@ -748,15 +758,18 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
         });
     }
 
-    private void updateDbOk(){
+    private void updateDbOk(float score,float threshold){
         HashMap<String, String> updateInfoMap = new HashMap<>();
         updateInfoMap.put("核验结果","通过");
         updateInfoMap.put("核验类型","身份证+人脸+指纹");
         updateInfoMap.put("核验时间",verifyTime());
-        dbManager.updateData(tableName,verifyLicid,updateInfoMap);
+//        updateInfoMap.put("现场照片",bitmapToBase64(facebm));
+        updateInfoMap.put("FS",Float.toString(score));
+        updateInfoMap.put("FACEYUZHI",Float.toString(threshold));
+        dbManager.updateLineData(tableName,verifyLicid,updateInfoMap);
     }
 
-    private void updateDbFail(){
+    private void updateDbFail(float score,float threshold){
         HashMap<String, String> updateInfoMap = new HashMap<>();
         updateInfoMap.put("核验结果","不通过");
         if(verifyType==CARD_FACE_FP) {
@@ -765,7 +778,10 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
             updateInfoMap.put("核验类型","身份证+指纹");
         }
         updateInfoMap.put("核验时间",verifyTime());
-        dbManager.updateData(tableName,verifyLicid,updateInfoMap);
+//        updateInfoMap.put("现场照片",bitmapToBase64(facebm));
+        updateInfoMap.put("FS",Float.toString(score));
+        updateInfoMap.put("FACEYUZHI",Float.toString(threshold));
+        dbManager.updateLineData(tableName,verifyLicid,updateInfoMap);
     }
 
     // 开发模式
@@ -1105,6 +1121,16 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
 
                                 verifyLicid = licid;
 
+                                Bitmap bmpPhoto = null;
+                                if (idCardInfo.getPhotolength() > 0) {
+                                    byte[] buf = new byte[WLTService.imgLength];
+                                    if (1 == WLTService.wlt2Bmp(idCardInfo.getPhoto(), buf)) {
+                                        bmpPhoto = IDPhotoHelper.Bgr2Bitmap(buf);
+                                    }
+                                }
+                                final int final_cardType = cardType;
+                                final Bitmap final_bmpPhoto = bmpPhoto;
+
                                 //导入数据库
                                 if(!dbManager.isKeyDataExist(tableName,"姓名",name)){
                                     Log.d(TAG,"new card");
@@ -1122,6 +1148,7 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                                     infoMap.put("证件有效期止",expireDate);
                                     infoMap.put("地址",addr);
                                     infoMap.put("签发次数",Integer.toString(visaTimes));
+                                    infoMap.put("证件照片",bitmapToBase64(final_bmpPhoto));
                                     if(cardType == IDCardType.TYPE_CARD_SFZ){
                                         infoMap.put("证件类别","身份证");
                                     }else{
@@ -1132,15 +1159,6 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                                     Log.d(TAG,"had card");
                                 }
 
-                                Bitmap bmpPhoto = null;
-                                if (idCardInfo.getPhotolength() > 0) {
-                                    byte[] buf = new byte[WLTService.imgLength];
-                                    if (1 == WLTService.wlt2Bmp(idCardInfo.getPhoto(), buf)) {
-                                        bmpPhoto = IDPhotoHelper.Bgr2Bitmap(buf);
-                                    }
-                                }
-                                final int final_cardType = cardType;
-                                final Bitmap final_bmpPhoto = bmpPhoto;
                                 runOnUiThread(new Runnable() {
                                     public void run() {
                                         imageView.setImageBitmap(final_bmpPhoto);
@@ -1268,12 +1286,15 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
     }
 
     private String generateId(){
-        // 创建SimpleDateFormat对象，指定输出格式
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        // 获取当前时间
-        Date currentDate = new Date();
-        // 使用SimpleDateFormat对象将当前时间格式化为指定格式
-        String formattedDate = sdf.format(currentDate);
+//        // 创建SimpleDateFormat对象，指定输出格式
+//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//        // 获取当前时间
+//        Date currentDate = new Date();
+//        // 使用SimpleDateFormat对象将当前时间格式化为指定格式
+//        String formattedDate = sdf.format(currentDate);
+
+        // 获取当前时间戳
+        long currentTimeMillis = System.currentTimeMillis();
 
         // 创建一个Random对象
         Random random = new Random();
@@ -1286,7 +1307,7 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
         // 将StringBuilder转换为字符串，并输出
         String randomDigits = sb.toString();
 
-        return formattedDate +"_"+randomDigits;
+        return currentTimeMillis +"_"+randomDigits;
     }
 
     public void onBnStart() {
@@ -1462,59 +1483,79 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
             Log.d(TAG,strText);
             setFpResult(strText);
 
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    if(verifyType == CARD_FP || verifyType == CARD_FACE_FP){
-                        if(!isFpConfirm){
-                            isVerifyFp = true;
-                            isFpConfirm = true;
-                            if(fp_score > 35){
-
-
-                                String result="";
-                                if(verifyType==CARD_FACE_FP){
-                                    if(!isVerifyFace){
-                                        result = "指纹人证核验通过\n 请进行人脸识别";
-                                    }else{
-                                        result = "指纹人证核验通过\n 全部验证通过";
-                                        HashMap<String, String> updateInfoMap = new HashMap<>();
-                                        updateInfoMap.put("核验结果","通过");
-                                        updateInfoMap.put("核验类型","身份证+人脸+指纹");
-                                        updateInfoMap.put("核验时间",verifyTime());
-                                        dbManager.updateData(tableName,verifyLicid,updateInfoMap);
-                                    }
-                                }else{
-                                    HashMap<String, String> updateInfoMap = new HashMap<>();
-                                    updateInfoMap.put("核验结果","通过");
-                                    updateInfoMap.put("核验类型","身份证+指纹");
-                                    updateInfoMap.put("核验时间",verifyTime());
-                                    dbManager.updateData(tableName,verifyLicid,updateInfoMap);
-                                }
-
-
-                                SpannableString redMessage = new SpannableString(result);
-                                redMessage.setSpan(new ForegroundColorSpan(Color.GREEN), 0, redMessage.length(), 0);
-                                showConfirmationDialog(redMessage);
-
+            if(verifyType == CARD_FP || verifyType == CARD_FACE_FP){
+                if(!isFpConfirm){
+                    isVerifyFp = true;
+                    isFpConfirm = true;
+                    if(fp_score > 35){
+                        String result="";
+                        if(verifyType==CARD_FACE_FP){
+                            if(!isVerifyFace){
+                                result = "指纹人证核验通过\n 请进行人脸识别";
                             }else{
-                                SpannableString redMessage = new SpannableString("指纹人证核验不通过");
-                                redMessage.setSpan(new ForegroundColorSpan(Color.RED), 0, redMessage.length(), 0);
-                                showConfirmationDialog(redMessage);
+                                result = "指纹人证核验通过\n 全部验证通过";
                                 HashMap<String, String> updateInfoMap = new HashMap<>();
-                                updateInfoMap.put("核验结果","不通过");
-                                if(verifyType==CARD_FACE_FP) {
-                                    updateInfoMap.put("核验类型","身份证+人脸+指纹");
-                                }else{
-                                    updateInfoMap.put("核验类型","身份证+指纹");
-                                }
+                                updateInfoMap.put("核验结果","通过");
+                                updateInfoMap.put("核验类型","身份证+人脸+指纹");
                                 updateInfoMap.put("核验时间",verifyTime());
-                                dbManager.updateData(tableName,verifyLicid,updateInfoMap);
+                                updateInfoMap.put("FINGER",bitmapToBase64(bitmap));
+                                updateInfoMap.put("FINGERFS",Float.toString(fp_score));
+                                updateInfoMap.put("FINGERYUZHI","35");
+                                dbManager.updateLineData(tableName,verifyLicid,updateInfoMap);
+                                sendDataToService();
                             }
+                        }else{
+                            HashMap<String, String> updateInfoMap = new HashMap<>();
+                            updateInfoMap.put("核验结果","通过");
+                            updateInfoMap.put("核验类型","身份证+指纹");
+                            updateInfoMap.put("核验时间",verifyTime());
+                            updateInfoMap.put("FINGER",bitmapToBase64(bitmap));
+                            updateInfoMap.put("FINGERFS",Float.toString(fp_score));
+                            updateInfoMap.put("FINGERYUZHI","35");
+                            dbManager.updateLineData(tableName,verifyLicid,updateInfoMap);
+                            sendDataToService();
                         }
+
+                        final SpannableString redMessage = new SpannableString(result);
+                        redMessage.setSpan(new ForegroundColorSpan(Color.GREEN), 0, redMessage.length(), 0);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                showConfirmationDialog(redMessage);
+                            }
+                        });
+
+                    }else{
+                        final SpannableString redMessage = new SpannableString("指纹人证核验不通过");
+                        redMessage.setSpan(new ForegroundColorSpan(Color.RED), 0, redMessage.length(), 0);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                showConfirmationDialog(redMessage);
+                            }
+                        });
+                        HashMap<String, String> updateInfoMap = new HashMap<>();
+                        updateInfoMap.put("核验结果","不通过");
+                        if(verifyType==CARD_FACE_FP) {
+                            updateInfoMap.put("核验类型","身份证+人脸+指纹");
+                        }else{
+                            updateInfoMap.put("核验类型","身份证+指纹");
+                        }
+                        updateInfoMap.put("核验时间",verifyTime());
+                        updateInfoMap.put("FINGER",bitmapToBase64(bitmap));
+                        updateInfoMap.put("FINGERFS",Float.toString(fp_score));
+                        updateInfoMap.put("FINGERFS","35");
+                        dbManager.updateLineData(tableName,verifyLicid,updateInfoMap);
+                        sendDataToService();
                     }
                 }
-            });
+            }
+//            runOnUiThread(new Runnable() {
+//                @Override
+//                public void run() {
+//
+//                }
+//            });
 
 
         }
@@ -1749,4 +1790,111 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
         });
     }
 
+    void sendDataToService(){
+        JSONObject json = new JSONObject();
+        HashMap<String, String> lineData = dbManager.getLineData(tableName, verifyLicid);
+        for (Map.Entry<String, String> entry : lineData.entrySet()) {
+            String key = entry.getKey();
+            String value = entry.getValue();
+
+            try {
+                if(key.equals(DBPersion.BirthDate)){
+                    json.put("sr",value);
+                }else if(key.equals(DBPersion.CardPhoto)){
+                    json.put("idzp",value);
+                }else if(key.equals(DBPersion.DeviceId)){
+                    json.put("deid",value);
+                }else if(key.equals(DBPersion.Depart)){
+                    json.put("jg",value);
+                }else if(key.equals(DBPersion.EnName)){
+                    json.put("deid",value);
+                }else if(key.equals(DBPersion.ExpireDate)){
+                    json.put("jssj",value);
+                }else if(key.equals(DBPersion.Licid)){
+                    json.put("sfz",value);
+                }else if(key.equals(DBPersion.Name)){
+                    json.put("xm",value);
+                }else if(key.equals(DBPersion.Nation)){
+                    json.put("mz",value);
+                }else if(key.equals(DBPersion.ScenePhoto)){
+                    json.put("zp",value);
+                }else if(key.equals(DBPersion.Sex)){
+                    json.put("xb",value);
+                }else if(key.equals(DBPersion.Site)){
+                    json.put("dz",value);
+                }else if(key.equals(DBPersion.StartDate)){
+                    json.put("kssj",value);
+                }else if(key.equals(DBPersion.VerifyTime)){
+                    json.put("sj",value);
+                }else if(key.equals(DBPersion.ID)){
+                    json.put("id",value);
+                }else if(key.equals(DBPersion.VerifyResult)){
+                    json.put("vr",value);
+                }else if(key.equals(DBPersion.VerifyType)){
+                    json.put("vt",value);
+                }else if(key.equals(DBPersion.CardType)){
+                    json.put("ct",value);
+                }else if(key.equals(DBPersion.DeviceType)){
+                    json.put("dt",value);
+                }else if(key.equals(DBPersion.VisaTimes)){
+                    json.put("vt",value);
+                }else if(key.equals(DBPersion.FS)){
+                    json.put("fs",value);
+                }else if(key.equals(DBPersion.MS)){
+                    json.put("ms",value);
+                }else if(key.equals(DBPersion.FaceYuZhi)){
+                    json.put("fyz",value);
+                }else if(key.equals(DBPersion.FingerYuZhi)){
+                    json.put("fyz",value);
+                }else if(key.equals(DBPersion.Fingerfs)){
+                    json.put("ffs",value);
+                }else if(key.equals(DBPersion.Finger)){
+                    json.put("fp",value);
+                }
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
+        // 创建 HttpPostRequest 实例，并设置当前 Activity 作为回调监听器
+        HttpPostRequest httpPostRequest = new HttpPostRequest(apiUrl, json, this);
+
+        // 执行异步任务
+        httpPostRequest.execute();
+    }
+
+    @Override
+    public void onResponse(String response) {
+        if (response != null) {
+            Log.d(TAG, "Response: " + response);
+            if (getJsonValue(response,"message").equals("OK")) {
+                Log.d(TAG,"send ok");
+            }else{
+                Log.d(TAG,"send fail");
+            }
+        } else {
+            Log.e(TAG, "Error in response");
+            // 处理错误情况...
+        }
+    }
+
+    private String getJsonValue(String result, String item){
+        try {
+            JSONObject jsonObject = new JSONObject(result);
+            String itemValue = jsonObject.getString(item);
+//            Log.d(TAG,"itemValue="+itemValue);
+            return itemValue;
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    private String bitmapToBase64(Bitmap bitmap) {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+        byte[] byteArray = baos.toByteArray();
+        return Base64.encodeToString(byteArray, Base64.DEFAULT);
+    }
 }
