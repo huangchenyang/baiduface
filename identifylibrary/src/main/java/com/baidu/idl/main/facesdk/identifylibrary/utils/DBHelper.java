@@ -14,7 +14,6 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-//        db.execSQL("DROP TABLE IF EXISTS my_table");
 
         // 创建表
         String createTableQuery = "CREATE TABLE IF NOT EXISTS my_table ("

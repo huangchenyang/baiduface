@@ -18,9 +18,11 @@ import android.hardware.Camera;
 import android.hardware.usb.UsbDevice;
 import android.hardware.usb.UsbManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.util.DisplayMetrics;
@@ -84,10 +86,13 @@ import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
@@ -209,6 +214,7 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
     //数据库
     private DBManager dbManager;
     private String tableName="my_table";
+    private String verifyLicid = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -672,6 +678,7 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                                                     result = "人脸核验通过\n 请进行指纹识别";
                                                 }else{
                                                     result = "人脸核验通过\n 全部验证通过";
+                                                    updateDbOk();
                                                 }
                                             }
                                             testimonyTipsFailTv.setText(result);
@@ -685,6 +692,7 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                                                         Color.parseColor("#FFFEC133"));
                                               testimonyTipsPleaseFailTv.setText("请上传正面人脸照片");
                                               testimonyTipsFailIv.setImageResource(R.mipmap.tips_fail);
+                                              updateDbFail();
                                         }
                                     } else {
 //                                        Log.d(TAG,"mLiveType != 0");
@@ -697,6 +705,7 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                                                     Color.parseColor("#FFFEC133"));
                                             testimonyTipsPleaseFailTv.setText("请上传正面人脸照片");
                                             testimonyTipsFailIv.setImageResource(R.mipmap.tips_fail);
+                                            updateDbFail();
                                         } else {
                                             Log.d(TAG,"rgbLivenessScore >= mRgbLiveScore");
                                             if (score > SingleBaseConfig.getBaseConfig()
@@ -709,6 +718,7 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                                                         result = "人脸核验通过\n 请进行指纹识别";
                                                     }else{
                                                         result = "人脸核验通过\n 全部验证通过";
+                                                        updateDbOk();
                                                     }
                                                 }
                                                 testimonyTipsFailTv.setText(result);
@@ -725,6 +735,7 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                                                 testimonyTipsPleaseFailTv.setText("请上传正面人脸照片");
                                                 testimonyTipsFailIv.setImageResource(
                                                         R.mipmap.tips_fail);
+                                                updateDbFail();
                                             }
                                         }
                                     }
@@ -732,11 +743,29 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                             }
                         }
                     });
-
-
                 }
             }
         });
+    }
+
+    private void updateDbOk(){
+        HashMap<String, String> updateInfoMap = new HashMap<>();
+        updateInfoMap.put("核验结果","通过");
+        updateInfoMap.put("核验类型","身份证+人脸+指纹");
+        updateInfoMap.put("核验时间",verifyTime());
+        dbManager.updateData(tableName,verifyLicid,updateInfoMap);
+    }
+
+    private void updateDbFail(){
+        HashMap<String, String> updateInfoMap = new HashMap<>();
+        updateInfoMap.put("核验结果","不通过");
+        if(verifyType==CARD_FACE_FP) {
+            updateInfoMap.put("核验类型","身份证+人脸+指纹");
+        }else{
+            updateInfoMap.put("核验类型","身份证+指纹");
+        }
+        updateInfoMap.put("核验时间",verifyTime());
+        dbManager.updateData(tableName,verifyLicid,updateInfoMap);
     }
 
     // 开发模式
@@ -1074,6 +1103,35 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
 //                                Log.d(TAG,"fplength:"+fplength);
                                 fpImportByCard(fpdata);
 
+                                verifyLicid = licid;
+
+                                //导入数据库
+                                if(!dbManager.isKeyDataExist(tableName,"姓名",name)){
+                                    Log.d(TAG,"new card");
+                                    HashMap<String, String> infoMap = new HashMap<>();
+                                    infoMap.put("ID",generateId());
+                                    infoMap.put("设备型号",getDeviceModle());
+                                    infoMap.put("设备编号",getDeviceId());
+                                    infoMap.put("姓名",name);
+                                    infoMap.put("性别",sex);
+                                    infoMap.put("民族或国籍",nation);
+                                    infoMap.put("出生日期",born);
+                                    infoMap.put("身份证号码",licid);
+                                    infoMap.put("签发机关",depart);
+//                                infoMap.put("证件有效期起","");
+                                    infoMap.put("证件有效期止",expireDate);
+                                    infoMap.put("地址",addr);
+                                    infoMap.put("签发次数",Integer.toString(visaTimes));
+                                    if(cardType == IDCardType.TYPE_CARD_SFZ){
+                                        infoMap.put("证件类别","身份证");
+                                    }else{
+                                        infoMap.put("证件类别","港澳居住证");
+                                    }
+                                    dbManager.insertLineData(tableName,infoMap);
+                                }else{
+                                    Log.d(TAG,"had card");
+                                }
+
                                 Bitmap bmpPhoto = null;
                                 if (idCardInfo.getPhotolength() > 0) {
                                     byte[] buf = new byte[WLTService.imgLength];
@@ -1197,6 +1255,39 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
         }
     }
 
+    // 获取设备型号
+    private String getDeviceModle(){
+        String deviceModel = Build.MODEL;
+        return deviceModel;
+    }
+
+    private String getDeviceId(){
+        // 获取设备编号
+        String deviceId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+        return deviceId;
+    }
+
+    private String generateId(){
+        // 创建SimpleDateFormat对象，指定输出格式
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        // 获取当前时间
+        Date currentDate = new Date();
+        // 使用SimpleDateFormat对象将当前时间格式化为指定格式
+        String formattedDate = sdf.format(currentDate);
+
+        // 创建一个Random对象
+        Random random = new Random();
+        // 生成9位随机数字
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 9; i++) {
+            // 生成随机数字，并将其添加到StringBuilder中
+            sb.append(random.nextInt(10));
+        }
+        // 将StringBuilder转换为字符串，并输出
+        String randomDigits = sb.toString();
+
+        return formattedDate +"_"+randomDigits;
+    }
 
     public void onBnStart() {
         bRepeatMode = false;
@@ -1379,21 +1470,46 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                             isVerifyFp = true;
                             isFpConfirm = true;
                             if(fp_score > 35){
+
+
                                 String result="";
                                 if(verifyType==CARD_FACE_FP){
                                     if(!isVerifyFace){
                                         result = "指纹人证核验通过\n 请进行人脸识别";
                                     }else{
                                         result = "指纹人证核验通过\n 全部验证通过";
+                                        HashMap<String, String> updateInfoMap = new HashMap<>();
+                                        updateInfoMap.put("核验结果","通过");
+                                        updateInfoMap.put("核验类型","身份证+人脸+指纹");
+                                        updateInfoMap.put("核验时间",verifyTime());
+                                        dbManager.updateData(tableName,verifyLicid,updateInfoMap);
                                     }
+                                }else{
+                                    HashMap<String, String> updateInfoMap = new HashMap<>();
+                                    updateInfoMap.put("核验结果","通过");
+                                    updateInfoMap.put("核验类型","身份证+指纹");
+                                    updateInfoMap.put("核验时间",verifyTime());
+                                    dbManager.updateData(tableName,verifyLicid,updateInfoMap);
                                 }
+
+
                                 SpannableString redMessage = new SpannableString(result);
                                 redMessage.setSpan(new ForegroundColorSpan(Color.GREEN), 0, redMessage.length(), 0);
                                 showConfirmationDialog(redMessage);
+
                             }else{
                                 SpannableString redMessage = new SpannableString("指纹人证核验不通过");
                                 redMessage.setSpan(new ForegroundColorSpan(Color.RED), 0, redMessage.length(), 0);
                                 showConfirmationDialog(redMessage);
+                                HashMap<String, String> updateInfoMap = new HashMap<>();
+                                updateInfoMap.put("核验结果","不通过");
+                                if(verifyType==CARD_FACE_FP) {
+                                    updateInfoMap.put("核验类型","身份证+人脸+指纹");
+                                }else{
+                                    updateInfoMap.put("核验类型","身份证+指纹");
+                                }
+                                updateInfoMap.put("核验时间",verifyTime());
+                                dbManager.updateData(tableName,verifyLicid,updateInfoMap);
                             }
                         }
                     }
@@ -1412,6 +1528,13 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
             }
         }
     };
+
+    private String verifyTime(){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date currentDate = new Date();
+        String formattedDate = sdf.format(currentDate);
+        return formattedDate;
+    }
 
     public void showConfirmationDialog(SpannableString result) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -1530,7 +1653,7 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
         }
         if (null == tempData || (tempData.length != 512 && tempData.length != 1024))
         {
-            Toast.makeText(this,"无效指纹数据",Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this,"无效指纹数据",Toast.LENGTH_SHORT).show();
 //            textView.setText("invalid template data!");
             return;
         }
