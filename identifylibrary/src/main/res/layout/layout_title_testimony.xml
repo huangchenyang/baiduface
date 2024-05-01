@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="20dp"
     android:alpha="0.9"
-    android:background="@android:color/transparent">
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:background="#191970">
 
     <ImageView
         android:id="@+id/btn_back"
@@ -62,6 +64,15 @@
         android:textSize="@dimen/title_font"
         android:visibility="gone" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="人证合一核验系统"
+        android:textSize="10sp"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        />
     <ImageView
         android:id="@+id/btn_setting"
         android:layout_width="wrap_content"

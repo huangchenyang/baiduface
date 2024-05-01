@@ -66,22 +66,22 @@ public class DBManager {
         database.insert(table_name, null, values);
     }
 
-    public void updateLineData(String tableName, String licid,  HashMap<String, String> infoMap) {
+    public void updateLineData(String tableName, String id,  HashMap<String, String> infoMap) {
         ContentValues values = new ContentValues();
         for (Map.Entry<String, String> entry : infoMap.entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue();
             values.put(key, value);
         }
-        String whereClause = "身份证号码=?";
-        String[] whereArgs = new String[] { licid };
+        String whereClause = "ID=?";
+        String[] whereArgs = new String[] { id };
         database.update(tableName, values, whereClause, whereArgs);
     }
 
-    public HashMap<String, String> getLineData(String tableName, String licid){
+    public HashMap<String, String> getLineData(String tableName, String id){
         HashMap<String, String> infoMap = new HashMap<>();
-        String[] selectionArgs = {String.valueOf(licid)};
-        String selection = "身份证号码=?";
+        String[] selectionArgs = {String.valueOf(id)};
+        String selection = "ID=?";
 
         // 执行查询操作
         Cursor cursor = database.query("my_table", null, selection, selectionArgs, null, null, null);

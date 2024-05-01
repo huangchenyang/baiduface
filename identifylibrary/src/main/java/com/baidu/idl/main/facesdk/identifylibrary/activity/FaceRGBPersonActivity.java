@@ -31,6 +31,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -51,6 +52,7 @@ import com.baidu.idl.main.facesdk.identifylibrary.utils.DBManager;
 import com.baidu.idl.main.facesdk.identifylibrary.utils.DBPersion;
 import com.baidu.idl.main.facesdk.identifylibrary.utils.FaceUtils;
 import com.baidu.idl.main.facesdk.identifylibrary.utils.HttpPostRequest;
+import com.baidu.idl.main.facesdk.identifylibrary.utils.MyToastUtils;
 import com.baidu.idl.main.facesdk.identifylibrary.utils.PermissionUtils;
 import com.baidu.idl.main.facesdk.model.BDFaceImageInstance;
 import com.baidu.idl.main.facesdk.model.BDFaceSDKCommon;
@@ -116,10 +118,10 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
     private ImageView testimonyPreviewLineIv;
     private TextView testimonyPreviewTv;
     private RelativeLayout testimonyShowRl;
-    private ImageView testimonyShowImg;
-    private TextView testimonyShowAgainTv;
-    private TextView testimonyUploadFilesTv;
-    private RelativeLayout testimonyTipsFailRl;
+//    private ImageView testimonyShowImg;
+//    private TextView testimonyShowAgainTv;
+//    private TextView testimonyUploadFilesTv;
+//    private RelativeLayout testimonyTipsFailRl;
 
     /*RGB摄像头图像宽和高*/
     /*图片越大，性能消耗越大，也可以选择640*480， 1280*720*/
@@ -129,23 +131,23 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
 
     private RelativeLayout personButtomLl;
     private TextView personBaiduTv;
-    private ImageView testImageview;
+//    private ImageView testImageview;
     private Paint paintBg;
     private TextView tvRgbLiveTime;
     private TextView tvRgbLiveScore;
     private RelativeLayout kaifaRelativeLayout;
     private TextView hintAdainIv;
     private ImageView hintShowIv;
-    private TextView testimonyTipsFailTv;
-    private TextView testimonyTipsPleaseFailTv;
+//    private TextView testimonyTipsFailTv;
+//    private TextView testimonyTipsPleaseFailTv;
     private float score = 0;
     // 定义一个变量判断是预览模式还是开发模式
     boolean isDevelopment = false;
-    private RelativeLayout testRelativeLayout;
-    private View view;
-    private RelativeLayout layoutCompareStatus;
-    private TextView textCompareStatus;
-    private ImageView personKaifaIv;
+//    private RelativeLayout testRelativeLayout;
+//    private View view;
+//    private RelativeLayout layoutCompareStatus;
+//    private TextView textCompareStatus;
+//    private ImageView personKaifaIv;
     private TextView tvFeatureTime;
     private TextView tvFeatureSearchTime;
     private TextView tvAllTime;
@@ -153,13 +155,13 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
     private RelativeLayout hintShowRl;
     private RelativeLayout developmentAddRl;
     private float mRgbLiveScore;
-    private ImageView testimonyTipsFailIv;
+//    private ImageView testimonyTipsFailIv;
     // 判断是否有人脸
     private boolean isFace = false;
     private float rgbLivenessScore = 0.0f;
-    private View saveCamera;
+//    private View saveCamera;
     private boolean isSaveImage;
-    private View spot;
+//    private View spot;
     private GlMantleSurfacView glSurfaceView;
     private BDFaceImageConfig bdFaceImageConfig;
     private BDFaceCheckConfig bdFaceCheckConfig;
@@ -213,18 +215,28 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
     public static int CARD_FACE_FP = 3;
     public  static  int verifyType = CARD_FACE;
     private float fp_score;
-    private boolean isFpConfirm = false;
-    private boolean isVerifyFp = false;
+//    private boolean isFpConfirm = false;
+//    private boolean isVerifyFp = false;
     private boolean isVerifyFace = false;
+    private boolean isVerifyFinish = false;
+    private String  timeId = "";
+    private boolean isNewCard = false;
 
     //数据库
     private DBManager dbManager;
     private String tableName="my_table";
-    private String verifyLicid = "";
+//    private String verifyLicid = "";
+//    private String lastVerifyLicid = "";
+//    private Bitmap senceFaceBitmap=null;
 
     //服务器
 //    String apiUrl = "http://192.168.3.14:8080/apiv1/internal/wonte32/UploadRecord";
-    String apiUrl = "http://192.168.3.14:8080/apiv1/internal/wonte32";
+    private String apiUrl = "http://192.168.3.14:8080/apiv1/internal/wonte32";
+    private int failNum=0;
+
+    //结果
+    Button verifyResultBt;
+    Button verifyConfirmBt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -327,16 +339,16 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
         // 百度大脑技术支持
         personBaiduTv = findViewById(R.id.person_baiduTv);
         // 送检RGB 图像回显
-        testImageview = findViewById(R.id.test_rgb_view);
-        testRelativeLayout = findViewById(R.id.test_rgb_rl);
-        testRelativeLayout.setVisibility(View.GONE);
-        personKaifaIv = findViewById(R.id.person_kaifaIv);
-        view = findViewById(R.id.mongolia_view);
+//        testImageview = findViewById(R.id.test_rgb_view);
+//        testRelativeLayout = findViewById(R.id.test_rgb_rl);
+//        testRelativeLayout.setVisibility(View.GONE);
+//        personKaifaIv = findViewById(R.id.person_kaifaIv);
+//        view = findViewById(R.id.mongolia_view);
         // 存图按钮
-        saveCamera = findViewById(R.id.save_camera);
-        saveCamera.setOnClickListener(this);
-        saveCamera.setVisibility(View.GONE);
-        spot = findViewById(R.id.spot);
+//        saveCamera = findViewById(R.id.save_camera);
+//        saveCamera.setOnClickListener(this);
+//        saveCamera.setVisibility(View.GONE);
+//        spot = findViewById(R.id.spot);
 
         // ****************预览模式****************
         testimonyPreviewTv = findViewById(R.id.preview_text);
@@ -351,10 +363,10 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
 //        testimonyShowAgainTv.setOnClickListener(this);
 //        testimonyUploadFilesTv = findViewById(R.id.testimony_upload_filesTv);
         // 失败提示
-        testimonyTipsFailRl = findViewById(R.id.testimony_tips_failRl);
-        testimonyTipsFailTv = findViewById(R.id.testimony_tips_failTv);
-        testimonyTipsPleaseFailTv = findViewById(R.id.testimony_tips_please_failTv);
-        testimonyTipsFailIv = findViewById(R.id.testimony_tips_failIv);
+//        testimonyTipsFailRl = findViewById(R.id.testimony_tips_failRl);
+//        testimonyTipsFailTv = findViewById(R.id.testimony_tips_failTv);
+//        testimonyTipsPleaseFailTv = findViewById(R.id.testimony_tips_please_failTv);
+//        testimonyTipsFailIv = findViewById(R.id.testimony_tips_failIv);
 
         // ****************开发模式****************
         testimonyDevelopmentTv = findViewById(R.id.develop_text);
@@ -377,8 +389,8 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
         hintShowIv = findViewById(R.id.hint_showIv);
         kaifaRelativeLayout = findViewById(R.id.kaifa_relativeLayout);
         // 提示
-        layoutCompareStatus = findViewById(R.id.layout_compare_status);
-        textCompareStatus = findViewById(R.id.text_compare_status);
+//        layoutCompareStatus = findViewById(R.id.layout_compare_status);
+//        textCompareStatus = findViewById(R.id.text_compare_status);
         // 上传图片
 //        developmentAddIv = findViewById(R.id.Development_addIv);
 //        developmentAddIv.setOnClickListener(this);
@@ -405,6 +417,16 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
 //        textView = (TextView)findViewById(R.id.txtResult);
         imageViewFp = (ImageView)findViewById(R.id.imageFP);
 //        editText = (EditText)findViewById(R.id.editFeatureFileName);
+
+        //结果
+        verifyResultBt = findViewById(R.id.VerifyResultBt);
+        verifyConfirmBt = findViewById(R.id.VerifyConfirmBt);
+        verifyConfirmBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                verifyResultBt.setText("");
+            }
+        });
     }
 
     @Override
@@ -458,20 +480,20 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
             // 开发模式显示buttom显示
             kaifaRelativeLayout.setVisibility(View.VISIBLE);
             // RGB 检测图片测试
-            testRelativeLayout.setVisibility(View.VISIBLE);
+//            testRelativeLayout.setVisibility(View.VISIBLE);
             // 开启保存图片按钮
-            saveCamera.setVisibility(View.VISIBLE);
+//            saveCamera.setVisibility(View.VISIBLE);
             judgeFirst();
             // 预览模式
         } else if (id == R.id.preview_text) {
             isDevelopment = false;
-            if (testimonyShowImg.getDrawable() != null || hintShowIv.getDrawable() != null) {
-                testimonyTipsFailRl.setVisibility(View.VISIBLE);
-                layoutCompareStatus.setVisibility(View.GONE);
-            } else {
-                testimonyTipsFailRl.setVisibility(View.GONE);
-                layoutCompareStatus.setVisibility(View.GONE);
-            }
+//            if (testimonyShowImg.getDrawable() != null || hintShowIv.getDrawable() != null) {
+//                testimonyTipsFailRl.setVisibility(View.VISIBLE);
+//                layoutCompareStatus.setVisibility(View.GONE);
+//            } else {
+//                testimonyTipsFailRl.setVisibility(View.GONE);
+//                layoutCompareStatus.setVisibility(View.GONE);
+//            }
             // title显隐
             testimonyDevelopmentLineIv.setVisibility(View.GONE);
             testimonyPreviewLineIv.setVisibility(View.VISIBLE);
@@ -480,16 +502,16 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
             // 百度大脑技术支持显示
             personBaiduTv.setVisibility(View.VISIBLE);
             // RGB 检测图片测试
-            testRelativeLayout.setVisibility(View.GONE);
+//            testRelativeLayout.setVisibility(View.GONE);
             // 预览模式显示buttom显示
             personButtomLl.setVisibility(View.VISIBLE);
             // 开发模式显示buttom隐藏
             kaifaRelativeLayout.setVisibility(View.GONE);
             // 预览模式重新上传
             // 隐藏保存按钮
-            saveCamera.setVisibility(View.GONE);
+//            saveCamera.setVisibility(View.GONE);
             isSaveImage = false;
-            spot.setVisibility(View.GONE);
+//            spot.setVisibility(View.GONE);
         } else if (id == R.id.testimony_showAgainTv) {
             Intent intent2 = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
             startActivityForResult(intent2, PICK_PHOTO_FRIST);
@@ -503,12 +525,12 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
             startActivityForResult(intent3, PICK_PHOTO_FRIST);
         } else if (id == R.id.save_camera){
             isSaveImage = !isSaveImage;
-            if (isSaveImage){
-                spot.setVisibility(View.VISIBLE);
-                ToastUtils.toast(FaceRGBPersonActivity.this, "存图功能已开启再次点击可关闭");
-            }else {
-                spot.setVisibility(View.GONE);
-            }
+//            if (isSaveImage){
+//                spot.setVisibility(View.VISIBLE);
+//                ToastUtils.toast(FaceRGBPersonActivity.this, "存图功能已开启再次点击可关闭");
+//            }else {
+//                spot.setVisibility(View.GONE);
+//            }
         }
     }
 
@@ -555,8 +577,9 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
         isPause = true;
         CameraPreviewManager.getInstance().setmCameraDataCallback(new CameraDataCallback() {
             @Override
-            public void onGetCameraData(byte[] data, Camera camera, int width, int height) {
+            public void onGetCameraData(final byte[] data, Camera camera, int width, int height) {
                 bdFaceImageConfig.setData(data);
+
                 // 预览模式或者开发模式上传图片成功开始
                 if (bdFaceCheckConfig.getSecondFeature() != null) {
                     glSurfaceView.setFrame();
@@ -569,7 +592,7 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                                 @Override
                                 public void onFaceDetectCallback(final LivenessModel livenessModel) {
                                     // 预览模式
-                                    checkCloseDebugResult(livenessModel);
+                                    checkCloseDebugResult(livenessModel,data);
                                     // 开发模式
 //                                    checkOpenDebugResult(livenessModel);
                                     if (isSaveImage){
@@ -590,15 +613,16 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                             });
 
 
-                } else {
-                    glSurfaceView.onGlDraw();
-                    // 如果开发模式或者预览模式没上传图片则显示蒙层
-                    testImageview.setImageResource(R.mipmap.ic_image_video);
-                    ObjectAnimator animator = ObjectAnimator.ofFloat(view, "alpha", 0.85f, 0.0f);
-                    animator.setDuration(3000);
-                    view.setBackgroundColor(Color.parseColor("#ffffff"));
-                    animator.start();
                 }
+//                else {
+//                    glSurfaceView.onGlDraw();
+//                    // 如果开发模式或者预览模式没上传图片则显示蒙层
+//                    testImageview.setImageResource(R.mipmap.ic_image_video);
+//                    ObjectAnimator animator = ObjectAnimator.ofFloat(view, "alpha", 0.85f, 0.0f);
+//                    animator.setDuration(3000);
+//                    view.setBackgroundColor(Color.parseColor("#ffffff"));
+//                    animator.start();
+//                }
             }
         });
     }
@@ -608,101 +632,100 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
      *
      * @param rgb
      */
-    private void showDetectImage(byte[] rgb) {
-        if (rgb == null) {
-            return;
-        }
+    private Bitmap showDetectImage(byte[] rgb) {
+//        if (rgb == null) {
+//            return;
+//        }
         BDFaceImageInstance rgbInstance = new BDFaceImageInstance(rgb, RGB_HEIGHT,
                 RGB_WIDTH, BDFaceSDKCommon.BDFaceImageType.BDFACE_IMAGE_TYPE_YUV_NV21,
                 SingleBaseConfig.getBaseConfig().getRgbVideoDirection(),
                 SingleBaseConfig.getBaseConfig().getMirrorVideoRGB());
         BDFaceImageInstance imageInstance = rgbInstance.getImage();
         final Bitmap bitmap = BitmapUtils.getInstaceBmp(imageInstance);
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                testImageview.setVisibility(View.VISIBLE);
-                testImageview.setImageBitmap(bitmap);
-            }
-        });
+//        runOnUiThread(new Runnable() {
+//            @Override
+//            public void run() {
+//                testImageview.setVisibility(View.VISIBLE);
+//                testImageview.setImageBitmap(bitmap);
+//            }
+//        });
         // 流程结束销毁图片，开始下一帧图片检测，否则内存泄露
         rgbInstance.destory();
+        return bitmap;
     }
 
     // 预览模式
-    private void checkCloseDebugResult(final LivenessModel model) {
+    private void checkCloseDebugResult(final LivenessModel model, final byte[]data) {
+        //不包含人脸验证,直接返沪
         if(verifyType!=CARD_FACE && verifyType!=CARD_FACE_FP){
+            return;
+        }
+        //没有刷卡 人脸验证已经结束,直接返回
+        if(!isNewCard || isVerifyFace){
             return;
         }
         // 当未检测到人脸UI显示
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-//                Log.d(TAG,"checkCloseDebugResult");
                 if (model == null) {
-//                    Log.d(TAG,"model == null");
                     // 提示隐藏
-                    testimonyTipsFailRl.setVisibility(View.GONE);
-                    if (testimonyPreviewLineIv.getVisibility() == View.VISIBLE) {
-                        ObjectAnimator animator = ObjectAnimator.ofFloat(view, "alpha", 0.85f, 0.0f);
-                        animator.setDuration(3000);
-                        animator.addListener(new AnimatorListenerAdapter() {
-                            @Override
-                            public void onAnimationEnd(Animator animation) {
-                                super.onAnimationEnd(animation);
-                            }
-
-                            @Override
-                            public void onAnimationStart(Animator animation) {
-                                super.onAnimationStart(animation);
-                                view.setBackgroundColor(Color.parseColor("#ffffff"));
-                            }
-                        });
-                        animator.start();
-                    }
+//                    testimonyTipsFailRl.setVisibility(View.GONE);
+//                    if (testimonyPreviewLineIv.getVisibility() == View.VISIBLE) {
+//                        ObjectAnimator animator = ObjectAnimator.ofFloat(view, "alpha", 0.85f, 0.0f);
+//                        animator.setDuration(3000);
+//                        animator.addListener(new AnimatorListenerAdapter() {
+//                            @Override
+//                            public void onAnimationEnd(Animator animation) {
+//                                super.onAnimationEnd(animation);
+//                            }
+//
+//                            @Override
+//                            public void onAnimationStart(Animator animation) {
+//                                super.onAnimationStart(animation);
+//                                view.setBackgroundColor(Color.parseColor("#ffffff"));
+//                            }
+//                        });
+//                        animator.start();
+//                    }
                 } else {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            Log.d(TAG,"model != null");
                             score = model.getScore();
                             if (isDevelopment == false) {
-//                                Log.d(TAG,"isDevelopment == false");
-                                layoutCompareStatus.setVisibility(View.GONE);
-                                testimonyTipsFailRl.setVisibility(View.VISIBLE);
+//                                layoutCompareStatus.setVisibility(View.GONE);
+//                                testimonyTipsFailRl.setVisibility(View.VISIBLE);
                                 if (isFace == true) {
 //                                    Log.d(TAG,"上传图片不包含人脸");
-                                    testimonyTipsFailTv.setText("上传图片不包含人脸");
-                                    testimonyTipsFailTv.setTextColor(Color.parseColor("#FFFEC133"));
-                                    testimonyTipsPleaseFailTv.setText("无法进行人证比对");
-                                    testimonyTipsFailIv.setImageResource(R.mipmap.tips_fail);
+//                                    testimonyTipsFailTv.setText("上传图片不包含人脸");
+//                                    testimonyTipsFailTv.setTextColor(Color.parseColor("#FFFEC133"));
+//                                    testimonyTipsPleaseFailTv.setText("无法进行人证比对");
+//                                    testimonyTipsFailIv.setImageResource(R.mipmap.tips_fail);
+                                    MyToastUtils.show(FaceRGBPersonActivity.this,"上传图片不包含人脸\n无法进行人证比对");
                                 } else {
                                     if (mLiveType == 0) {
-//                                        Log.d(TAG,"mLiveType == 0");
                                         if (score > SingleBaseConfig.getBaseConfig().getIdThreshold()) {
                                             Log.d(TAG,"人证核验通过");
-                                            String result="";
                                             isVerifyFace = true;
-                                            if(verifyType==CARD_FACE_FP){
-                                                if(!isVerifyFp){
-                                                    result = "人脸核验通过\n 请进行指纹识别";
-                                                }else{
-                                                    result = "人脸核验通过\n 全部验证通过";
-                                                    updateDbOk(score,SingleBaseConfig.getBaseConfig().getIdThreshold());
-                                                }
+                                            if(verifyType==CARD_FACE){
+                                                updateDbOk(score,SingleBaseConfig.getBaseConfig().getIdThreshold(),data);
+                                            }else if(verifyType==CARD_FACE_FP){
+                                                verifyResultBt.setText("人脸核验通过,请指纹验证");
+                                                verifyResultBt.setTextSize(6);
+                                                verifyResultBt.setTextColor(Color.YELLOW);
                                             }
-                                            testimonyTipsFailTv.setText(result);
-                                            testimonyTipsFailTv.setTextColor(
-                                                    Color.parseColor("#FF00BAF2"));
-                                            testimonyTipsPleaseFailTv.setText("识别成功");
-                                            testimonyTipsFailIv.setImageResource(R.mipmap.tips_success);
+//                                            testimonyTipsFailTv.setText(result);
+//                                            testimonyTipsFailTv.setTextColor(
+//                                                    Color.parseColor("#FF00BAF2"));
+//                                            testimonyTipsPleaseFailTv.setText("识别成功");
+//                                            testimonyTipsFailIv.setImageResource(R.mipmap.tips_success);
                                         } else {
-                                              testimonyTipsFailTv.setText("人证核验未通过");
-                                              testimonyTipsFailTv.setTextColor(
-                                                        Color.parseColor("#FFFEC133"));
-                                              testimonyTipsPleaseFailTv.setText("请上传正面人脸照片");
-                                              testimonyTipsFailIv.setImageResource(R.mipmap.tips_fail);
-                                              updateDbFail(score,SingleBaseConfig.getBaseConfig().getIdThreshold());
+                                            failNum++;
+                                            if(failNum>5){
+                                                failNum=0;
+                                                updateDbFail(score,SingleBaseConfig.getBaseConfig().getIdThreshold(),data);
+                                            }
                                         }
                                     } else {
 //                                        Log.d(TAG,"mLiveType != 0");
@@ -710,42 +733,51 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                                         rgbLivenessScore = model.getRgbLivenessScore();
                                         if (rgbLivenessScore < mRgbLiveScore) {
 //                                            Log.d(TAG,"人证核验未通过");
-                                            testimonyTipsFailTv.setText("人证核验未通过");
-                                            testimonyTipsFailTv.setTextColor(
-                                                    Color.parseColor("#FFFEC133"));
-                                            testimonyTipsPleaseFailTv.setText("请上传正面人脸照片");
-                                            testimonyTipsFailIv.setImageResource(R.mipmap.tips_fail);
-                                            updateDbFail(score,SingleBaseConfig.getBaseConfig().getIdThreshold());
+//                                            testimonyTipsFailTv.setText("人证核验未通过");
+//                                            testimonyTipsFailTv.setTextColor(
+//                                                    Color.parseColor("#FFFEC133"));
+//                                            testimonyTipsPleaseFailTv.setText("请上传正面人脸照片");
+//                                            testimonyTipsFailIv.setImageResource(R.mipmap.tips_fail);
+                                            MyToastUtils.show(FaceRGBPersonActivity.this,"人证核验未通过,请上传正面人脸照片");
+                                            failNum++;
+                                            if(failNum>5){
+                                                failNum=0;
+                                                updateDbFail(score,SingleBaseConfig.getBaseConfig().getIdThreshold(),data);
+                                            }
                                         } else {
                                             Log.d(TAG,"rgbLivenessScore >= mRgbLiveScore");
                                             if (score > SingleBaseConfig.getBaseConfig()
                                                     .getIdThreshold()) {
                                                 Log.d(TAG,"人证核验通过");
-                                                String result="";
                                                 isVerifyFace = true;
-                                                if(verifyType==CARD_FACE_FP){
-                                                    if(!isVerifyFp){
-                                                        result = "人脸核验通过\n 请进行指纹识别";
-                                                    }else{
-                                                        result = "人脸核验通过\n 全部验证通过";
-                                                        updateDbOk(score,SingleBaseConfig.getBaseConfig().getIdThreshold());
-                                                    }
+                                                if(verifyType==CARD_FACE){
+                                                    updateDbOk(score,SingleBaseConfig.getBaseConfig().getIdThreshold(),data);
+                                                }else if(verifyType==CARD_FACE_FP){
+                                                    verifyResultBt.setText("人脸核验通过,请指纹验证");
+                                                    verifyResultBt.setTextSize(6);
+                                                    verifyResultBt.setTextColor(Color.YELLOW);
                                                 }
-                                                testimonyTipsFailTv.setText(result);
-                                                testimonyTipsFailTv.setTextColor(
-                                                        Color.parseColor("#FF00BAF2"));
-                                                testimonyTipsPleaseFailTv.setText("识别成功");
-                                                testimonyTipsFailIv.setImageResource(
-                                                        R.mipmap.tips_success);
+//                                                testimonyTipsFailTv.setText(result);
+//                                                testimonyTipsFailTv.setTextColor(
+//                                                        Color.parseColor("#FF00BAF2"));
+//                                                testimonyTipsPleaseFailTv.setText("识别成功");
+//                                                testimonyTipsFailIv.setImageResource(
+//                                                        R.mipmap.tips_success);
                                             } else {
-//                                              Log.d(TAG,"人证核验未通过");
-                                                testimonyTipsFailTv.setText("人证核验未通过");
-                                                testimonyTipsFailTv.setTextColor(
-                                                        Color.parseColor("#FFFEC133"));
-                                                testimonyTipsPleaseFailTv.setText("请上传正面人脸照片");
-                                                testimonyTipsFailIv.setImageResource(
-                                                        R.mipmap.tips_fail);
-                                                updateDbFail(score,SingleBaseConfig.getBaseConfig().getIdThreshold());
+                                                Log.d(TAG,"人证核验未通过");
+//                                                testimonyTipsFailTv.setText("人证核验未通过");
+//                                                testimonyTipsFailTv.setTextColor(
+//                                                        Color.parseColor("#FFFEC133"));
+//                                                testimonyTipsPleaseFailTv.setText("请上传正面人脸照片");
+//                                                testimonyTipsFailIv.setImageResource(
+//                                                        R.mipmap.tips_fail);
+//                                                updateDbFail(score,SingleBaseConfig.getBaseConfig().getIdThreshold(),data);
+                                                MyToastUtils.show(FaceRGBPersonActivity.this,"人证核验未通过,请上传正面人脸照片");
+                                                failNum++;
+                                                if(failNum>5){
+                                                    failNum=0;
+                                                    updateDbFail(score,SingleBaseConfig.getBaseConfig().getIdThreshold(),data);
+                                                }
                                             }
                                         }
                                     }
@@ -758,121 +790,134 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
         });
     }
 
-    private void updateDbOk(float score,float threshold){
+    private void updateDbOk(float score,float threshold,byte[]data){
+        failNum=0;
+        isVerifyFinish = true;
+        isNewCard = false;
+        verifyResultBt.setText("核验通过");
+        verifyResultBt.setTextColor(Color.GREEN);
         HashMap<String, String> updateInfoMap = new HashMap<>();
         updateInfoMap.put("核验结果","通过");
-        updateInfoMap.put("核验类型","身份证+人脸+指纹");
+        updateInfoMap.put("核验类型","身份证+人脸");
         updateInfoMap.put("核验时间",verifyTime());
-//        updateInfoMap.put("现场照片",bitmapToBase64(facebm));
+        updateInfoMap.put("现场照片",bitmapToBase64(showDetectImage(data)));
         updateInfoMap.put("FS",Float.toString(score));
         updateInfoMap.put("FACEYUZHI",Float.toString(threshold));
-        dbManager.updateLineData(tableName,verifyLicid,updateInfoMap);
+        dbManager.updateLineData(tableName,timeId,updateInfoMap);
+        sendDataToService();
     }
 
-    private void updateDbFail(float score,float threshold){
+    private void updateDbFail(float score,float threshold,byte[]data){
+        isVerifyFinish = true;
+        isVerifyFace = true;
+        isNewCard = false;
+        verifyResultBt.setText("核验不通过");
+        verifyResultBt.setTextColor(Color.RED);
         HashMap<String, String> updateInfoMap = new HashMap<>();
         updateInfoMap.put("核验结果","不通过");
         if(verifyType==CARD_FACE_FP) {
             updateInfoMap.put("核验类型","身份证+人脸+指纹");
         }else{
-            updateInfoMap.put("核验类型","身份证+指纹");
+            updateInfoMap.put("核验类型","身份证+人脸");
         }
         updateInfoMap.put("核验时间",verifyTime());
-//        updateInfoMap.put("现场照片",bitmapToBase64(facebm));
+        updateInfoMap.put("现场照片",bitmapToBase64(showDetectImage(data)));
         updateInfoMap.put("FS",Float.toString(score));
         updateInfoMap.put("FACEYUZHI",Float.toString(threshold));
-        dbManager.updateLineData(tableName,verifyLicid,updateInfoMap);
+        dbManager.updateLineData(tableName,timeId,updateInfoMap);
+        sendDataToService();
     }
+
 
     // 开发模式
-    private void checkOpenDebugResult(final LivenessModel model) {
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                if (model == null) {
-                    // 提示隐藏
-                    layoutCompareStatus.setVisibility(View.GONE);
-                    // 阈值
-                    personKaifaIv.setVisibility(View.GONE);
-                    // 显示默认图片
-                    testImageview.setImageResource(R.mipmap.ic_image_video);
-                    // 默认值为0
-                    tvRgbLiveTime.setText(String.format("相似度分数：%s", 0));
-                    tvRgbLiveScore.setText(String.format("活体检测耗时：%s ms", 0));
-                    tvFeatureTime.setText(String.format("特征抽取耗时：%s ms", 0));
-                    tvFeatureSearchTime.setText(String.format("特征比对耗时：%s ms", 0));
-                    tvAllTime.setText(String.format("总耗时：%s ms", 0));
-                } else {
-                    // rgb回显图赋值显示
-                    BDFaceImageInstance image = model.getBdFaceImageInstance();
-                    if (image != null) {
-                        testImageview.setImageBitmap(BitmapUtils.getInstaceBmp(image));
-                    }
-                    tvRgbLiveTime.setText(String.format("相似度分数：%s", score));
-                    tvRgbLiveScore.setText(String.format("活体检测耗时：%s ms", model.getRgbLivenessDuration()));
-                    tvFeatureTime.setText(String.format("特征抽取耗时：%s ms", model.getFeatureDuration()));
-                    tvFeatureSearchTime.setText(String.format("特征比对耗时：%s ms", model.getCheckDuration()));
-
-
-                    if (isDevelopment) {
-                        testimonyTipsFailRl.setVisibility(View.GONE);
-                        layoutCompareStatus.setVisibility(View.VISIBLE);
-                        if (model .isQualityCheck()) {
-                            tvFeatureTime.setText(String.format("特征抽取耗时：%s ms", 0));
-                            tvFeatureSearchTime.setText(String.format("特征比对耗时：%s ms", 0));
-                            long l = model.getRgbDetectDuration() + model.getRgbLivenessDuration();
-                            tvAllTime.setText(String.format("总耗时：%s ms", l));
-                            personKaifaIv.setVisibility(View.VISIBLE);
-                            personKaifaIv.setImageResource(R.mipmap.ic_icon_develop_fail);
-                            textCompareStatus.setTextColor(Color.parseColor("#FECD33"));
-                            /*textCompareStatus.setMaxEms(6)*/;
-                            textCompareStatus.setText("请正视摄像头");
-                        } else if (isFace == true) {
-                            textCompareStatus.setTextColor(Color.parseColor("#FECD33"));
-                            textCompareStatus.setText("比对失败");
-                        } else {
-                            if (mLiveType == 0) {
-                                tvAllTime.setText(String.format("总耗时：%s ms", model.getAllDetectDuration()));
-                                if (score > SingleBaseConfig.getBaseConfig().getIdThreshold()) {
-                                    textCompareStatus.setTextColor(Color.parseColor("#00BAF2"));
-                                    textCompareStatus.setText("比对成功");
-                                } else {
-                                    textCompareStatus.setTextColor(Color.parseColor("#FECD33"));
-                                    textCompareStatus.setText("比对失败");
-                                }
-                            } else {
-                                // 活体阈值判断显示
-                                rgbLivenessScore = model.getRgbLivenessScore();
-                                if (rgbLivenessScore < mRgbLiveScore) {
-                                    personKaifaIv.setVisibility(View.VISIBLE);
-                                    personKaifaIv.setImageResource(R.mipmap.ic_icon_develop_fail);
-                                    textCompareStatus.setTextColor(Color.parseColor("#FECD33"));
-
-//                            textCompareStatus.setMaxEms(7);
-                                    textCompareStatus.setText("活体检测未通过");
-                                } else {
-                                    personKaifaIv.setVisibility(View.VISIBLE);
-                                    personKaifaIv.setImageResource(R.mipmap.ic_icon_develop_success);
-                                    if (score > SingleBaseConfig.getBaseConfig().getIdThreshold()) {
-                                        textCompareStatus.setTextColor(Color.parseColor("#00BAF2"));
-                                        textCompareStatus.setText("比对成功");
-                                    } else {
-                                        textCompareStatus.setTextColor(Color.parseColor("#FECD33"));
-                                        textCompareStatus.setText("比对失败");
-                                    }
-                                }
-                                tvFeatureTime.setText(String.format("特征抽取耗时：%s ms", model.getFeatureDuration()));
-                                tvFeatureSearchTime.setText(String.format("特征比对耗时：%s ms",
-                                        model.getCheckDuration()));
-
-                                tvAllTime.setText(String.format("总耗时：%s ms", model.getAllDetectDuration()));
-                            }
-                        }
-                    }
-                }
-            }
-        });
-    }
+//    private void checkOpenDebugResult(final LivenessModel model) {
+//        runOnUiThread(new Runnable() {
+//            @Override
+//            public void run() {
+//                if (model == null) {
+//                    // 提示隐藏
+//                    layoutCompareStatus.setVisibility(View.GONE);
+//                    // 阈值
+//                    personKaifaIv.setVisibility(View.GONE);
+//                    // 显示默认图片
+//                    testImageview.setImageResource(R.mipmap.ic_image_video);
+//                    // 默认值为0
+//                    tvRgbLiveTime.setText(String.format("相似度分数：%s", 0));
+//                    tvRgbLiveScore.setText(String.format("活体检测耗时：%s ms", 0));
+//                    tvFeatureTime.setText(String.format("特征抽取耗时：%s ms", 0));
+//                    tvFeatureSearchTime.setText(String.format("特征比对耗时：%s ms", 0));
+//                    tvAllTime.setText(String.format("总耗时：%s ms", 0));
+//                } else {
+//                    // rgb回显图赋值显示
+//                    BDFaceImageInstance image = model.getBdFaceImageInstance();
+//                    if (image != null) {
+//                        testImageview.setImageBitmap(BitmapUtils.getInstaceBmp(image));
+//                    }
+//                    tvRgbLiveTime.setText(String.format("相似度分数：%s", score));
+//                    tvRgbLiveScore.setText(String.format("活体检测耗时：%s ms", model.getRgbLivenessDuration()));
+//                    tvFeatureTime.setText(String.format("特征抽取耗时：%s ms", model.getFeatureDuration()));
+//                    tvFeatureSearchTime.setText(String.format("特征比对耗时：%s ms", model.getCheckDuration()));
+//
+//
+//                    if (isDevelopment) {
+//                        testimonyTipsFailRl.setVisibility(View.GONE);
+//                        layoutCompareStatus.setVisibility(View.VISIBLE);
+//                        if (model .isQualityCheck()) {
+//                            tvFeatureTime.setText(String.format("特征抽取耗时：%s ms", 0));
+//                            tvFeatureSearchTime.setText(String.format("特征比对耗时：%s ms", 0));
+//                            long l = model.getRgbDetectDuration() + model.getRgbLivenessDuration();
+//                            tvAllTime.setText(String.format("总耗时：%s ms", l));
+//                            personKaifaIv.setVisibility(View.VISIBLE);
+//                            personKaifaIv.setImageResource(R.mipmap.ic_icon_develop_fail);
+//                            textCompareStatus.setTextColor(Color.parseColor("#FECD33"));
+//                            /*textCompareStatus.setMaxEms(6)*/;
+//                            textCompareStatus.setText("请正视摄像头");
+//                        } else if (isFace == true) {
+//                            textCompareStatus.setTextColor(Color.parseColor("#FECD33"));
+//                            textCompareStatus.setText("比对失败");
+//                        } else {
+//                            if (mLiveType == 0) {
+//                                tvAllTime.setText(String.format("总耗时：%s ms", model.getAllDetectDuration()));
+//                                if (score > SingleBaseConfig.getBaseConfig().getIdThreshold()) {
+//                                    textCompareStatus.setTextColor(Color.parseColor("#00BAF2"));
+//                                    textCompareStatus.setText("比对成功");
+//                                } else {
+//                                    textCompareStatus.setTextColor(Color.parseColor("#FECD33"));
+//                                    textCompareStatus.setText("比对失败");
+//                                }
+//                            } else {
+//                                // 活体阈值判断显示
+//                                rgbLivenessScore = model.getRgbLivenessScore();
+//                                if (rgbLivenessScore < mRgbLiveScore) {
+//                                    personKaifaIv.setVisibility(View.VISIBLE);
+//                                    personKaifaIv.setImageResource(R.mipmap.ic_icon_develop_fail);
+//                                    textCompareStatus.setTextColor(Color.parseColor("#FECD33"));
+//
+////                            textCompareStatus.setMaxEms(7);
+//                                    textCompareStatus.setText("活体检测未通过");
+//                                } else {
+//                                    personKaifaIv.setVisibility(View.VISIBLE);
+//                                    personKaifaIv.setImageResource(R.mipmap.ic_icon_develop_success);
+//                                    if (score > SingleBaseConfig.getBaseConfig().getIdThreshold()) {
+//                                        textCompareStatus.setTextColor(Color.parseColor("#00BAF2"));
+//                                        textCompareStatus.setText("比对成功");
+//                                    } else {
+//                                        textCompareStatus.setTextColor(Color.parseColor("#FECD33"));
+//                                        textCompareStatus.setText("比对失败");
+//                                    }
+//                                }
+//                                tvFeatureTime.setText(String.format("特征抽取耗时：%s ms", model.getFeatureDuration()));
+//                                tvFeatureSearchTime.setText(String.format("特征比对耗时：%s ms",
+//                                        model.getCheckDuration()));
+//
+//                                tvAllTime.setText(String.format("总耗时：%s ms", model.getAllDetectDuration()));
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        });
+//    }
 
     private void toast(final String tip) {
         runOnUiThread(new Runnable() {
@@ -898,9 +943,9 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                     // 提取特征值
                     // 上传图片有人脸显示
                     hintShowIv.setVisibility(View.VISIBLE);
-                    testimonyShowImg.setVisibility(View.VISIBLE);
+//                    testimonyShowImg.setVisibility(View.VISIBLE);
                     hintShowIv.setImageBitmap(bitmap);
-                    testimonyShowImg.setImageBitmap(bitmap);
+//                    testimonyShowImg.setImageBitmap(bitmap);
                     if (ret != -1) {
                         isFace = false;
                         // 判断质量检测，针对模糊度、遮挡、角度
@@ -910,7 +955,7 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                             hintShowRl.setVisibility(View.VISIBLE);
                             testimonyShowRl.setVisibility(View.VISIBLE);
                             testimonyAddIv.setVisibility(View.GONE);
-                            testimonyUploadFilesTv.setVisibility(View.GONE);
+//                            testimonyUploadFilesTv.setVisibility(View.GONE);
                             developmentAddRl.setVisibility(View.GONE);
                         } else {
                             ToastUtils.toast(mContext, "图片特征抽取失败");
@@ -919,11 +964,11 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                         isFace = true;
                         // 上传图片无人脸隐藏
                         hintShowIv.setVisibility(View.GONE);
-                        testimonyShowImg.setVisibility(View.GONE);
+//                        testimonyShowImg.setVisibility(View.GONE);
                         hintShowRl.setVisibility(View.VISIBLE);
                         testimonyShowRl.setVisibility(View.VISIBLE);
                         testimonyAddIv.setVisibility(View.GONE);
-                        testimonyUploadFilesTv.setVisibility(View.GONE);
+//                        testimonyUploadFilesTv.setVisibility(View.GONE);
                         developmentAddRl.setVisibility(View.GONE);
                     }
                 }
@@ -936,8 +981,9 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        Log.d(TAG,"onDestroy");
         CameraPreviewManager.getInstance().stopPreview();
-        closeDevice();
+//        closeDevice();
 
 //        if (bFpStarted)
 //        {
@@ -1049,27 +1095,34 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                     bCancel = false;
                     while (!bCancel) {
                         try {
+                            Log.d(TAG,"sleep");
                             Thread.sleep(500);
                         } catch (InterruptedException e) {
+                            Log.d(TAG,"InterruptedException--0");
                             e.printStackTrace();
                         }
 //                        updateStatus();
 
+                        Log.d(TAG,"openDevice--1");
                         boolean ret = false;
                         final long nTickstart = System.currentTimeMillis();
                         try {
+                            Log.d(TAG,"openDevice--find card--1");
                             idCardReader.findCard(0);
                             idCardReader.selectCard(0);
+                            Log.d(TAG,"openDevice--find card--2");
                         }catch (IDCardReaderException e)
                         {
                             if (!bRepeatMode)
                             {
+                                Log.d(TAG,"openDevice--2");
                                 continue;
                             }
                         }
                         try {
                             Thread.sleep(50);
                         } catch (InterruptedException e) {
+                            Log.d(TAG,"InterruptedException--1");
                             e.printStackTrace();
                         }
                         int cardType = 0;
@@ -1085,6 +1138,7 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                         catch (IDCardReaderException e)
                         {
                             setResult("读卡失败，错误信息：" + e.getMessage());
+                            Log.d(TAG,"read error");
                             readFailTimes++;
 //                            updateStatus();
                             continue;
@@ -1093,6 +1147,7 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                         if (cardType == IDCardType.TYPE_CARD_SFZ || cardType == IDCardType.TYPE_CARD_PRP ||
                                 cardType == IDCardType.TYPE_CARD_GAT || cardType == IDCardType.TYPE_CARD_PRP2)
                         {
+                            Log.d(TAG,"openDevice--3");
                             readSuccessTimes++;
                             timeCostCurrent = System.currentTimeMillis()-nTickstart;
                             timeCostAll += timeCostCurrent;
@@ -1103,6 +1158,7 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                             final long nTickCommuUsed = (System.currentTimeMillis()-nTickstart);
                             if (cardType == IDCardType.TYPE_CARD_SFZ || cardType == IDCardType.TYPE_CARD_GAT)
                             {
+                                Log.d(TAG,"openDevice--4");
                                 IDCardInfo idCardInfo = idCardReader.getLastIDCardInfo();
                                 final String name = idCardInfo.getName();
                                 final String sex = idCardInfo.getSex();
@@ -1119,8 +1175,6 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
 //                                Log.d(TAG,"fplength:"+fplength);
                                 fpImportByCard(fpdata);
 
-                                verifyLicid = licid;
-
                                 Bitmap bmpPhoto = null;
                                 if (idCardInfo.getPhotolength() > 0) {
                                     byte[] buf = new byte[WLTService.imgLength];
@@ -1132,35 +1186,39 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                                 final Bitmap final_bmpPhoto = bmpPhoto;
 
                                 //导入数据库
-                                if(!dbManager.isKeyDataExist(tableName,"姓名",name)){
-                                    Log.d(TAG,"new card");
-                                    HashMap<String, String> infoMap = new HashMap<>();
-                                    infoMap.put("ID",generateId());
-                                    infoMap.put("设备型号",getDeviceModle());
-                                    infoMap.put("设备编号",getDeviceId());
-                                    infoMap.put("姓名",name);
-                                    infoMap.put("性别",sex);
-                                    infoMap.put("民族或国籍",nation);
-                                    infoMap.put("出生日期",born);
-                                    infoMap.put("身份证号码",licid);
-                                    infoMap.put("签发机关",depart);
+                                HashMap<String, String> infoMap = new HashMap<>();
+                                String id = generateId();
+                                infoMap.put("ID",id);
+                                infoMap.put("设备型号",getDeviceModle());
+                                infoMap.put("设备编号",getDeviceId());
+                                infoMap.put("姓名",name);
+                                infoMap.put("性别",sex);
+                                infoMap.put("民族或国籍",nation);
+                                infoMap.put("出生日期",born);
+                                infoMap.put("身份证号码",licid);
+                                infoMap.put("签发机关",depart);
 //                                infoMap.put("证件有效期起","");
-                                    infoMap.put("证件有效期止",expireDate);
-                                    infoMap.put("地址",addr);
-                                    infoMap.put("签发次数",Integer.toString(visaTimes));
-                                    infoMap.put("证件照片",bitmapToBase64(final_bmpPhoto));
-                                    if(cardType == IDCardType.TYPE_CARD_SFZ){
-                                        infoMap.put("证件类别","身份证");
-                                    }else{
-                                        infoMap.put("证件类别","港澳居住证");
-                                    }
-                                    dbManager.insertLineData(tableName,infoMap);
+                                infoMap.put("证件有效期止",expireDate);
+                                infoMap.put("地址",addr);
+                                infoMap.put("签发次数",Integer.toString(visaTimes));
+                                infoMap.put("证件照片",bitmapToBase64(final_bmpPhoto));
+                                if(cardType == IDCardType.TYPE_CARD_SFZ){
+                                    infoMap.put("证件类别","身份证");
                                 }else{
-                                    Log.d(TAG,"had card");
+                                    infoMap.put("证件类别","港澳居住证");
                                 }
+                                dbManager.insertLineData(tableName,infoMap);
+
+                                isNewCard = true;
+                                isVerifyFinish = false;
+                                timeId = id;
+                                isVerifyFace = false;
+                                verifyResultBt.setText("");
+
 
                                 runOnUiThread(new Runnable() {
                                     public void run() {
+                                        verifyResultBt.setText("成功");
                                         imageView.setImageBitmap(final_bmpPhoto);
                                         dealCardImage(final_bmpPhoto);
                                         String result = "";
@@ -1219,6 +1277,7 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                                 }
                                 final int final_cardType = cardType;
                                 final Bitmap final_bmpPhoto = bmpPhoto;
+
                                 runOnUiThread(new Runnable() {
                                     public void run() {
                                         imageView.setImageBitmap(final_bmpPhoto);
@@ -1327,7 +1386,8 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
             return;
         }
 
-        bRepeatMode = true;
+        //不需要重复读取
+        bRepeatMode = false;
 //        if (checkRepeat.isChecked())
 //        {
 //
@@ -1434,6 +1494,14 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
     private ZKNIDFPSensorListener zknidfpSensorListener = new ZKNIDFPSensorListener() {
         @Override
         public void onCapture(byte[] fpImage) {
+            //没有指纹验证方式,直接返回
+            if(verifyType != CARD_FP && verifyType != CARD_FACE_FP){
+                return;
+            }
+            //未滴身份证或者验证已经完成
+            if(!isNewCard || isVerifyFinish){
+                return;
+            }
             final Bitmap bitmap = ToolUtils.renderCroppedGreyScaleBitmap(fpImage, fingerprintSensor.getImageWidth(), fingerprintSensor.getImageHeight());
             runOnUiThread(new Runnable() {
                 public void run() {
@@ -1443,7 +1511,7 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
             byte imageQuality = fingerprintSensor.getImageQuality(fpImage);
             String strText;
             strText = "image quality:" + imageQuality;
-//            Log.d(TAG,strText);
+            Log.d(TAG,strText);
             if (imageQuality < 45 || null == idTemplate1)
             {
                 setFpResult(strText);
@@ -1480,84 +1548,74 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
             }
             strText += "\r\n";
             strText += "Match result:" + fp_score;
-            Log.d(TAG,strText);
+//            Log.d(TAG,strText);
             setFpResult(strText);
 
-            if(verifyType == CARD_FP || verifyType == CARD_FACE_FP){
-                if(!isFpConfirm){
-                    isVerifyFp = true;
-                    isFpConfirm = true;
-                    if(fp_score > 35){
-                        String result="";
-                        if(verifyType==CARD_FACE_FP){
-                            if(!isVerifyFace){
-                                result = "指纹人证核验通过\n 请进行人脸识别";
-                            }else{
-                                result = "指纹人证核验通过\n 全部验证通过";
-                                HashMap<String, String> updateInfoMap = new HashMap<>();
-                                updateInfoMap.put("核验结果","通过");
-                                updateInfoMap.put("核验类型","身份证+人脸+指纹");
-                                updateInfoMap.put("核验时间",verifyTime());
-                                updateInfoMap.put("FINGER",bitmapToBase64(bitmap));
-                                updateInfoMap.put("FINGERFS",Float.toString(fp_score));
-                                updateInfoMap.put("FINGERYUZHI","35");
-                                dbManager.updateLineData(tableName,verifyLicid,updateInfoMap);
-                                sendDataToService();
-                            }
-                        }else{
-                            HashMap<String, String> updateInfoMap = new HashMap<>();
-                            updateInfoMap.put("核验结果","通过");
-                            updateInfoMap.put("核验类型","身份证+指纹");
-                            updateInfoMap.put("核验时间",verifyTime());
-                            updateInfoMap.put("FINGER",bitmapToBase64(bitmap));
-                            updateInfoMap.put("FINGERFS",Float.toString(fp_score));
-                            updateInfoMap.put("FINGERYUZHI","35");
-                            dbManager.updateLineData(tableName,verifyLicid,updateInfoMap);
-                            sendDataToService();
-                        }
-
-                        final SpannableString redMessage = new SpannableString(result);
-                        redMessage.setSpan(new ForegroundColorSpan(Color.GREEN), 0, redMessage.length(), 0);
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                showConfirmationDialog(redMessage);
-                            }
-                        });
-
-                    }else{
-                        final SpannableString redMessage = new SpannableString("指纹人证核验不通过");
-                        redMessage.setSpan(new ForegroundColorSpan(Color.RED), 0, redMessage.length(), 0);
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                showConfirmationDialog(redMessage);
-                            }
-                        });
-                        HashMap<String, String> updateInfoMap = new HashMap<>();
-                        updateInfoMap.put("核验结果","不通过");
-                        if(verifyType==CARD_FACE_FP) {
-                            updateInfoMap.put("核验类型","身份证+人脸+指纹");
-                        }else{
-                            updateInfoMap.put("核验类型","身份证+指纹");
-                        }
-                        updateInfoMap.put("核验时间",verifyTime());
-                        updateInfoMap.put("FINGER",bitmapToBase64(bitmap));
-                        updateInfoMap.put("FINGERFS",Float.toString(fp_score));
-                        updateInfoMap.put("FINGERFS","35");
-                        dbManager.updateLineData(tableName,verifyLicid,updateInfoMap);
-                        sendDataToService();
+            if((verifyType==CARD_FACE_FP) && (!isVerifyFace)) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        MyToastUtils.show(FaceRGBPersonActivity.this,"请先进行人脸识别!");
                     }
-                }
+                });
             }
-//            runOnUiThread(new Runnable() {
-//                @Override
-//                public void run() {
-//
-//                }
-//            });
 
-
+            if(fp_score > 35){
+                //显示检测结果
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        verifyResultBt.setTextSize(8);
+                        verifyResultBt.setText("核验通过");
+                        verifyResultBt.setTextColor(Color.GREEN);
+                        idTemplate1 =null;
+                        idTemplate2=null;
+                    }
+                });
+                HashMap<String, String> updateInfoMap = new HashMap<>();
+                updateInfoMap.put("核验结果","通过");
+                if(verifyType==CARD_FACE_FP) {
+                    updateInfoMap.put("核验类型","身份证+人脸+指纹");
+                }else{
+                    updateInfoMap.put("核验类型","身份证+指纹");
+                }
+                updateInfoMap.put("核验时间",verifyTime());
+                updateInfoMap.put("FINGER",bitmapToBase64(bitmap));
+                updateInfoMap.put("FINGERFS",Float.toString(fp_score));
+                updateInfoMap.put("FINGERYUZHI","35");
+                Log.d(TAG,"timeId:"+timeId);
+                dbManager.updateLineData(tableName,timeId,updateInfoMap);
+                sendDataToService();
+                timeId = "";
+            }else{
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        verifyResultBt.setTextSize(8);
+                        verifyResultBt.setText("核验不通过");
+                        verifyResultBt.setTextColor(Color.RED);
+                        idTemplate1 =null;
+                        idTemplate2=null;
+                    }
+                });
+                HashMap<String, String> updateInfoMap = new HashMap<>();
+                updateInfoMap.put("核验结果","不通过");
+                if(verifyType==CARD_FACE_FP) {
+                    updateInfoMap.put("核验类型","身份证+人脸+指纹");
+                }else{
+                    updateInfoMap.put("核验类型","身份证+指纹");
+                }
+                updateInfoMap.put("核验时间",verifyTime());
+                updateInfoMap.put("FINGER",bitmapToBase64(bitmap));
+                updateInfoMap.put("FINGERFS",Float.toString(fp_score));
+                updateInfoMap.put("FINGERFS","35");
+                Log.d(TAG,"timeId:"+timeId);
+                dbManager.updateLineData(tableName,timeId,updateInfoMap);
+                sendDataToService();
+                timeId="";
+            }
+            isVerifyFinish = true;
+            isNewCard = false;
         }
 
         @Override
@@ -1583,7 +1641,7 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
         builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                isFpConfirm = false;
+//                isFpConfirm = false;
                 dialog.dismiss();
             }
         });
@@ -1792,7 +1850,7 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
 
     void sendDataToService(){
         JSONObject json = new JSONObject();
-        HashMap<String, String> lineData = dbManager.getLineData(tableName, verifyLicid);
+        HashMap<String, String> lineData = dbManager.getLineData(tableName, timeId);
         for (Map.Entry<String, String> entry : lineData.entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue();
@@ -1849,7 +1907,7 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
                 }else if(key.equals(DBPersion.Fingerfs)){
                     json.put("ffs",value);
                 }else if(key.equals(DBPersion.Finger)){
-                    json.put("fp",value);
+                    json.put("Fingerzp",value);
                 }
 
             } catch (JSONException e) {
@@ -1868,7 +1926,7 @@ public class FaceRGBPersonActivity extends BaseActivity implements View.OnClickL
     public void onResponse(String response) {
         if (response != null) {
             Log.d(TAG, "Response: " + response);
-            if (getJsonValue(response,"message").equals("OK")) {
+            if (getJsonValue(response,"code").equals("0")) {
                 Log.d(TAG,"send ok");
             }else{
                 Log.d(TAG,"send fail");

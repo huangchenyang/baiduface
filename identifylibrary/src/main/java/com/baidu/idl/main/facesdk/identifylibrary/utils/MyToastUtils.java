@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.Gravity;
 import android.widget.Toast;
 
-public class ToastUtils {
+public class MyToastUtils {
 
 
     public static void show(Context context, String content) {
